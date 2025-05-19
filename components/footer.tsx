@@ -1,5 +1,5 @@
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="py-12 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black">
@@ -9,10 +9,10 @@ export default function Footer() {
             © {currentYear} Semeton Balogun. All rights reserved.
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 md:mt-0">
-            Senior Backend Engineer & Technical Lead
+            Backend Engineer
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

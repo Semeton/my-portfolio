@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import Image from "next/image"
-import { GithubIcon, LinkedinIcon, FileTextIcon } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Image from "next/image";
+import { GithubIcon, LinkedinIcon, FileTextIcon } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -60,15 +60,18 @@ export default function Hero() {
 
               <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300">
                 <p className="leading-relaxed">
-                  I'm <span className="font-semibold">Semeton Balogun</span>, a senior backend engineer with 5 years of
-                  experience architecting and scaling mission-critical systems for financial institutions, security
-                  platforms, and enterprise applications.
+                  I'm <span className="font-semibold">Semeton Balogun</span>, a
+                  backend engineer with 5 years of experience architecting and
+                  scaling mission-critical systems for financial institutions,
+                  security platforms, and enterprise applications.
                 </p>
 
                 <p className="leading-relaxed">
-                  I specialize in designing resilient backend architectures, optimizing system performance, and leading
-                  technical teams through complex implementations. My expertise spans PHP (Laravel), Node.js, and
-                  distributed systems with a focus on security and scalability.
+                  I specialize in designing resilient backend architectures,
+                  optimizing system performance, and leading technical teams
+                  through complex implementations. My expertise spans PHP
+                  (Laravel), Node.js, and distributed systems with a focus on
+                  security and scalability.
                 </p>
               </div>
 
@@ -76,7 +79,11 @@ export default function Hero() {
                 <Button asChild className="rounded-full px-8 py-6 text-base">
                   <Link href="#contact">Get in touch</Link>
                 </Button>
-                <Button asChild variant="outline" className="rounded-full px-8 py-6 text-base">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="rounded-full px-8 py-6 text-base"
+                >
                   <Link href="#projects">View key projects</Link>
                 </Button>
               </div>
@@ -85,5 +92,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
