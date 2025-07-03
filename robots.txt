@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://semeton.xyz
+Sitemap: https://semeton.xyz/sitemap.xml
