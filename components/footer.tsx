@@ -9,7 +9,7 @@ export default function Footer() {
             © {currentYear} Semeton Balogun. All rights reserved.
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-2 md:mt-0">
-            Backend Engineer
+            Software Engineer
           </p>
         </div>
       </div>
