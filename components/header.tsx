@@ -1,34 +1,39 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { MoonIcon, SunIcon, LaptopIcon, MenuIcon, XIcon } from "lucide-react"
-import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
-import { useMobile } from "@/hooks/use-mobile"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { MoonIcon, SunIcon, LaptopIcon, MenuIcon, XIcon } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
+import { useMobile } from "@/hooks/use-mobile";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Header() {
-  const { theme, setTheme } = useTheme()
-  const isMobile = useMobile()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme();
+  const isMobile = useMobile();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const navItems = [
     { name: "About", href: "#about" },
-    { name: "Leadership", href: "#leadership" },
-    { name: "Expertise", href: "#expertise" },
+    { name: "Leadership & Technical Expertise", href: "#leadership" },
+    // { name: "Expertise", href: "#expertise" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-  ]
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-white/90 dark:bg-black/90 backdrop-blur-md">
@@ -57,14 +62,29 @@ export default function Header() {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
-                    <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setTheme("light")}>
+                      Light
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setTheme("dark")}>
+                      Dark
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setTheme("system")}>
+                      System
+                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               )}
-              <Button variant="ghost" size="icon" onClick={toggleMenu} aria-label="Toggle menu">
-                {isMenuOpen ? <XIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleMenu}
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? (
+                  <XIcon className="h-5 w-5" />
+                ) : (
+                  <MenuIcon className="h-5 w-5" />
+                )}
               </Button>
             </div>
           ) : (
@@ -95,9 +115,15 @@ export default function Header() {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
-                    <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setTheme("light")}>
+                      Light
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setTheme("dark")}>
+                      Dark
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => setTheme("system")}>
+                      System
+                    </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               )}
@@ -124,5 +150,5 @@ export default function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }

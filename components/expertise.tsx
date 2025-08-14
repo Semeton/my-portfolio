@@ -7,60 +7,55 @@ import {
 } from "@/components/ui/card";
 
 export default function Expertise() {
-  const experiences = [
+  const expertiseAreas = [
     {
-      company: "SeamlesHR",
-      role: "Backend Engineer",
-      period: "Current Role",
+      title: "Enterprise Platform Development",
       description:
-        "Contributing to enterprise HR systems used by major corporations across Africa.",
+        "Specialized in building and re-architecting enterprise-grade platforms for financial institutions, manufacturing companies, and large organizations.",
       highlights: [
-        "Architecting scalable API services handling 50k+ employees daily requests",
-        "Implementing AI integration for recruitment module with smart scoring and ranking, CV parsing and auto-screening of applicants",
-        "Developing secure data handling protocols for sensitive HR information",
+        "Multi-tenant, multi-database LMS architecture supporting MySQL and MSSQL",
+        "Custom driver implementations for legacy system compatibility",
+        "Scalable proctoring systems with chunked video streaming",
+        "Distributed, cloud-ready solutions with modular integrations",
       ],
+      technologies: "PHP 8.*, Laravel, MySQL, MSSQL, Docker, LDAP, REST APIs",
     },
     {
-      company: "Zercom Systems",
-      role: "Technical Lead",
-      period: "Apr 2023 – Sep 2024",
+      title: "Security & Compliance",
       description:
-        "Led the re-architecture of Tangerine LMS, deployed across multiple banking institutions in Nigeria.",
+        "Comprehensive security engineering with focus on vulnerability assessment, remediation, and compliance for enterprise systems.",
       highlights: [
-        "Migrated legacy PHP 7.4 codebase to modern PHP 8.1 architecture",
-        "Designed custom Laravel MSSQL driver enabling multi-bank support",
-        "Implemented CI/CD pipelines reducing deployment time by 70%",
-        "Conducted security audits and performance optimization",
+        "High-risk vulnerability remediation for LMS and ATM monitoring systems",
+        "Bank security audit compliance and certification",
+        "Vulnerability scanning platforms with ZAP and Gophish integration",
+        "Real-time monitoring for Docker containers and scheduled jobs",
       ],
-      stack:
-        "PHP, Laravel, SQL Server, MySQL, JavaScript, Node.js, Memcached, DigitalOcean, IIS, Apache",
+      technologies: "ZAP, Gophish, Docker, Security Auditing, Compliance",
     },
     {
-      company: "ScholarshipIQ",
-      role: "Backend Engineer",
-      period: "Jun 2022 – Apr 2023",
+      title: "Infrastructure & DevOps",
       description:
-        "Architected backend infrastructure for a rubust scholarship matching platform.",
+        "Modern DevOps practices including containerization, CI/CD pipelines, and infrastructure optimization for cost and performance.",
       highlights: [
-        "Designed RESTful API architecture with Laravel and MySQL",
-        "Set up version control strategies, pipelines and handled deployments",
-        "Boosted system performance by 50% through SQL optimization",
-        "Reduced production errors by 90% through staging workflows",
+        "Legacy system containerization reducing setup time from days to hours",
+        "CI/CD pipeline implementation reducing deployment time by 70%",
+        "Infrastructure consolidation and performance optimization",
+        "VPS migration reducing hosting costs by ~85%",
       ],
+      technologies:
+        "Docker, CI/CD, CyberPanel, VPS, Infrastructure Optimization",
     },
     {
-      company: "Bincom Dev Center",
-      role: "Backend Developer",
-      period: "Sep 2020 – Jul 2022",
+      title: "Performance & Scalability",
       description:
-        "Contributed to educational platforms and API development in an Agile environment.",
+        "Expertise in database optimization, query tuning, and system performance enhancement for high-traffic applications.",
       highlights: [
-        "Enhanced the ARM Learn Moodle web application by fixing 12 UAT-listed errors and integrating OAuth 2 for Facebook and Google",
-        "Contributed to development of REST APIs in an Agile Scrum team using PHP and Node.js",
-        "Facilitated training sessions for 5+ interns and community events with 30+ participants",
+        "Database performance improvement by over 50% through indexing and tuning",
+        "Resolution of database lock issues with automated recovery systems",
+        "Stress testing and scalability validation",
+        "Caching strategies and infrastructure consolidation",
       ],
-      stack:
-        "Node.js, PHP/Laravel, MySQL, REST APIs, Git/GitHub, CI/CD pipelines",
+      technologies: "MySQL, Query Optimization, Indexing, Caching, JMeter",
     },
   ];
 
@@ -68,51 +63,46 @@ export default function Expertise() {
     <section id="expertise" className="py-24 bg-white dark:bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold mb-6">Professional Experience</h2>
+          <h2 className="text-3xl font-bold mb-6">Technical Expertise</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Key roles where I've delivered significant technical impact and
-            leadership.
+            Deep technical knowledge across enterprise development, security
+            engineering, and infrastructure optimization.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
-          {experiences.map((exp, index) => (
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {expertiseAreas.map((area, index) => (
             <Card
               key={index}
-              className="border border-gray-200 dark:border-gray-800"
+              className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300"
             >
               <CardHeader>
-                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
-                  <div>
-                    <CardTitle className="text-xl">{exp.role}</CardTitle>
-                    <CardDescription className="text-lg font-medium mt-1">
-                      {exp.company}
-                    </CardDescription>
-                  </div>
-                  <span className="text-sm text-gray-500 dark:text-gray-400 md:text-right">
-                    {exp.period}
-                  </span>
-                </div>
+                <CardTitle className="text-xl text-gray-900 dark:text-gray-100">
+                  {area.title}
+                </CardTitle>
+                <CardDescription className="text-base mt-2 text-gray-600 dark:text-gray-400">
+                  {area.description}
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="mb-4 text-gray-600 dark:text-gray-400">
-                  {exp.description}
-                </p>
-                {exp.highlights && (
-                  <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                    {exp.highlights.map((highlight, i) => (
+                <div className="mb-4">
+                  <h4 className="text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                    Key Capabilities:
+                  </h4>
+                  <ul className="list-disc pl-4 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                    {area.highlights.map((highlight, i) => (
                       <li key={i}>{highlight}</li>
                     ))}
                   </ul>
-                )}
-                {exp.stack && (
-                  <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
-                    <p className="text-sm font-medium">Tech Stack:</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {exp.stack}
-                    </p>
-                  </div>
-                )}
+                </div>
+                <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Technologies:
+                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    {area.technologies}
+                  </p>
+                </div>
               </CardContent>
             </Card>
           ))}

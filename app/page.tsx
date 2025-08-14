@@ -1,11 +1,11 @@
-import Header from "@/components/header"
-import Hero from "@/components/hero"
-import Terminal from "@/components/terminal"
-import Leadership from "@/components/leadership"
-import Expertise from "@/components/expertise"
-import Projects from "@/components/projects"
-import Contact from "@/components/contact"
-import Footer from "@/components/footer"
+import Header from "@/components/header";
+import Hero from "@/components/hero";
+import Terminal from "@/components/terminal";
+import Leadership from "@/components/leadership";
+import Projects from "@/components/projects";
+import Writing from "@/components/writing";
+import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -24,10 +24,10 @@ export default function Home() {
         </div>
       </section>
       <Leadership />
-      <Expertise />
       <Projects />
+      <Writing />
       <Contact />
       <Footer />
     </main>
-  )
+  );
 }

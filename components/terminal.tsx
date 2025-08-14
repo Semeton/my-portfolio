@@ -19,17 +19,21 @@ export default function Terminal() {
     }
   };
 
-  // Simulate typing effect
+  // Simulate typing effect with backend-focused commands
   useEffect(() => {
     const commands = [
       "whoami",
-      "Semeton Balogun",
-      "skills --top",
-      "PHP (Laravel) | Node.js | System Architecture | Security",
-      "projects --count",
-      "5 major projects completed",
-      "experience --years",
-      "5 years of professional experience",
+      "Semeton Balogun - Backend Engineer & Technical Lead",
+      "backend --expertise",
+      "PHP (Laravel), Node.js, System Architecture, Database Design, API Development",
+      "architecture --show",
+      "Multi-tenant systems, Microservices, REST APIs, GraphQL, Event-driven architecture",
+      "database --skills",
+      "MySQL, PostgreSQL, SQL Server, Redis, Database optimization, Query tuning",
+      "security --focus",
+      "OWASP compliance, Authentication, Authorization, Vulnerability scanning, Penetration testing",
+      "devops --tools",
+      "Docker, CI/CD, Git, AWS, Performance monitoring, Infrastructure as code",
     ];
 
     let i = 0;
@@ -42,7 +46,7 @@ export default function Terminal() {
         // After commands are done, try to get location
         fetchLocation();
       }
-    }, 500);
+    }, 600);
 
     // Blinking cursor effect
     const cursorInterval = setInterval(() => {
@@ -93,7 +97,8 @@ export default function Terminal() {
     if (e.key === "Enter") {
       const command = currentCommand.trim();
       if (command) {
-        let response = "Command not recognized";
+        let response =
+          "Command not recognized. Type 'help' for available commands.";
 
         if (command === "clear") {
           setOutput([]);
@@ -101,18 +106,31 @@ export default function Terminal() {
           return;
         } else if (command === "help") {
           response =
-            "Available commands: whoami, skills, projects, experience, location, clear, help";
+            "Available commands: whoami, backend, architecture, database, security, devops, projects, experience, location, clear, help";
         } else if (command === "whoami") {
-          response = "Semeton Balogun - Backend Engineer & Technical Lead";
-        } else if (command === "skills") {
           response =
-            "PHP (Laravel) | Node.js | System Architecture | Security | Docker | CI/CD";
+            "Semeton Balogun - Backend Engineer & Technical Lead. I architect and build scalable enterprise systems.";
+        } else if (command === "backend") {
+          response =
+            "Core expertise: PHP (Laravel), Node.js, Python, System Architecture, API Development, Database Design, Performance Optimization";
+        } else if (command === "architecture") {
+          response =
+            "I design: Multi-tenant systems, Microservices, Event-driven architecture, REST APIs, GraphQL, CQRS patterns, Domain-driven design";
+        } else if (command === "database") {
+          response =
+            "Expertise: MySQL, PostgreSQL, SQL Server, Redis, Database optimization, Query tuning, Indexing strategies, Data modeling, ACID compliance";
+        } else if (command === "security") {
+          response =
+            "Security focus: OWASP compliance, Authentication flows, Authorization systems, Vulnerability assessment, Penetration testing, Security audits";
+        } else if (command === "devops") {
+          response =
+            "DevOps tools: Docker, Kubernetes, CI/CD pipelines, Git, AWS, Performance monitoring, Infrastructure as code, Automated testing";
         } else if (command === "projects") {
           response =
-            "Trustcenta | Tangerine LMS | Trustpass | ScholarshipIQ | Verivault";
+            "Enterprise projects: TrustCenta (security), Tangerine365 (LMS), Eventshores (platform), SkuleIQ (AI), and more. Check projects section!";
         } else if (command === "experience") {
           response =
-            "5 years of professional experience in backend development and technical leadership";
+            "5+ years building enterprise systems for banks, manufacturing companies, and large organizations. Led teams, architected solutions, optimized performance.";
         } else if (command === "location") {
           response = location
             ? `Visitor from ${location}`
@@ -131,36 +149,42 @@ export default function Terminal() {
   };
 
   return (
-    <Card className="border border-gray-200 dark:border-gray-800 bg-gray-900 text-gray-100 p-4 w-full max-w-3xl mx-auto rounded-lg shadow-lg overflow-hidden">
-      <div className="flex items-center mb-2 pb-2 border-b border-gray-700">
+    <Card className="border border-gray-200 dark:border-gray-800 bg-gray-900 text-gray-100 p-6 w-full max-w-4xl mx-auto rounded-2xl shadow-2xl overflow-hidden">
+      <div className="flex items-center mb-4 pb-3 border-b border-gray-700">
         <div className="flex space-x-2">
           <div className="w-3 h-3 rounded-full bg-red-500"></div>
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
           <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
-        <div className="ml-4 text-sm text-gray-400">semeton@portfolio:~</div>
+        <div className="ml-4 text-sm text-gray-400 font-mono">
+          semeton@backend:~
+        </div>
       </div>
 
       <div
         ref={terminalRef}
-        className="font-mono text-sm h-48 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900"
+        className="font-mono text-sm h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900"
         onClick={focusInput}
       >
         {output.map((line, index) => (
           <div
             key={index}
             className={
-              isCommand(line) ? "text-green-400 mt-2" : "text-gray-300 mb-1"
+              isCommand(line)
+                ? "text-green-400 mt-3 font-semibold"
+                : "text-gray-300 mb-2 leading-relaxed"
             }
           >
             {line}
           </div>
         ))}
-        <div className="flex items-center mt-2">
-          <span className="text-green-400">$ </span>
-          <span className="ml-1">{currentCommand}</span>
+        <div className="flex items-center mt-3">
+          <span className="text-green-400 font-semibold">$ </span>
+          <span className="ml-2">{currentCommand}</span>
           <span
-            className={`ml-0.5 w-2 h-4 bg-gray-300 ${cursorVisible ? "opacity-100" : "opacity-0"}`}
+            className={`ml-1 w-2 h-4 bg-gray-300 ${
+              cursorVisible ? "opacity-100" : "opacity-0"
+            }`}
           ></span>
         </div>
       </div>
@@ -175,7 +199,7 @@ export default function Terminal() {
         autoFocus
       />
 
-      <div className="mt-2 text-xs text-gray-500">
+      <div className="mt-4 text-xs text-gray-500 text-center">
         Type <span className="text-gray-400 font-semibold">help</span> for
         available commands
       </div>

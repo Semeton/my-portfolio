@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -133,44 +135,50 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-gray-50 dark:bg-gray-950">
+    <section
+      id="projects"
+      className="py-24 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-gray-900"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold mb-6">
+        <div className="max-w-4xl mx-auto mb-20 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
             Key Projects Contributed to or Built
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
+          <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
             Significant technical achievements that demonstrate my expertise in
             system architecture, security, and full-stack development.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto space-y-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card
+            <div
               key={index}
-              className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow duration-300"
+              className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
-              <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <CardTitle className="text-2xl flex items-center gap-2">
-                      {project.title}
+              {/* Project Header */}
+              <div className="p-6 border-b border-gray-100 dark:border-gray-800">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-2">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">
+                        {project.title}
+                      </h3>
                       {project.link && (
                         <a
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                          className="text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors flex-shrink-0"
                         >
-                          <ExternalLink className="h-5 w-5" />
+                          <ExternalLink className="h-4 w-4" />
                         </a>
                       )}
-                    </CardTitle>
-                    <CardDescription className="text-lg mt-1">
+                    </div>
+                    <p className="text-base text-gray-600 dark:text-gray-400 mb-3">
                       {project.subtitle}
-                    </CardDescription>
-                    <div className="mt-2">
+                    </p>
+                    <div className="flex items-center gap-3">
                       <Badge
                         variant={
                           project.type === "built" ? "default" : "secondary"
@@ -182,32 +190,63 @@ export default function Projects() {
                     </div>
                   </div>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-6 text-gray-600 dark:text-gray-400 text-lg">
+
+                {/* Description */}
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
                   {project.description}
                 </p>
+              </div>
 
-                <div className="mb-8">
-                  <h4 className="text-base font-medium mb-3">
-                    Key Contributions:
+              {/* Project Content */}
+              <div className="p-6 space-y-6">
+                {/* Key Contributions */}
+                <div>
+                  <h4 className="text-sm font-semibold mb-3 text-gray-900 dark:text-white uppercase tracking-wide">
+                    Key Contributions
                   </h4>
-                  <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                    {project.highlights.map((highlight, i) => (
-                      <li key={i}>{highlight}</li>
+                  <ul className="space-y-2">
+                    {project.highlights.slice(0, 4).map((highlight, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400"
+                      >
+                        <div className="w-1.5 h-1.5 rounded-full bg-gray-900 dark:bg-white mt-2 flex-shrink-0"></div>
+                        <span className="leading-relaxed">{highlight}</span>
+                      </li>
                     ))}
+                    {project.highlights.length > 4 && (
+                      <li className="text-xs text-gray-500 dark:text-gray-500 italic">
+                        +{project.highlights.length - 4} more contributions
+                      </li>
+                    )}
                   </ul>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <Badge key={i} variant="outline" className="font-normal">
-                      {tech}
-                    </Badge>
-                  ))}
+                {/* Technologies */}
+                <div>
+                  <h4 className="text-sm font-semibold mb-3 text-gray-900 dark:text-white uppercase tracking-wide">
+                    Technologies
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, i) => (
+                      <Badge
+                        key={i}
+                        variant="outline"
+                        className="px-2 py-1 text-xs font-normal bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+
+              {/* Hover Effect Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-50/0 via-gray-50/0 to-gray-50/0 group-hover:from-gray-50/10 group-hover:via-gray-50/5 group-hover:to-gray-50/0 transition-all duration-300 pointer-events-none"></div>
+
+              {/* Decorative Corner Element */}
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gray-200 dark:bg-gray-700 opacity-30 rounded-full -translate-y-8 translate-x-8 group-hover:scale-110 transition-transform duration-300"></div>
+            </div>
           ))}
         </div>
       </div>

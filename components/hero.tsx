@@ -23,10 +23,14 @@ export default function Hero() {
             </div>
 
             <div className="order-2 md:order-1 text-center md:text-left">
-              <h1 className="text-6xl md:text-8xl font-extrabold tracking-tight mb-4 leading-tight">
-                Software <br className="hidden md:block" />
-                Engineer
+              <h1 className="text-6xl md:text-8xl font-black tracking-tight mb-4 leading-tight">
+                Semeton <br className="hidden md:block" />
+                Balogun
               </h1>
+              <hr className="my-4" />
+              <p className="text-lg uppercase font-bold text-gray-600 dark:text-gray-400">
+                Software Engineer | 5 Years Experience
+              </p>
 
               <div className="flex items-center justify-center md:justify-start space-x-4 mt-4 mb-12">
                 <a
@@ -60,18 +64,19 @@ export default function Hero() {
 
               <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300">
                 <p className="leading-relaxed">
-                  I'm <span className="font-bold">Semeton Balogun</span>, a
-                  software engineer (backend heavy) with 5 years of experience
-                  architecting and developing scalable enterprise systems and
-                  solutions for individuals and organisations.
+                  Over the past 5 years, I have designed and delivered secure,
+                  scalable enterprise systems used by banks and large
+                  organizations. My work spans re-architecting legacy platforms,
+                  building multi-tenant SaaS applications, optimizing
+                  infrastructure for cost and performance, and integrating
+                  complex enterprise systems.
                 </p>
 
                 <p className="leading-relaxed">
-                  I design secure software architectures, optimise system
-                  performance, and also lead technical teams through
-                  implementations. My expertise spans PHP (Laravel), Node.js,
-                  and distributed systems with a focus on security and
-                  scalability.
+                  With deep expertise in PHP (Laravel), Node.js, and distributed
+                  architectures, I lead technical projects from concept to
+                  production—working directly with CIOs, security teams, and
+                  business leads to deliver reliable, scalable solutions.
                 </p>
               </div>
 
