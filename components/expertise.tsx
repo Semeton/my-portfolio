@@ -16,7 +16,7 @@ export default function Expertise() {
         "Contributing to enterprise HR systems used by major corporations across Africa.",
       highlights: [
         "Architecting scalable API services handling 50k+ employees daily requests",
-        "Implementing AI integration for recruitment module with CV parsing and auto-screening of applicants",
+        "Implementing AI integration for recruitment module with smart scoring and ranking, CV parsing and auto-screening of applicants",
         "Developing secure data handling protocols for sensitive HR information",
       ],
     },
