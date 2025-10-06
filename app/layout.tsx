@@ -1,10 +1,10 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import type React from "react";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Semeton Balogun | Backend Engineer & Technical Lead",
@@ -90,13 +90,13 @@ export const metadata: Metadata = {
   verification: {
     google: "verification_token",
   },
-    generator: 'v0.dev'
-}
+  generator: "v0.dev",
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -114,7 +114,10 @@ export default function RootLayout({
                 "@type": "Organization",
                 name: "SeamlesHR",
               },
-              sameAs: ["https://github.com/semeton", "https://www.linkedin.com/in/semetonbalogun/"],
+              sameAs: [
+                "https://github.com/semeton",
+                "https://www.linkedin.com/in/semetonbalogun/",
+              ],
               description:
                 "Semeton Balogun is a senior backend engineer with 5 years of experience in PHP (Laravel), Node.js, and distributed systems, specializing in system architecture and security.",
               knowsAbout: [
@@ -131,11 +134,18 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} font-sans bg-background text-foreground`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <body
+        className={`${inter.variable} font-sans bg-background text-foreground`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

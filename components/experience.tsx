@@ -1,48 +1,62 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Experience() {
   const experiences = [
     {
-      company: "SeamlesHR",
+      company: "SeamlessHR",
       role: "Backend Engineer",
-      period: "Current Role",
-      description: "Contributing to enterprise-grade backend systems and scalable API services.",
-      details: ["Details will be shared once publicly available."],
+      period: "November 2024 – Current",
+      description:
+        "Contributing to enterprise-grade backend systems and scalable API services.",
+      details: [
+        "Architecting scalable API services handling 100K+ employees daily requests",
+        "Implementing AI integration for recruitment module with CV parsing, ranking and auto-screening of applicants",
+        "Developing secure data handling protocols for sensitive HR information",
+      ],
     },
     {
       company: "Zercom Systems",
       role: "Technical Lead",
-      period: "Apr 2023 – Sep 2024",
+      period: "Apr 2023 – November 2024",
       description:
         "Led the upgrade and re-architecture of Tangerine LMS, an enterprise learning platform deployed across banking institutions in Nigeria.",
       details: [
-        "Migrated monolithic PHP 7.4 codebase to modern PHP 8.1 and refactored frontend from ES5 to ES6",
-        "Oversaw deployments to IIS (Windows) and Apache2 (Ubuntu/DigitalOcean)",
-        "Designed and integrated a custom Laravel MSSQL driver for multi-bank support",
-        "Developed new modules: test proctoring, gamification, and video conferencing",
-        "Improved deployment efficiency with Git-based CI/CD pipelines, staging environments, and branch management",
-        "Conducted vulnerability assessments using ZAP and stress testing via JMeter",
+        "Led the upgrade of Tangerine LMS to a multitenant Tangerine365, deploying to IIS on physical Windows Servers across 3 banking infrastructures and Apache2 servers on multiple VPS Ubuntu cloud instances (DigitalOcean droplets, AWS EC2)",
+        "Developed cross-functional REST APIs, enabling seamless integration with 5+ external organizations, notably Human Manager HRMS, making the LMS a modular solution",
+        "Introduced SQL Server support with a custom MSSQL driver alongside the default MySQL driver, expanding capabilities to 3 banks using MSSQL",
+        "Implemented test proctoring and video conferencing modules using Jitsi Meet and Zoom",
+        "Enhanced application performance with caching strategies (libcache, memcached) and improved load times via Gzip/Brotli compression for static files",
+        "Conducted vulnerability and performance testing using ZAP and JMeter",
+        "Contributed to Terminoxx360 (ATM monitoring platform) by optimizing DB performance through indexing and schema cleanup, troubleshooting job failures caused by DB locks, and implementing auto-restart mechanisms",
       ],
-      stack: "PHP, Laravel, SQL Server, MySQL, JavaScript, Node.js, Memcached, DigitalOcean, IIS, Apache, Gzip/Brotli",
+      stack:
+        "PHP, Laravel, SQL Server, MySQL, JavaScript, Node.js, Memcached, DigitalOcean, IIS, Apache, Gzip/Brotli",
     },
     {
       company: "ScholarshipIQ",
       role: "Backend Engineer",
       period: "Jun 2022 – Apr 2023",
-      description: "Built the backend infrastructure for a nationwide academic funding platform.",
+      description:
+        "Built the backend infrastructure for an academic matching and funding platform.",
       details: [
-        "Developed robust RESTful APIs using Laravel and MySQL",
-        "Integrated with ReactJS frontend and external services (Flutterwave, HubSpot)",
-        "Boosted performance by 50% via SQL optimization and proper indexing",
-        "Implemented secure user verification, cron-based scheduling, and automated email alerts",
-        "Reduced production errors by 90% through staging workflows and code reviews",
+        "Developed and deployed the backend service and REST APIs using PHP/Laravel and MySQL, integrating them seamlessly with the frontend ReactJS application.",
+        "Enhanced system efficiency by implementing email verifications to eliminate ghost emails, achieving 50% faster API responses through database query optimization and indexing, and improved user management by integrating third-party libraries like HubSpot.",
+        "Implemented version control practices, including branching strategies and staging environments, resulting in a reduction of production errors by over 90%.",
+        "Automated email notifications and scheduling using cron jobs to enhance user engagement and system notifications, and integrated Flutterwave payment gateway.",
       ],
     },
     {
       company: "Bincom Dev Center",
       role: "Backend Developer",
       period: "Sep 2020 – Jul 2022",
-      description: "Contributed to educational platforms like ARM Learn and internal API systems.",
+      description:
+        "Contributed to educational platforms like ARM Learn and internal API systems.",
       details: [
         "Integrated OAuth2 with Facebook and Google",
         "Participated in Agile teams using Scrum methodology",
@@ -50,7 +64,7 @@ export default function Experience() {
         "Trained 5+ interns and helped organize technical community events",
       ],
     },
-  ]
+  ];
 
   return (
     <section id="experience" className="py-24 bg-gray-50 dark:bg-gray-950">
@@ -58,24 +72,34 @@ export default function Experience() {
         <div className="max-w-3xl mx-auto mb-16 text-center">
           <h2 className="text-3xl font-bold mb-4">Professional Experience</h2>
           <p className="text-gray-600 dark:text-gray-400">
-            My journey building scalable backend systems and leading technical teams.
+            My journey building scalable backend systems and leading technical
+            teams.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
           {experiences.map((exp, index) => (
-            <Card key={index} className="border border-gray-200 dark:border-gray-800">
+            <Card
+              key={index}
+              className="border border-gray-200 dark:border-gray-800"
+            >
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
                   <div>
                     <CardTitle className="text-xl">{exp.role}</CardTitle>
-                    <CardDescription className="text-lg font-medium mt-1">{exp.company}</CardDescription>
+                    <CardDescription className="text-lg font-medium mt-1">
+                      {exp.company}
+                    </CardDescription>
                   </div>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">{exp.period}</span>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                    {exp.period}
+                  </span>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="mb-4 text-gray-600 dark:text-gray-400">{exp.description}</p>
+                <p className="mb-4 text-gray-600 dark:text-gray-400">
+                  {exp.description}
+                </p>
                 {exp.details && (
                   <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
                     {exp.details.map((detail, i) => (
@@ -86,7 +110,9 @@ export default function Experience() {
                 {exp.stack && (
                   <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
                     <p className="text-sm font-medium">Tech Stack:</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{exp.stack}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {exp.stack}
+                    </p>
                   </div>
                 )}
               </CardContent>
@@ -95,5 +121,5 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }

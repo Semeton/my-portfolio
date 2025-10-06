@@ -117,21 +117,21 @@ export default function Projects() {
       link: "https://whisknpuffbites.com",
       type: "built",
     },
-    {
-      title: "VeriVault",
-      subtitle: "End-to-End Zero Knowledge Proof Chatting Application",
-      description:
-        "End to end zero knowledge proof chatting application built with Laravel backend and React JS PWA. A side project focused on cybersecurity and online privacy.",
-      highlights: [
-        "End-to-end encrypted chatting with zero knowledge proof",
-        "Secret-locked conversations with self-destruct capability",
-        "Ability to purge all data and send encrypted emails",
-        "Built as a progressive web app for privacy-focused communication",
-      ],
-      tech: ["Laravel", "React", "PWA", "Encryption", "Zero Knowledge Proof"],
-      link: "https://app.encryptme.online",
-      type: "built",
-    },
+    // {
+    //   title: "VeriVault",
+    //   subtitle: "End-to-End Zero Knowledge Proof Chatting Application",
+    //   description:
+    //     "End to end zero knowledge proof chatting application built with Laravel backend and React JS PWA. A side project focused on cybersecurity and online privacy.",
+    //   highlights: [
+    //     "End-to-end encrypted chatting with zero knowledge proof",
+    //     "Secret-locked conversations with self-destruct capability",
+    //     "Ability to purge all data and send encrypted emails",
+    //     "Built as a progressive web app for privacy-focused communication",
+    //   ],
+    //   tech: ["Laravel", "React", "PWA", "Encryption", "Zero Knowledge Proof"],
+    //   link: "https://app.encryptme.online",
+    //   type: "built",
+    // },
   ];
 
   return (

@@ -6,6 +6,7 @@ import Projects from "@/components/projects";
 import Writing from "@/components/writing";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
+import Experience from "@/components/experience";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
           <Terminal />
         </div>
       </section>
+      <Experience />
       <Leadership />
       <Projects />
       <Writing />
