@@ -8,7 +8,6 @@ import { Card } from "@/components/ui/card";
 export default function Terminal() {
   const [output, setOutput] = useState<string[]>([]);
   const [currentCommand, setCurrentCommand] = useState("");
-  const [cursorVisible, setCursorVisible] = useState(true);
   const [location, setLocation] = useState<string | null>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -48,14 +47,8 @@ export default function Terminal() {
       }
     }, 600);
 
-    // Blinking cursor effect
-    const cursorInterval = setInterval(() => {
-      setCursorVisible((prev) => !prev);
-    }, 500);
-
     return () => {
       clearInterval(interval);
-      clearInterval(cursorInterval);
     };
   }, []);
 
@@ -180,25 +173,17 @@ export default function Terminal() {
         ))}
         <div className="flex items-center mt-3">
           <span className="text-green-400 font-semibold">$ </span>
-          <span className="ml-2">{currentCommand}</span>
-          <span
-            className={`ml-1 w-2 h-4 bg-gray-300 ${
-              cursorVisible ? "opacity-100" : "opacity-0"
-            }`}
-          ></span>
+          <input
+            ref={inputRef}
+            type="text"
+            className="ml-2 flex-1 bg-transparent outline-none border-none text-gray-100 placeholder-gray-500"
+            value={currentCommand}
+            onChange={(e) => setCurrentCommand(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="type a command (try 'help')"
+          />
         </div>
       </div>
-
-      <input
-        type="text"
-        ref={inputRef}
-        className="sr-only"
-        value={currentCommand}
-        onChange={(e) => setCurrentCommand(e.target.value)}
-        onKeyDown={handleKeyDown}
-        autoFocus
-      />
-
       <div className="mt-4 text-xs text-gray-500 text-center">
         Type <span className="text-gray-400 font-semibold">help</span> for
         available commands

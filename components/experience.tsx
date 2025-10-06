@@ -70,54 +70,79 @@ export default function Experience() {
     <section id="experience" className="py-24 bg-gray-50 dark:bg-gray-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto mb-16 text-center">
-          <h2 className="text-3xl font-bold mb-4">Professional Experience</h2>
+          <h2 className="text-3xl font-bold mb-4">Professional Journey</h2>
           <p className="text-gray-600 dark:text-gray-400">
-            My journey building scalable backend systems and leading technical
-            teams.
+            A roadmap of roles, impact, and lessons learned along the way.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
-          {experiences.map((exp, index) => (
-            <Card
-              key={index}
-              className="border border-gray-200 dark:border-gray-800"
-            >
-              <CardHeader>
-                <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-                  <div>
-                    <CardTitle className="text-xl">{exp.role}</CardTitle>
-                    <CardDescription className="text-lg font-medium mt-1">
-                      {exp.company}
-                    </CardDescription>
+        <div className="relative max-w-6xl mx-auto">
+          {/* Timeline spine */}
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-800 md:left-1/2 md:-translate-x-1/2" />
+
+          <div className="space-y-12 md:space-y-16">
+            {experiences.map((exp, index) => {
+              const isLeft = index % 2 === 0;
+              return (
+                <div
+                  key={index}
+                  className="relative md:grid md:grid-cols-2 md:gap-12"
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-3 h-3 w-3 rounded-full bg-gray-900 dark:bg-white border-2 border-white dark:border-gray-950 shadow" />
+
+                  {/* Connector subtle backdrop for hover effect */}
+                  <div className="absolute left-[14px] md:left-1/2 md:-translate-x-1/2 top-3 h-3 w-3 rounded-full bg-gray-900/5 dark:bg-white/10 blur-sm" />
+
+                  <div
+                    className={
+                      isLeft
+                        ? "md:col-start-1 md:pr-10"
+                        : "md:col-start-2 md:pl-10"
+                    }
+                  >
+                    <Card className="border border-gray-200 dark:border-gray-800 hover:shadow-lg transition-shadow">
+                      <CardHeader>
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
+                            <CardTitle className="text-xl">
+                              {exp.role}
+                            </CardTitle>
+                            <CardDescription className="text-lg font-medium mt-1">
+                              {exp.company}
+                            </CardDescription>
+                          </div>
+                          <span className="text-sm text-gray-500 dark:text-gray-400 whitespace-nowrap">
+                            {exp.period}
+                          </span>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="mb-4 text-gray-600 dark:text-gray-400">
+                          {exp.description}
+                        </p>
+                        {exp.details && (
+                          <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
+                            {exp.details.map((detail, i) => (
+                              <li key={i}>{detail}</li>
+                            ))}
+                          </ul>
+                        )}
+                        {exp.stack && (
+                          <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
+                            <p className="text-sm font-medium">Tech Stack:</p>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                              {exp.stack}
+                            </p>
+                          </div>
+                        )}
+                      </CardContent>
+                    </Card>
                   </div>
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
-                    {exp.period}
-                  </span>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-gray-600 dark:text-gray-400">
-                  {exp.description}
-                </p>
-                {exp.details && (
-                  <ul className="list-disc pl-5 space-y-2 text-gray-600 dark:text-gray-400">
-                    {exp.details.map((detail, i) => (
-                      <li key={i}>{detail}</li>
-                    ))}
-                  </ul>
-                )}
-                {exp.stack && (
-                  <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800">
-                    <p className="text-sm font-medium">Tech Stack:</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {exp.stack}
-                    </p>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

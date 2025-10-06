@@ -7,6 +7,7 @@ import Writing from "@/components/writing";
 import Contact from "@/components/contact";
 import Footer from "@/components/footer";
 import Experience from "@/components/experience";
+import CollapsibleSection from "@/components/collapsible-section";
 
 export default function Home() {
   return (
@@ -24,10 +25,21 @@ export default function Home() {
           <Terminal />
         </div>
       </section>
-      <Experience />
-      <Leadership />
-      <Projects />
-      <Writing />
+      <CollapsibleSection title="Professional Experience" defaultOpen={false}>
+        <Experience />
+      </CollapsibleSection>
+      <CollapsibleSection
+        title="Leadership & Technical Expertise"
+        defaultOpen={false}
+      >
+        <Leadership />
+      </CollapsibleSection>
+      <CollapsibleSection title="Projects" defaultOpen={false}>
+        <Projects />
+      </CollapsibleSection>
+      <CollapsibleSection title="Writing & Media" defaultOpen={false}>
+        <Writing />
+      </CollapsibleSection>
       <Contact />
       <Footer />
     </main>
