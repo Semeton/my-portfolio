@@ -9,20 +9,17 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "Semeton Balogun | Backend Engineer & Technical Lead",
   description:
-    "Semeton Balogun is a senior backend engineer with 5 years of experience in PHP (Laravel), Node.js, and distributed systems, specializing in system architecture and security.",
+    "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
   keywords: [
     "Semeton Balogun",
     "Backend Engineer",
-    "PHP Developer",
-    "Laravel Developer",
-    "Node.js Developer",
-    "Technical Lead",
-    "System Architecture",
-    "API Development",
-    "Security Engineering",
-    "Performance Optimization",
-    "Nigeria Developer",
-    "Software Engineer",
+    "Laravel",
+    "NestJS",
+    "PostgreSQL",
+    "Distributed Systems",
+    "Multi-tenant Architecture",
+    "Systems Architecture",
+    "Production Debugging",
   ],
   authors: [{ name: "Semeton Balogun" }],
   creator: "Semeton Balogun",
@@ -53,7 +50,7 @@ export const metadata: Metadata = {
     url: "https://semeton.xyz",
     title: "Semeton Balogun | Backend Engineer & Technical Lead",
     description:
-      "Semeton Balogun is a senior backend engineer with 5 years of experience in PHP (Laravel), Node.js, and distributed systems, specializing in system architecture and security.",
+      "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
     siteName: "Semeton Balogun Portfolio",
     images: [
       {
@@ -68,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Semeton Balogun | Backend Engineer & Technical Lead",
     description:
-      "Semeton Balogun is a senior backend engineer with 5 years of experience in PHP (Laravel), Node.js, and distributed systems, specializing in system architecture and security.",
+      "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
     images: ["/og-image.png"],
     creator: "@semetonbalogun",
   },
@@ -119,7 +116,7 @@ export default function RootLayout({
                 "https://www.linkedin.com/in/semetonbalogun/",
               ],
               description:
-                "Semeton Balogun is a senior backend engineer with 5 years of experience in PHP (Laravel), Node.js, and distributed systems, specializing in system architecture and security.",
+                "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
               knowsAbout: [
                 "Backend Development",
                 "PHP",
@@ -127,8 +124,8 @@ export default function RootLayout({
                 "Node.js",
                 "System Architecture",
                 "API Development",
-                "Security Engineering",
-                "Performance Optimization",
+                "Production Debugging",
+                "Multi-tenant Architecture",
               ],
             }),
           }}
