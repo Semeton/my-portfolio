@@ -6,7 +6,8 @@ import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 const projects = [
   {
     title: "Tangerine365",
-    subtitle: "Multi-tenant LMS deployed across Wema Bank, First Bank, and FCMB.",
+    subtitle:
+      "Multi-tenant LMS deployed across Wema Bank, First Bank, and FCMB.",
     description:
       "A full rewrite of a legacy PHP 7.4 LMS into a multi-tenant PHP 8 platform with per-tenant database isolation. The hard part was the multi-database strategy — keeping MySQL as default while supporting SQL Server for the banks that required it, without forking the codebase.",
     role: "Led",
@@ -17,7 +18,16 @@ const projects = [
       "Migrated infrastructure to Hostinger VPS — ~85% cost reduction",
       "Set up CI/CD across IIS (Windows Server) and Apache (Ubuntu) deployments",
     ],
-    tech: ["PHP 8", "Laravel", "MySQL", "SQL Server", "Docker", "Jitsi Meet", "LDAP", "IIS"],
+    tech: [
+      "PHP 8",
+      "Laravel",
+      "MySQL",
+      "SQL Server",
+      "Docker",
+      "Jitsi Meet",
+      "LDAP",
+      "IIS",
+    ],
     link: "https://tangerine365.com",
   },
   {
@@ -25,7 +35,7 @@ const projects = [
     subtitle: "Real-time ATM monitoring for Access Bank Nigeria.",
     description:
       "Laravel application monitoring ATM fleet health across Access Bank infrastructure. I own it end to end — codebase, deployments, and the stakeholder relationship.",
-    role: "Sole engineer",
+    role: "Principal engineer",
     highlights: [
       "Diagnosed transaction-heavy jobs stalling under database locks; rewrote them for transactional efficiency",
       "Added index-based query optimization and schema cleanup that cleared the persistent slow-query backlog",
@@ -46,12 +56,26 @@ const projects = [
       "Web (Next.js) for administrators; React Native for gate personnel",
       "Wrapped ZAP and Gophish behind clean APIs with scheduled scans and automated email reports",
     ],
-    tech: ["Laravel", "Next.js", "React Native", "MySQL", "Docker", "ZAP", "Gophish"],
+    tech: [
+      "Laravel",
+      "Next.js",
+      "React Native",
+      "MySQL",
+      "Docker",
+      "ZAP",
+      "Gophish",
+    ],
     link: "https://trustcenta.com",
   },
 ];
 
-function ProjectCard({ project, index }: { project: (typeof projects)[0]; index: number }) {
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: (typeof projects)[0];
+  index: number;
+}) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -79,7 +103,9 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
         </a>
       </div>
 
-      <p className="text-sm text-gray-500 dark:text-gray-400">{project.subtitle}</p>
+      <p className="text-sm text-gray-500 dark:text-gray-400">
+        {project.subtitle}
+      </p>
 
       <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
         {project.description}
@@ -104,8 +130,13 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
       {expanded && (
         <ul className="space-y-2.5 border-t border-gray-100 dark:border-gray-800 pt-4">
           {project.highlights.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400">
-              <span className="text-gray-300 dark:text-gray-600 mt-0.5 flex-shrink-0">—</span>
+            <li
+              key={i}
+              className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400"
+            >
+              <span className="text-gray-300 dark:text-gray-600 mt-0.5 flex-shrink-0">
+                —
+              </span>
               <span>{item}</span>
             </li>
           ))}
@@ -117,10 +148,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
 
 export default function Projects() {
   return (
-    <section
-      id="projects"
-      className="py-24 bg-gray-50 dark:bg-gray-950"
-    >
+    <section id="projects" className="py-24 bg-gray-50 dark:bg-gray-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">

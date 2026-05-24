@@ -14,16 +14,16 @@ export default function Hero() {
                 <Image
                   src="/images/semeton-black.jpeg"
                   alt="Semeton Balogun"
-                  width={256}
-                  height={256}
+                  width={320}
+                  height={320}
                   className="w-full h-full object-cover absolute inset-0 transition-opacity duration-500 opacity-100 group-hover:opacity-0"
                   priority
                 />
                 <Image
                   src="/images/semeton.jpeg"
                   alt="Semeton Balogun"
-                  width={256}
-                  height={256}
+                  width={320}
+                  height={320}
                   className="w-full h-full object-cover absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                 />
               </div>

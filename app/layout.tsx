@@ -70,24 +70,9 @@ export const metadata: Metadata = {
     creator: "@semetonbalogun",
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon.ico", sizes: "16x16", type: "image/png" },
-      { url: "/favicon.ico", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/favicon.ico", sizes: "180x180", type: "image/png" }],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/favicon.ico",
-      },
-    ],
+    icon: "/favicon.ico",
   },
   manifest: "/site.webmanifest",
-  verification: {
-    google: "verification_token",
-  },
-  generator: "v0.dev",
 };
 
 export default function RootLayout({
@@ -109,7 +94,7 @@ export default function RootLayout({
               jobTitle: "Backend Engineer",
               worksFor: {
                 "@type": "Organization",
-                name: "SeamlesHR",
+                name: "SeamlessHR",
               },
               sameAs: [
                 "https://github.com/semeton",

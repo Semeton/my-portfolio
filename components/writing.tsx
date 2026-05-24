@@ -8,7 +8,7 @@ const writingActivities = [
     subtitle: "Engineering writing for practitioners",
     description:
       "Engineering writing. Practitioner to practitioner, reflective rather than instructional. Production debugging stories, architecture decisions, notes from working through Designing Data-Intensive Applications.",
-    link: "https://codeplified.substack.com",
+    link: "https://semeton.substack.com",
     embed: true,
   },
   {
@@ -72,6 +72,7 @@ export default function Writing() {
                       src="https://semeton.substack.com/embed"
                       width="100%"
                       height="320"
+                      title="Codeplified Substack newsletter"
                       style={{ border: 0, background: "transparent" }}
                     />
                   </div>
@@ -83,7 +84,9 @@ export default function Writing() {
                       height={110}
                       className="rounded"
                     />
-                    <p className="text-xs text-gray-500 dark:text-gray-400">Scan to subscribe</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      Scan to subscribe
+                    </p>
                   </div>
                 </div>
               )}
