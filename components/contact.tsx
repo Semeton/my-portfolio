@@ -10,8 +10,7 @@ export default function Contact() {
         <div className="max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold mb-6">Contact</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Interested in discussing technical challenges or opportunities?
-            Let's connect.
+            For work, writing, or anything in between.
           </p>
         </div>
 

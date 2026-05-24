@@ -9,15 +9,22 @@ export default function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
-            <div className="w-48 h-48 md:w-64 md:h-64 relative flex-shrink-0 order-1 md:order-2">
+            <div className="w-56 h-56 md:w-80 md:h-80 relative flex-shrink-0 order-1 md:order-2 group">
               <div className="absolute inset-0 rounded-xl overflow-hidden border-4 border-white dark:border-black shadow-lg">
                 <Image
-                  src="/images/semeton-balogun.png"
+                  src="/images/semeton-black.jpeg"
                   alt="Semeton Balogun"
                   width={256}
                   height={256}
-                  className="w-full h-full object-cover grayscale"
+                  className="w-full h-full object-cover absolute inset-0 transition-opacity duration-500 opacity-100 group-hover:opacity-0"
                   priority
+                />
+                <Image
+                  src="/images/semeton.jpeg"
+                  alt="Semeton Balogun"
+                  width={256}
+                  height={256}
+                  className="w-full h-full object-cover absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                 />
               </div>
             </div>
@@ -29,7 +36,7 @@ export default function Hero() {
               </h1>
               <hr className="my-4" />
               <p className="text-lg uppercase font-bold text-gray-600 dark:text-gray-400">
-                Software Engineer | 5 Years Experience
+                Backend engineer. Systems for banks and enterprise SaaS.
               </p>
 
               <div className="flex items-center justify-center md:justify-start space-x-4 mt-4 mb-12">
@@ -62,34 +69,35 @@ export default function Hero() {
                 </a>
               </div>
 
-              <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300">
+              <div className="space-y-5 text-lg text-gray-600 dark:text-gray-300">
                 <p className="leading-relaxed">
-                  Over the past 5 years, I have designed and delivered secure,
-                  scalable enterprise systems used by banks and large
-                  organizations. My work spans re-architecting legacy platforms,
-                  building multi-tenant SaaS applications, optimizing
-                  infrastructure for cost and performance, and integrating
-                  complex enterprise systems.
+                  A registered nurse who codes. The instinct transfers: assess before you act,
+                  find what's actually broken, not just the presenting symptom.
                 </p>
 
                 <p className="leading-relaxed">
-                  With deep expertise in PHP (Laravel), Node.js, and distributed
-                  architectures, I lead technical projects from concept to
-                  production—working directly with CIOs, security teams, and
-                  business leads to deliver reliable, scalable solutions.
+                  Taught myself to code, led the rewrite of a legacy banking LMS into a
+                  multi-tenant platform across Wema Bank, First Bank, and FCMB, built custom
+                  database drivers, physical server deployments inside bank networks.
+                  The unconventional path tends to produce the unconventional solution.
+                </p>
+
+                <p className="leading-relaxed">
+                  Currently at SeamlessHR. Pursuing a Master of Information Technology
+                  (MIT) at Miva Open University. Building towards systems (and solutions) architecture.
                 </p>
               </div>
 
               <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button asChild className="rounded-full px-8 py-6 text-base">
-                  <Link href="#contact">Get in touch</Link>
+                  <Link href="#contact">Email me</Link>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
                   className="rounded-full px-8 py-6 text-base"
                 >
-                  <Link href="#projects">View key projects</Link>
+                  <Link href="#projects">See the work</Link>
                 </Button>
               </div>
             </div>

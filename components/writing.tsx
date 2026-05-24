@@ -1,189 +1,95 @@
-"use client";
+import Link from "next/link";
+import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Mic, PenTool, Newspaper, Podcast } from "lucide-react";
+const writingActivities = [
+  {
+    title: "Codeplified — Substack",
+    subtitle: "Engineering writing for practitioners",
+    description:
+      "Engineering writing. Practitioner to practitioner, reflective rather than instructional. Production debugging stories, architecture decisions, notes from working through Designing Data-Intensive Applications.",
+    link: "https://codeplified.substack.com",
+    embed: true,
+  },
+  {
+    title: "Medium",
+    subtitle: "Essays and journaling",
+    description:
+      "Essays and journaling. Includes 'On the God Question' — a long-form piece on naturalistic agnosticism and why no existing religion produces a portrait of God that isn't too small and too human.",
+    link: "https://medium.com/@semeton",
+  },
+  {
+    title: "Perspective Podcast",
+    subtitle: "Conversational podcast co-host",
+    description:
+      "Co-hosted with a close friend. Conversational, not specialist — ambition, attention, adult friendships, discipline, identity.",
+    link: "https://open.spotify.com/show/6IIbErw26bSWgRs5NWz8vw",
+  },
+];
 
 export default function Writing() {
-  const writingActivities = [
-    {
-      title: "Medium Blog",
-      subtitle: "Personal & Socioeconomic Commentary",
-      description:
-        "I write about politics, socioeconomic issues, and topics that pique my interest. Sharing perspectives on current events and societal trends.",
-      icon: <PenTool className="h-6 w-6" />,
-      link: "https://semeton.medium.com",
-      type: "writing",
-      highlights: [
-        "Political commentary and analysis",
-        "Socioeconomic issue exploration",
-        "Personal insights and perspectives",
-        "Current events discussion",
-      ],
-      tech: ["Medium", "Content Creation", "Analysis"],
-    },
-    {
-      title: "Technical Substack",
-      subtitle: "Tech Insights & Tutorials",
-      description:
-        "A dedicated space for technical content, tutorials, and insights from my development experience.",
-      icon: <Newspaper className="h-6 w-6" />,
-      link: "https://semeton.substack.com",
-      type: "writing",
-      highlights: [
-        "Technical tutorials and guides",
-        "Development insights and best practices",
-        "Code reviews and architecture discussions",
-        "Industry trends and analysis",
-      ],
-      tech: ["Substack", "Technical Writing", "Tutorials"],
-    },
-    {
-      title: "Perspective Podcast Newsletter",
-      subtitle: "Major Contributor",
-      description:
-        "I'm a major contributor to the Perspective Podcast Newsletter on Substack, helping curate and create content that complements the podcast discussions.",
-      icon: <Newspaper className="h-6 w-6" />,
-      link: "https://substack.com/@perspectivepodcastwithej",
-      type: "collaboration",
-      highlights: [
-        "Newsletter content creation and curation",
-        "Podcast episode summaries and insights",
-        "Guest research and background preparation",
-        "Community engagement and discussion",
-      ],
-      tech: ["Substack", "Newsletter", "Content Curation"],
-    },
-    {
-      title: "Perspective with Emma and Josh",
-      subtitle: "Podcast Co-host",
-      description:
-        "I co-host a podcast where we discuss trending and topical issues around the world, providing diverse perspectives on current events.",
-      icon: <Podcast className="h-6 w-6" />,
-      link: "https://open.spotify.com/show/6IIbErw26bSWgRs5NWz8vw",
-      type: "podcast",
-      highlights: [
-        "Co-hosting weekly podcast episodes",
-        "Discussing global trending topics",
-        "Providing diverse perspectives on current events",
-        "Engaging with listeners and community",
-      ],
-      tech: ["Spotify", "Podcasting", "Discussion", "Current Events"],
-    },
-  ];
-
   return (
     <section id="writing" className="py-24 bg-white dark:bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto mb-20 text-center">
+        <div className="max-w-4xl mx-auto mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-            I Write, Not Just Code
+            Writing & Media
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
-            Beyond coding, I share my thoughts on technology, society, and
-            current events through writing and podcasting.
+            I write. The list is short on purpose.
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-10 max-w-4xl mx-auto">
           {writingActivities.map((activity, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="p-8">
-                <div className="space-y-6">
-                  {/* Header Section */}
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="p-3 bg-gray-900 dark:bg-white rounded-xl text-white dark:text-gray-900 shadow-lg">
-                        {activity.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                          {activity.title}
-                          {activity.link && (
-                            <a
-                              href={activity.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
-                            >
-                              <ExternalLink className="h-4 w-4" />
-                            </a>
-                          )}
-                        </h3>
-                        <p className="text-base text-gray-600 dark:text-gray-400 mt-1">
-                          {activity.subtitle}
-                        </p>
-                      </div>
-                    </div>
-                    <Badge
-                      variant={
-                        activity.type === "podcast"
-                          ? "default"
-                          : activity.type === "writing"
-                          ? "secondary"
-                          : "outline"
-                      }
-                      className="text-xs bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white"
-                    >
-                      {activity.type === "podcast"
-                        ? "Podcast"
-                        : activity.type === "writing"
-                        ? "Writing"
-                        : "Collaboration"}
-                    </Badge>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {activity.description}
+            <div key={index} className="space-y-5">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                    {activity.title}
+                  </h3>
+                  <p className="mt-2 text-sm uppercase tracking-[0.22em] text-gray-500 dark:text-gray-400">
+                    {activity.subtitle}
                   </p>
-
-                  {/* Highlights */}
-                  <div>
-                    <h4 className="text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300">
-                      What I Do:
-                    </h4>
-                    <div className="space-y-2">
-                      {activity.highlights.map((highlight, i) => (
-                        <div
-                          key={i}
-                          className="flex items-start gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-gray-900 dark:bg-white mt-2 flex-shrink-0"></div>
-                          <p className="text-sm text-gray-700 dark:text-gray-300">
-                            {highlight}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
+                </div>
+                <Link
+                  href={activity.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm font-semibold text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+                >
+                  Visit
+                  <ExternalLink className="ml-2 h-4 w-4" />
+                </Link>
+              </div>
+              <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+                {activity.description}
+              </p>
+              {activity.embed && (
+                <div className="flex flex-col sm:flex-row gap-6 items-start pt-2">
+                  <div className="flex-1 overflow-hidden rounded-lg border border-gray-100 dark:border-gray-800">
+                    <iframe
+                      src="https://semeton.substack.com/embed"
+                      width="100%"
+                      height="320"
+                      style={{ border: 0, background: "transparent" }}
+                    />
                   </div>
-
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2">
-                    {activity.tech.map((tech, i) => (
-                      <Badge
-                        key={i}
-                        variant="outline"
-                        className="text-xs font-normal bg-gray-900 dark:bg-white text-white dark:text-gray-900 border-gray-900 dark:border-white"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
+                  <div className="flex flex-col items-center gap-2 flex-shrink-0">
+                    <Image
+                      src="/qr-code.svg"
+                      alt="Scan to subscribe to Codeplified"
+                      width={110}
+                      height={110}
+                      className="rounded"
+                    />
+                    <p className="text-xs text-gray-500 dark:text-gray-400">Scan to subscribe</p>
                   </div>
                 </div>
-              </div>
-
-              {/* Decorative Background Element */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gray-200 dark:bg-gray-700 opacity-30 rounded-full -translate-y-12 translate-x-12"></div>
+              )}
+              {index < writingActivities.length - 1 && (
+                <hr className="border-gray-200 dark:border-gray-800" />
+              )}
             </div>
           ))}
         </div>
