@@ -10,16 +10,15 @@ Live site: [https://semeton.xyz](https://semeton.xyz)
 
 - **Responsive Design**: Fully responsive across all device sizes
 - **Light/Dark Mode**: System-preference detection with manual toggle option
-- **Interactive Terminal**: Command-line interface to explore the portfolio
-- **Modern Stack**: Built with Next.js 14, React, and Tailwind CSS
+- **Modern Stack**: Built with Next.js 15, React 19, and Tailwind CSS
 - **SEO Optimized**: Comprehensive metadata, structured data, and sitemap
 - **Accessibility**: WCAG-compliant with proper semantic HTML and ARIA attributes
 - **Performance**: Optimized for Core Web Vitals and fast loading
 
 ## Technologies
 
-- **Framework**: Next.js 14 (App Router)
-- **UI Library**: React 18
+- **Framework**: Next.js 15 (App Router)
+- **UI Library**: React 19
 - **Styling**: Tailwind CSS
 - **Components**: shadcn/ui
 - **Icons**: Lucide React
@@ -38,11 +37,10 @@ semeton_portfolio/
 │   └── robots.ts           # Robots.txt configuration
 ├── components/             # React components
 │   ├── header.tsx          # Navigation header
-│   ├── hero.tsx            # Hero section with profile
-│   ├── terminal.tsx        # Interactive terminal
-│   ├── leadership.tsx      # Leadership & expertise section
-│   ├── expertise.tsx       # Professional experience section
+│   ├── hero.tsx            # Hero / about section
+│   ├── experience.tsx      # Work experience section
 │   ├── projects.tsx        # Key projects section
+│   ├── writing.tsx         # Writing & media section
 │   ├── contact.tsx         # Contact information section
 │   ├── footer.tsx          # Page footer
 │   ├── theme-provider.tsx  # Dark/light mode provider
@@ -61,35 +59,36 @@ semeton_portfolio/
 
 ### About
 
-Semeton Balogun is a senior backend engineer with 5 years of experience architecting and scaling mission-critical systems for financial institutions, security platforms, and enterprise applications. Specializing in PHP (Laravel), Node.js, and distributed systems with a focus on security and scalability.
+Semeton Balogun is a backend engineer working across banking, HR tech, and security platforms. Mostly PHP (Laravel) and Node.js, with a focus on multi-tenant systems and production debugging. See [components/hero.tsx](components/hero.tsx) for the current bio and [components/experience.tsx](components/experience.tsx) for the full work history — this section is a summary and can drift out of date.
 
 ### Experience
 
-- **Backend Engineer** at SeamlesHR (Current)
-  - Architecting scalable API services handling 100K+ employees daily requests
-  - Implementing AI integration for recruitment module with CV parsing and auto-screening of applicants
-  - Developing secure data handling protocols for sensitive HR information
+- **Backend Engineer** at SeamlessHR (Nov 2024 – present)
+  - Backend for the AI-integrated recruitment module: CV parsing, candidate ranking, automated screening
+  - Webhooks for the recruitment pipeline
+  - Feature work across exit, onboarding, and employee confirmation modules
 
-- **Technical Lead** at Zercom Systems (Apr 2023 – Sep 2024)
-  - Led the re-architecture of Tangerine LMS, deployed across multiple banking institutions
-  - Designed custom Laravel MSSQL driver enabling multi-bank support
-  - Implemented CI/CD pipelines reducing deployment time by 70%
+- **Technical Lead** at Zercom Systems (Apr 2023 – Nov 2024)
+  - Rewrote a legacy PHP 7.4 LMS into Tangerine365, a multi-tenant platform deployed across three Nigerian banks
+  - Built a custom MSSQL driver to support SQL Server banks alongside the MySQL default
+  - Cut infrastructure costs ~85% through a VPS migration
 
 - **Backend Engineer** at ScholarshipIQ (Jun 2022 – Apr 2023)
-  - Architected backend infrastructure for a nationwide academic funding platform
-  - Boosted system performance by 50% through SQL optimization
-  - Reduced production errors by 90% through staging workflows
+  - Backend and REST APIs for an academic matching and funding platform
+  - Cut API response times ~50% through query optimization and indexing
+  - Introduced staging environments and branching discipline, cutting the error rate reaching production
 
 - **Backend Developer** at Bincom Dev Center (Sep 2020 – Jul 2022)
-  - Enhanced the ARM Learn Moodle web application by fixing 12 UAT-listed errors and integrating OAuth 2
-  - Contributed to development of REST APIs in an Agile Scrum team
-  - Facilitated training sessions for 5+ interns and community events with 30+ participants
+  - Backend components in Node.js and PHP across educational platforms (ARM Learn) and internal API systems
+  - OAuth2 integrations with Google and Facebook
+  - Trained interns and helped run technical community events
 
 ### Key Projects
 
-- **Trustcenta**: Enterprise Vulnerability Management Platform
-- **Tangerine LMS**: Multi-Bank Learning Management System
-- **Trustpass**: Security & ID Verification System
+- **Tangerine365** — multi-tenant LMS deployed across Wema Bank, First Bank, and FCMB
+- **Terminoxx360** — real-time ATM monitoring for Access Bank Nigeria
+- **TrustCenta** — estate access control (TrustPass) plus a cybersecurity suite wrapping ZAP and Gophish
+- **Agent Contract** — npm CLI enforcing policy guardrails around AI coding agents
 
 ## Setup and Development
 

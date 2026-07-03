@@ -35,7 +35,7 @@ const projects = [
     subtitle: "Real-time ATM monitoring for Access Bank Nigeria.",
     description:
       "Laravel application monitoring ATM fleet health across Access Bank infrastructure. I own it end to end — codebase, deployments, and the stakeholder relationship.",
-    role: "Principal engineer",
+    role: "Owner",
     highlights: [
       "Diagnosed transaction-heavy jobs stalling under database locks; rewrote them for transactional efficiency",
       "Added index-based query optimization and schema cleanup that cleared the persistent slow-query backlog",
@@ -66,6 +66,22 @@ const projects = [
       "Gophish",
     ],
     link: "https://trustcenta.com",
+  },
+  {
+    title: "Agent Contract",
+    subtitle: "A governance runtime that puts deterministic guardrails around AI coding agents.",
+    description:
+      "Published npm CLI that drops a policy layer into any repo so AI agents (Claude, Codex, Copilot) operate under explicit, enforceable rules instead of hoping they read the instructions file. Enforcement happens before writes land, not in post-hoc review.",
+    role: "Creator",
+    highlights: [
+      "Designed a layered runtime: repository contract (policy) → execution role (scoped authority) → governance runtime (enforcement) → verified writes",
+      "Built deterministic scope enforcement via exit codes — violations are blocked before they reach the codebase, not caught in diff review",
+      "Added Repository Memory so architectural decisions and session state persist across executions instead of being rebuilt each time",
+      "Made governance provider-independent, so the same contract holds whether the agent is Claude, OpenAI, or a future model",
+      "Shipped and maintain it as an installable CLI: npm i -g @semeton/agent-contract",
+    ],
+    tech: ["Node.js", "CLI", "YAML", "Claude", "OpenAI"],
+    link: "https://agent-contract.semeton.xyz",
   },
 ];
 
@@ -155,11 +171,11 @@ export default function Projects() {
             Projects
           </h2>
           <p className="text-lg text-gray-500 dark:text-gray-400">
-            Three projects. Each one a different kind of ownership.
+            Four projects. Each one a different kind of ownership.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}

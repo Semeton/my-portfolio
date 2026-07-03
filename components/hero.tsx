@@ -71,20 +71,19 @@ export default function Hero() {
 
               <div className="space-y-5 text-lg text-gray-600 dark:text-gray-300">
                 <p className="leading-relaxed">
-                  A registered nurse who codes. The instinct transfers: assess before you act,
-                  find what's actually broken, not just the presenting symptom.
+                  Registered nurse before switching to software engineering. Self-taught.
                 </p>
 
                 <p className="leading-relaxed">
-                  Taught myself to code, led the rewrite of a legacy banking LMS into a
-                  multi-tenant platform across Wema Bank, First Bank, and FCMB, built custom
-                  database drivers, physical server deployments inside bank networks.
-                  The unconventional path tends to produce the unconventional solution.
+                  Led the rewrite of a legacy banking LMS into a multi-tenant platform
+                  used by Wema Bank, First Bank, and FCMB. Wrote the custom database
+                  drivers and handled deployment on physical servers inside the banks'
+                  networks.
                 </p>
 
                 <p className="leading-relaxed">
-                  Currently at SeamlessHR. Pursuing a Master of Information Technology
-                  (MIT) at Miva Open University. Building towards systems (and solutions) architecture.
+                  Currently at SeamlessHR. Pursuing a Master's in Information Technology
+                  at Miva Open University, working toward systems architecture.
                 </p>
               </div>
 
