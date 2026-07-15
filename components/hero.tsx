@@ -71,19 +71,20 @@ export default function Hero() {
 
               <div className="space-y-5 text-lg text-gray-600 dark:text-gray-300">
                 <p className="leading-relaxed">
-                  Registered nurse before switching to software engineering. Self-taught.
+                  Registered nurse before switching to software engineering.
                 </p>
 
                 <p className="leading-relaxed">
-                  Led the rewrite of a legacy banking LMS into a multi-tenant platform
-                  used by Wema Bank, First Bank, and FCMB. Wrote the custom database
-                  drivers and handled deployment on physical servers inside the banks'
-                  networks.
+                  Led the rewrite of a legacy banking LMS into a multi-tenant
+                  platform used by Wema Bank, First Bank, and FCMB. Wrote the
+                  custom database drivers and handled deployment on physical
+                  servers inside the banks' networks.
                 </p>
 
                 <p className="leading-relaxed">
-                  Currently at SeamlessHR. Pursuing a Master's in Information Technology
-                  at Miva Open University, working toward systems architecture.
+                  Currently at SeamlessHR. Pursuing a Master's in Information
+                  Technology at Miva Open University, working toward systems
+                  architecture.
                 </p>
               </div>
 

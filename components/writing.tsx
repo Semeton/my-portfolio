@@ -2,6 +2,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 
+const featuredArticles = [
+  {
+    title: "The Architecture I Didn't Design, Part 1: Decisions Under Deadline",
+    dek: "How a Central Bank vulnerability scan kicked off a six-month rebuild of an LMS deployed across several major Nigerian banks.",
+    link: "https://semeton.substack.com/p/the-architecture-i-didnt-design-part",
+  },
+  {
+    title: "The Architecture I Didn't Design, Part 2: Decisions Production Demanded",
+    dek: "The rebuild was done. The architecture wasn't. What ten thousand users in production taught us about everything we hadn't thought to design.",
+    link: "https://semeton.substack.com/p/the-architecture-i-didnt-design-part-86b",
+  },
+  {
+    title: "Beyond Prompts: Repository Governance for AI Coding Agents",
+    dek: "Deterministic guardrails for non-deterministic agents.",
+    link: "https://semeton.substack.com/p/beyond-prompts-repository-governance",
+  },
+];
+
 const writingActivities = [
   {
     title: "Codeplified — Substack",
@@ -10,6 +28,7 @@ const writingActivities = [
       "Engineering writing. Practitioner to practitioner, reflective rather than instructional. Production debugging stories, architecture decisions, notes from working through Designing Data-Intensive Applications.",
     link: "https://semeton.substack.com",
     embed: true,
+    featured: true,
   },
   {
     title: "Medium",
@@ -65,6 +84,26 @@ export default function Writing() {
               <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
                 {activity.description}
               </p>
+              {activity.featured && (
+                <div className="grid gap-4 sm:grid-cols-3 pt-2">
+                  {featuredArticles.map((article) => (
+                    <Link
+                      key={article.link}
+                      href={article.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block rounded-lg border border-gray-100 dark:border-gray-800 p-4 hover:border-gray-400 dark:hover:border-gray-600 transition-colors"
+                    >
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white leading-snug group-hover:underline">
+                        {article.title}
+                      </p>
+                      <p className="mt-2 text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                        {article.dek}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              )}
               {activity.embed && (
                 <div className="flex flex-col sm:flex-row gap-6 items-start pt-2">
                   <div className="flex-1 overflow-hidden rounded-lg border border-gray-100 dark:border-gray-800">

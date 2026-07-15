@@ -29,6 +29,16 @@ const projects = [
       "IIS",
     ],
     link: "https://tangerine365.com",
+    articles: [
+      {
+        label: "The writeup, Part 1",
+        link: "https://semeton.substack.com/p/the-architecture-i-didnt-design-part",
+      },
+      {
+        label: "Part 2",
+        link: "https://semeton.substack.com/p/the-architecture-i-didnt-design-part-86b",
+      },
+    ],
   },
   {
     title: "Terminoxx360",
@@ -43,7 +53,7 @@ const projects = [
       "Manage the stakeholder relationship and release cycle directly",
     ],
     tech: ["Laravel", "MySQL", "Redis", "Queue workers"],
-    link: "https://atmapp.accessbankplc.com",
+    link: "https://cloud.terminoxx360.com",
   },
   {
     title: "TrustCenta",
@@ -69,7 +79,8 @@ const projects = [
   },
   {
     title: "Agent Contract",
-    subtitle: "A governance runtime that puts deterministic guardrails around AI coding agents.",
+    subtitle:
+      "A governance runtime that puts deterministic guardrails around AI coding agents.",
     description:
       "Published npm CLI that drops a policy layer into any repo so AI agents (Claude, Codex, Copilot) operate under explicit, enforceable rules instead of hoping they read the instructions file. Enforcement happens before writes land, not in post-hoc review.",
     role: "Creator",
@@ -82,6 +93,12 @@ const projects = [
     ],
     tech: ["Node.js", "CLI", "YAML", "Claude", "OpenAI"],
     link: "https://agent-contract.semeton.xyz",
+    articles: [
+      {
+        label: "The writeup",
+        link: "https://semeton.substack.com/p/beyond-prompts-repository-governance",
+      },
+    ],
   },
 ];
 
@@ -130,6 +147,23 @@ function ProjectCard({
       <p className="text-xs font-mono text-gray-400 dark:text-gray-500">
         {project.tech.join(" · ")}
       </p>
+
+      {project.articles && (
+        <p className="text-sm text-gray-500 dark:text-gray-400 flex flex-wrap gap-x-3 gap-y-1">
+          {project.articles.map((article, i) => (
+            <a
+              key={article.link}
+              href={article.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              {article.label}
+              <ExternalLink className="h-3 w-3" />
+            </a>
+          ))}
+        </p>
+      )}
 
       <button
         onClick={() => setExpanded(!expanded)}

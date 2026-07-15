@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /Users/semeton/Herd/agent 2>&1 | head -50)",
+      "Read(//Users/semeton/Herd/agent/**)",
+      "Bash(cat /Users/semeton/Herd/agent/README.md 2>&1 | head -100)",
+      "Read(//Users/semeton/Node/**)",
+      "Bash(npm view *)",
+      "Bash(cd /Users/semeton/Node/agent-contract && cat package.json 2>/dev/null | head -40)",
+      "Read(//Users/semeton/Node/agent-contract/**)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(yarn build *)"
+    ]
+  }
+}
