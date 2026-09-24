@@ -14,6 +14,8 @@ const projects = [
     role: "Led",
     highlights: [
       "Designed the multi-tenancy layer using the strategy pattern; one codebase, multiple database drivers",
+      "Two tenancy models from that codebase: subdomain-based in the cloud (tenant.tangerine365.com), ID-based inside Human Manager HRMS",
+      "First Bank deployment: external load balancer → two proxying web servers → internal load balancer → two app servers → central SQL Server",
       "Wrote a custom MSSQL driver to support three banks on SQL Server while preserving the MySQL default",
       "Built core modules for user management, course delivery, and integrated Jitsi Meet proctoring",
       "Migrated infrastructure to Hostinger VPS — ~85% cost reduction",

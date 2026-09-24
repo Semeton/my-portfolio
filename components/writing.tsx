@@ -29,8 +29,21 @@ const elsewhere = [
   {
     title: "Medium",
     kind: "Essays",
-    description:
-      "Essays and journaling. Includes 'On the God Question' — a long-form piece on naturalistic agnosticism and why no existing religion produces a portrait of God that isn't too small and too human.",
+    description: (
+      <>
+        Essays and journaling. Includes{" "}
+        <a
+          href="https://semeton.medium.com/on-the-god-question-10262250a36d"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
+        >
+          On the God Question
+        </a>{" "}
+        — a long-form piece on naturalistic agnosticism and why no existing
+        religion produces a portrait of God that isn't too small and too human.
+      </>
+    ),
     link: "https://medium.com/@semeton",
   },
 ];
