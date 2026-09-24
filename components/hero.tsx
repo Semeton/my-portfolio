@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ThemeToggle from "@/components/theme-toggle";
+import ClientList from "@/components/clients";
 
 const links = [
   { label: "GitHub", href: "https://github.com/semeton" },
@@ -72,8 +73,7 @@ export default function Hero() {
         <p>
           Since then I've mostly built backend systems: education platforms at
           Bincom and ScholarshipIQ, then as technical lead at Zercom Systems,
-          where I led the rewrite of a banking LMS used by Wema Bank, First
-          Bank, and FCMB. What I keep coming back to, and write about, is how
+          where I led the rewrite of an LMS used by <ClientList />. What I keep coming back to, and write about, is how
           architecture decisions hold up once they meet production.
         </p>
         <p>

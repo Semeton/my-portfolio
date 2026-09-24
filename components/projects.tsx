@@ -1,10 +1,14 @@
 import Section from "@/components/section";
+import ClientList from "@/components/clients";
 
 const projects = [
   {
     title: "Tangerine365",
-    subtitle:
-      "Multi-tenant LMS deployed across Wema Bank, First Bank, and FCMB.",
+    subtitle: (
+      <>
+        Multi-tenant LMS deployed across <ClientList />.
+      </>
+    ),
     description:
       "A full rewrite of a legacy PHP 7.4 LMS into a multi-tenant PHP 8 platform with per-tenant database isolation. The hard part was the multi-database strategy — keeping MySQL as default while supporting SQL Server for the banks that required it, without forking the codebase.",
     role: "Led",
