@@ -20,6 +20,24 @@ const articles = [
     link: "https://semeton.substack.com/p/the-architecture-i-didnt-design-part-86b",
   },
   {
+    title: "When Your Security Platform Becomes the Target: A Post-Mortem (Part 1)",
+    date: "May 2026",
+    dek: 'How "small" convenience decisions added up to a full infrastructure rebuild.',
+    link: "https://semeton.substack.com/p/when-your-security-platform-becomes",
+  },
+  {
+    title: "When Your Security Platform Becomes the Target: A Post-Mortem (Part 2)",
+    date: "May 2026",
+    dek: "Five lessons from rebuilding from scratch, and the architecture I should have had on day one.",
+    link: "https://semeton.substack.com/p/when-your-security-platform-becomes-ed0",
+  },
+  {
+    title: "Understanding Is the Feature: What AI Agents Can't Do For You",
+    date: "Mar 2026",
+    dek: "A reflection from an engineer who learned the hard way.",
+    link: "https://semeton.substack.com/p/understanding-is-the-feature-what",
+  },
+  {
     title: "Engineering is More Than The Code",
     date: "Aug 2025",
     dek: "How I Cut Hosting Costs by 85% Without Sacrificing Performance.",

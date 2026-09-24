@@ -88,6 +88,16 @@ const projects = [
       "Gophish",
     ],
     link: "https://trustcenta.com",
+    articles: [
+      {
+        label: "Post-mortem, Part 1",
+        link: "https://semeton.substack.com/p/when-your-security-platform-becomes",
+      },
+      {
+        label: "Part 2",
+        link: "https://semeton.substack.com/p/when-your-security-platform-becomes-ed0",
+      },
+    ],
   },
   {
     title: "Agent Contract",
