@@ -41,6 +41,10 @@ const projects = [
         label: "Part 2",
         link: "https://semeton.substack.com/p/the-architecture-i-didnt-design-part-86b",
       },
+      {
+        label: "The hosting setup",
+        link: "https://semeton.substack.com/p/engineering-is-more-than-the-code",
+      },
     ],
   },
   {
@@ -58,6 +62,12 @@ const projects = [
     ],
     tech: ["Laravel", "MySQL", "Redis", "Queue workers", "Ollama", "Claude", "OpenAI"],
     link: "https://cloud.terminoxx360.com",
+    articles: [
+      {
+        label: "The hosting setup",
+        link: "https://semeton.substack.com/p/engineering-is-more-than-the-code",
+      },
+    ],
   },
   {
     title: "TrustCenta",
