@@ -37,8 +37,11 @@ export default function Hero() {
 
       <div className="mt-8 space-y-4 leading-relaxed">
         <p>
-          I was a registered nurse before I switched to software engineering.
-          I taught myself to code and took my first engineering role in 2020.
+          I trained as a registered nurse and spent about five years as a
+          graphic designer and creative director. Curiosity got me teaching
+          myself to code. In 2020 I joined the tech apprenticeship at Bincom
+          Dev Center, which became my first engineering role, with Emmanuel
+          Ogwo as my mentor.
         </p>
         <p>
           At Zercom Systems I led the rewrite of a legacy banking LMS into a

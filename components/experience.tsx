@@ -57,7 +57,7 @@ export default function Experience() {
       role: "Backend Developer",
       period: "Sep 2020 – Jul 2022",
       description:
-        "First professional engineering role. Self-taught transition from a nursing background.",
+        "Joined through Bincom's tech apprenticeship; became my first engineering role. Mentored by Emmanuel Ogwo.",
       details: [
         "Backend components in Node.js and PHP across educational platforms (ARM Learn) and internal API systems",
         "OAuth2 integrations with Google and Facebook",
