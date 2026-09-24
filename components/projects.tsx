@@ -53,16 +53,11 @@ const projects = [
       "At Access Bank: diagnosed transaction-heavy jobs stalling under database locks and rewrote them for transactional efficiency",
       "Added index-based query optimization and schema cleanup that cleared the persistent slow-query backlog, plus auto-restart for stuck jobs",
       "New version: multi-tenancy by country and regional subsidiary, with full brand customisation per tenant",
-      "Map views, detailed monitoring records, and AI integration, behind a deliberately simpler UI",
+      "Map views, a full monitoring history, and detailed reporting, behind a deliberately simpler UI",
+      "AI-generated system overviews, reports, and alerts, with Ollama, Claude, or OpenAI as the model provider",
     ],
-    tech: ["Laravel", "MySQL", "Redis", "Queue workers"],
+    tech: ["Laravel", "MySQL", "Redis", "Queue workers", "Ollama", "Claude", "OpenAI"],
     link: "https://cloud.terminoxx360.com",
-    articles: [
-      {
-        label: "Access Bank version",
-        link: "https://atmapp.accessbankplc.com/",
-      },
-    ],
   },
   {
     title: "TrustCenta",

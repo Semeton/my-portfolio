@@ -16,6 +16,11 @@ const articles = [
     dek: "Deterministic guardrails for non-deterministic agents.",
     link: "https://semeton.substack.com/p/beyond-prompts-repository-governance",
   },
+  {
+    title: "Engineering is More Than The Code",
+    dek: "How I Cut Hosting Costs by 85% Without Sacrificing Performance",
+    link: "https://semeton.substack.com/p/engineering-is-more-than-the-code",
+  },
 ];
 
 const elsewhere = [
