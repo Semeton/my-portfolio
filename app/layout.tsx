@@ -7,9 +7,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Semeton Balogun | Backend Engineer & Technical Lead",
+  title: "Semeton Balogun | Software Engineer",
   description:
-    "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+    "Software engineer. Backend systems for banks, enterprise SaaS, and public health. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
   keywords: [
     "Semeton Balogun",
     "Backend Engineer",
@@ -48,24 +48,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://semeton.xyz",
-    title: "Semeton Balogun | Backend Engineer & Technical Lead",
+    title: "Semeton Balogun | Software Engineer",
     description:
-      "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+      "Software engineer. Backend systems for banks, enterprise SaaS, and public health. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
     siteName: "Semeton Balogun Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Semeton Balogun - Backend Engineer",
+        alt: "Semeton Balogun - Software Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Semeton Balogun | Backend Engineer & Technical Lead",
+    title: "Semeton Balogun | Software Engineer",
     description:
-      "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+      "Software engineer. Backend systems for banks, enterprise SaaS, and public health. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
     images: ["/og-image.png"],
     creator: "@semetonbalogun",
   },
@@ -91,7 +91,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Semeton Balogun",
               url: "https://semeton.xyz",
-              jobTitle: "Backend Engineer",
+              jobTitle: "Software Engineer",
               worksFor: {
                 "@type": "Organization",
                 name: "SeamlessHR",
@@ -101,7 +101,7 @@ export default function RootLayout({
                 "https://www.linkedin.com/in/semetonbalogun/",
               ],
               description:
-                "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+                "Software engineer. Backend systems for banks, enterprise SaaS, and public health. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
               knowsAbout: [
                 "Backend Development",
                 "PHP",

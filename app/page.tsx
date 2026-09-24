@@ -1,20 +1,17 @@
-import Header from "@/components/header";
 import Hero from "@/components/hero";
-import Projects from "@/components/projects";
-import Writing from "@/components/writing";
-import Contact from "@/components/contact";
-import Footer from "@/components/footer";
 import Experience from "@/components/experience";
+import Projects from "@/components/projects";
+import { Writing, Elsewhere } from "@/components/writing";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
-      <Header />
+    <main className="mx-auto min-h-screen max-w-[650px] px-4 py-16 sm:py-24">
       <Hero />
+      <Writing />
       <Experience />
       <Projects />
-      <Writing />
-      <Contact />
+      <Elsewhere />
       <Footer />
     </main>
   );

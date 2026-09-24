@@ -1,3 +1,5 @@
+import Section from "@/components/section";
+
 export default function Experience() {
   const experiences = [
     {
@@ -65,60 +67,34 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-24 bg-white dark:bg-black">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-gray-900 dark:text-white">
-            Experience
-          </h2>
-
-          <div>
-            {experiences.map((exp, index) => (
-              <div key={index}>
-                <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-4 md:gap-16 py-10">
-                  <div className="space-y-1">
-                    <p className="font-semibold text-gray-900 dark:text-white">{exp.company}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{exp.role}</p>
-                    <p className="text-xs font-mono text-gray-400 dark:text-gray-600 pt-0.5">
-                      {exp.period}
-                    </p>
-                  </div>
-
-                  <div className="space-y-4">
-                    <p className="text-gray-600 dark:text-gray-300">{exp.description}</p>
-
-                    {exp.details && (
-                      <ul className="space-y-2">
-                        {exp.details.map((detail, i) => (
-                          <li
-                            key={i}
-                            className="flex items-start gap-3 text-sm text-gray-500 dark:text-gray-400"
-                          >
-                            <span className="text-gray-300 dark:text-gray-700 mt-0.5 flex-shrink-0">
-                              —
-                            </span>
-                            <span>{detail}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-
-                    {exp.stack && (
-                      <p className="text-xs font-mono text-gray-400 dark:text-gray-600 pt-1">
-                        {exp.stack}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                {index < experiences.length - 1 && (
-                  <hr className="border-gray-100 dark:border-gray-900" />
-                )}
-              </div>
-            ))}
+    <Section id="work" title="Work">
+      <div className="space-y-10">
+        {experiences.map((exp) => (
+          <div key={exp.company}>
+            <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+              <p>
+                <span className="font-medium">{exp.company}</span>
+                <span className="text-muted-foreground"> — {exp.role}</span>
+              </p>
+              <p className="text-sm text-muted-foreground tabular-nums">
+                {exp.period}
+              </p>
+            </div>
+            <p className="mt-2 leading-relaxed">{exp.description}</p>
+            <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
+              {exp.details.map((detail) => (
+                <li key={detail} className="flex gap-3">
+                  <span className="flex-shrink-0">–</span>
+                  <span>{detail}</span>
+                </li>
+              ))}
+            </ul>
+            {exp.stack && (
+              <p className="mt-3 text-xs text-muted-foreground">{exp.stack}</p>
+            )}
           </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

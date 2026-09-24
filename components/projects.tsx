@@ -1,7 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
+import Section from "@/components/section";
 
 const projects = [
   {
@@ -102,119 +99,59 @@ const projects = [
   },
 ];
 
-function ProjectCard({
-  project,
-  index,
-}: {
-  project: (typeof projects)[0];
-  index: number;
-}) {
-  const [expanded, setExpanded] = useState(false);
-
-  return (
-    <div className="flex flex-col border border-gray-200 dark:border-gray-800 rounded-2xl p-7 space-y-4 bg-white dark:bg-black hover:border-gray-400 dark:hover:border-gray-600 transition-colors duration-200">
-      <div className="flex items-center justify-between">
-        <span className="text-xs font-mono text-gray-300 dark:text-gray-600">
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <span className="text-xs font-mono uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
-          {project.role}
-        </span>
-      </div>
-
-      <div className="flex items-start gap-2">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white leading-snug">
-          {project.title}
-        </h3>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-300 hover:text-gray-500 dark:text-gray-600 dark:hover:text-gray-400 transition-colors mt-0.5 flex-shrink-0"
-        >
-          <ExternalLink className="h-4 w-4" />
-        </a>
-      </div>
-
-      <p className="text-sm text-gray-500 dark:text-gray-400">
-        {project.subtitle}
-      </p>
-
-      <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
-        {project.description}
-      </p>
-
-      <p className="text-xs font-mono text-gray-400 dark:text-gray-500">
-        {project.tech.join(" · ")}
-      </p>
-
-      {project.articles && (
-        <p className="text-sm text-gray-500 dark:text-gray-400 flex flex-wrap gap-x-3 gap-y-1">
-          {project.articles.map((article, i) => (
-            <a
-              key={article.link}
-              href={article.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-            >
-              {article.label}
-              <ExternalLink className="h-3 w-3" />
-            </a>
-          ))}
-        </p>
-      )}
-
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="flex items-center gap-1.5 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors pt-1 w-fit"
-      >
-        {expanded ? (
-          <ChevronUp className="h-4 w-4" />
-        ) : (
-          <ChevronDown className="h-4 w-4" />
-        )}
-        {expanded ? "Collapse" : "What I did"}
-      </button>
-
-      {expanded && (
-        <ul className="space-y-2.5 border-t border-gray-100 dark:border-gray-800 pt-4">
-          {project.highlights.map((item, i) => (
-            <li
-              key={i}
-              className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-400"
-            >
-              <span className="text-gray-300 dark:text-gray-600 mt-0.5 flex-shrink-0">
-                —
-              </span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-}
-
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-gray-50 dark:bg-gray-950">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-            Projects
-          </h2>
-          <p className="text-lg text-gray-500 dark:text-gray-400">
-            Four projects. Each one a different kind of ownership.
-          </p>
-        </div>
-
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
-          ))}
-        </div>
+    <Section id="projects" title="Projects">
+      <div className="space-y-10">
+        {projects.map((project) => (
+          <div key={project.title}>
+            <p>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
+              >
+                {project.title}
+              </a>
+              <span className="text-muted-foreground"> — {project.role}</span>
+            </p>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {project.subtitle}
+            </p>
+            <p className="mt-2 leading-relaxed">{project.description}</p>
+            <details className="group mt-3 text-sm">
+              <summary className="cursor-pointer text-muted-foreground hover:text-foreground">
+                What I did
+              </summary>
+              <ul className="mt-3 space-y-1.5 text-muted-foreground">
+                {project.highlights.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="flex-shrink-0">–</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </details>
+            <p className="mt-3 text-xs text-muted-foreground">
+              {project.tech.join(" · ")}
+              {project.articles?.map((article) => (
+                <span key={article.link}>
+                  {" · "}
+                  <a
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4 hover:text-foreground"
+                  >
+                    {article.label}
+                  </a>
+                </span>
+              ))}
+            </p>
+          </div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }
