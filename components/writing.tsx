@@ -2,23 +2,27 @@ import Section from "@/components/section";
 
 const articles = [
   {
+    title: "Beyond Prompts: Repository Governance for AI Coding Agents",
+    date: "Jul 2026",
+    dek: "Deterministic guardrails for non-deterministic agents.",
+    link: "https://semeton.substack.com/p/beyond-prompts-repository-governance",
+  },
+  {
     title: "The Architecture I Didn't Design, Part 1: Decisions Under Deadline",
+    date: "May 2026",
     dek: "How a Central Bank vulnerability scan kicked off a six-month rebuild of an LMS deployed across several major Nigerian banks.",
     link: "https://semeton.substack.com/p/the-architecture-i-didnt-design-part",
   },
   {
     title: "The Architecture I Didn't Design, Part 2: Decisions Production Demanded",
+    date: "May 2026",
     dek: "The rebuild was done. The architecture wasn't. What ten thousand users in production taught us about everything we hadn't thought to design.",
     link: "https://semeton.substack.com/p/the-architecture-i-didnt-design-part-86b",
   },
   {
-    title: "Beyond Prompts: Repository Governance for AI Coding Agents",
-    dek: "Deterministic guardrails for non-deterministic agents.",
-    link: "https://semeton.substack.com/p/beyond-prompts-repository-governance",
-  },
-  {
     title: "Engineering is More Than The Code",
-    dek: "How I Cut Hosting Costs by 85% Without Sacrificing Performance",
+    date: "Aug 2025",
+    dek: "How I Cut Hosting Costs by 85% Without Sacrificing Performance.",
     link: "https://semeton.substack.com/p/engineering-is-more-than-the-code",
   },
 ];
@@ -83,6 +87,7 @@ export function Writing() {
               {article.title}
             </a>
             <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              <span className="tabular-nums">{article.date}</span> ·{" "}
               {article.dek}
             </p>
           </li>

@@ -96,9 +96,8 @@ export default function Hero() {
             eGov Foundation
           </a>{" "}
           on DIGIT, the platform behind Nigeria's health campaigns. Pursuing a
-          Master's in Information Technology at Miva Open University, working
-          toward deep systems architecture and ultimately solutions
-          engineering.
+          Master's in Information Technology at Miva Open University, and
+          growing toward systems architecture and solutions engineering.
         </p>
       </div>
 

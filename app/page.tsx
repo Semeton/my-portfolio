@@ -8,9 +8,9 @@ export default function Home() {
   return (
     <main className="mx-auto min-h-screen max-w-[650px] px-4 py-16 sm:py-24">
       <Hero />
-      <Writing />
       <Experience />
       <Projects />
+      <Writing />
       <Elsewhere />
       <Footer />
     </main>

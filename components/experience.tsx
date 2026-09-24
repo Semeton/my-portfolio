@@ -10,9 +10,11 @@ export default function Experience() {
       description:
         "Working with the Solutions Engineering team on DIGIT HCM, the open-source platform running health campaigns in Nigeria.",
       details: [
+        "Supported seasonal malaria chemoprevention (SMC) campaigns across Abuja, Bauchi, and Taraba",
         "Diagnose field-reported issues: sync failures, stock and beneficiary data problems, app rollout issues",
         "Write root-cause analyses and escalate confirmed defects to product engineering",
       ],
+      stack: "Java · Spring Boot · PostgreSQL",
     },
     {
       company: "Seamless Technologies",
