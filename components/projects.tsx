@@ -45,18 +45,24 @@ const projects = [
   },
   {
     title: "Terminoxx360",
-    subtitle: "Real-time ATM monitoring for Access Bank Nigeria.",
+    subtitle: "Real-time ATM fleet monitoring, running at Access Bank.",
     description:
-      "Laravel application monitoring ATM fleet health across Access Bank infrastructure. I own it end to end — codebase, deployments, and the stakeholder relationship.",
-    role: "Owner",
+      "I maintain the version running at Access Bank, where I fixed the jobs that stalled under database locks. I then rebuilt the platform as its sole engineer: a new version designed to avoid those locking problems, built to serve multiple countries and regional subsidiaries from one deployment.",
+    role: "Sole engineer, new version",
     highlights: [
-      "Diagnosed transaction-heavy jobs stalling under database locks; rewrote them for transactional efficiency",
-      "Added index-based query optimization and schema cleanup that cleared the persistent slow-query backlog",
-      "Built auto-restart for stuck jobs to keep uptime continuous",
-      "Manage the stakeholder relationship and release cycle directly",
+      "At Access Bank: diagnosed transaction-heavy jobs stalling under database locks and rewrote them for transactional efficiency",
+      "Added index-based query optimization and schema cleanup that cleared the persistent slow-query backlog, plus auto-restart for stuck jobs",
+      "New version: multi-tenancy by country and regional subsidiary, with full brand customisation per tenant",
+      "Map views, detailed monitoring records, and AI integration, behind a deliberately simpler UI",
     ],
     tech: ["Laravel", "MySQL", "Redis", "Queue workers"],
     link: "https://cloud.terminoxx360.com",
+    articles: [
+      {
+        label: "Access Bank version",
+        link: "https://atmapp.accessbankplc.com/",
+      },
+    ],
   },
   {
     title: "TrustCenta",
