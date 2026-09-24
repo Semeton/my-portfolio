@@ -54,10 +54,11 @@ export default function Hero() {
           as my mentor.
         </p>
         <p>
-          At Zercom Systems I led the rewrite of a legacy banking LMS into a
-          multi-tenant platform used by Wema Bank, First Bank, and FCMB. I
-          wrote the custom database drivers and handled deployment on physical
-          servers inside the banks' networks.
+          Since then I've mostly built backend systems: education platforms at
+          Bincom and ScholarshipIQ, then as technical lead at Zercom Systems,
+          where I led the rewrite of a banking LMS used by Wema Bank, First
+          Bank, and FCMB. What I keep coming back to, and write about, is how
+          architecture decisions hold up once they meet production.
         </p>
         <p>
           Currently at SeamlessHR, and on contract with eGov Foundation on
