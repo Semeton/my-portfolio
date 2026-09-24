@@ -51,7 +51,8 @@ export default function Experience() {
       details: [
         "Backend services and REST APIs in Laravel, integrated with a React frontend",
         "Cut API response times ~50% through query optimization and indexing",
-        "Introduced staging environments and branching discipline; cut the error rate reaching production significantly",
+        "Introduced staging environments and branching discipline; cut production errors by over 90%",
+        "Added email verification to eliminate ghost sign-ups",
         "Integrated Flutterwave for payments, HubSpot for user management, and cron-driven email automation",
       ],
     },
@@ -60,7 +61,7 @@ export default function Experience() {
       role: "Backend Developer",
       period: "Sep 2020 – Jul 2022",
       description:
-        "Joined through Bincom's tech apprenticeship; became my first engineering role. Mentored by Emmanuel Ogwo.",
+        "Joined through Bincom's tech apprenticeship; became my first engineering role.",
       details: [
         "Backend components in Node.js and PHP across educational platforms (ARM Learn) and internal API systems",
         "OAuth2 integrations with Google and Facebook",

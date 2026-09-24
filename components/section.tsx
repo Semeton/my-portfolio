@@ -9,7 +9,9 @@ export default function Section({
 }) {
   return (
     <section id={id} className="mt-16">
-      <h2 className="mb-6 font-semibold">{title}</h2>
+      <h2 className="mb-6 text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground">
+        {title}
+      </h2>
       {children}
     </section>
   );

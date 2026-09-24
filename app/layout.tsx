@@ -70,7 +70,8 @@ export const metadata: Metadata = {
     creator: "@semetonbalogun",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [{ url: "/icon-32.png", sizes: "32x32", type: "image/png" }],
+    apple: "/icon-180.png",
   },
   manifest: "/site.webmanifest",
 };

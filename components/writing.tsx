@@ -59,7 +59,7 @@ const linkClass =
 export function Writing() {
   return (
     <Section id="writing" title="Writing">
-      <p className="mb-6 leading-relaxed text-muted-foreground">
+      <p className="mb-6 text-muted-foreground">
         Engineering writing on{" "}
         <a
           href="https://semeton.substack.com"
@@ -69,9 +69,7 @@ export function Writing() {
         >
           Codeplified
         </a>
-        . Practitioner to practitioner: production debugging stories,
-        architecture decisions, notes from working through Designing
-        Data-Intensive Applications.
+        , practitioner to practitioner.
       </p>
       <ul className="space-y-6">
         {articles.map((article) => (

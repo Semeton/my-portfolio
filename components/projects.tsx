@@ -16,9 +16,7 @@ const projects = [
       "Designed the multi-tenancy layer using the strategy pattern; one codebase, multiple database drivers",
       "Two tenancy models from that codebase: subdomain-based in the cloud (tenant.tangerine365.com), ID-based inside Human Manager HRMS",
       "First Bank deployment: external load balancer → two proxying web servers → internal load balancer → two app servers → central SQL Server",
-      "Wrote a custom MSSQL driver to support three banks on SQL Server while preserving the MySQL default",
       "Built core modules for user management, course delivery, and integrated Jitsi Meet proctoring",
-      "Migrated infrastructure to Hostinger VPS — ~85% cost reduction",
       "Set up CI/CD across IIS (Windows Server) and Apache (Ubuntu) deployments",
     ],
     tech: [
@@ -34,7 +32,7 @@ const projects = [
     link: "https://tangerine365.com",
     articles: [
       {
-        label: "The writeup, Part 1",
+        label: "Part 1",
         link: "https://semeton.substack.com/p/the-architecture-i-didnt-design-part",
       },
       {
@@ -150,21 +148,26 @@ export default function Projects() {
                 ))}
               </ul>
             </details>
-            <p className="mt-3 text-xs text-muted-foreground">
+            {project.articles && (
+              <p className="mt-3 text-sm">
+                <span className="text-muted-foreground">Read: </span>
+                {project.articles.map((article, i) => (
+                  <span key={article.link}>
+                    {i > 0 && <span className="text-muted-foreground"> · </span>}
+                    <a
+                      href={article.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
+                    >
+                      {article.label}
+                    </a>
+                  </span>
+                ))}
+              </p>
+            )}
+            <p className="mt-2 text-xs text-muted-foreground">
               {project.tech.join(" · ")}
-              {project.articles?.map((article) => (
-                <span key={article.link}>
-                  {" · "}
-                  <a
-                    href={article.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline underline-offset-4 hover:text-foreground"
-                  >
-                    {article.label}
-                  </a>
-                </span>
-              ))}
             </p>
           </div>
         ))}
