@@ -15,6 +15,22 @@ const links = [
 export default function Hero() {
   return (
     <section id="about">
+      <div className="mb-12 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+        {links.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+            rel="noopener noreferrer"
+            className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
+          >
+            {link.label}
+          </a>
+        ))}
+        <span className="ml-auto">
+          <ThemeToggle />
+        </span>
+      </div>
       <div className="flex items-center justify-between gap-6">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">
@@ -69,22 +85,6 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-        {links.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            target={link.href.startsWith("mailto:") ? undefined : "_blank"}
-            rel="noopener noreferrer"
-            className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
-          >
-            {link.label}
-          </a>
-        ))}
-        <span className="ml-auto">
-          <ThemeToggle />
-        </span>
-      </div>
     </section>
   );
 }
