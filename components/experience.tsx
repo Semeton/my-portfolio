@@ -1,6 +1,17 @@
 export default function Experience() {
   const experiences = [
     {
+      company: "eGov Foundation",
+      role: "Hub Software Engineer (Contract)",
+      period: "Jun 2026 – present",
+      description:
+        "Working with the Solutions Engineering team on DIGIT HCM, the open-source platform running health campaigns in Nigeria.",
+      details: [
+        "Diagnose field-reported issues: sync failures, stock and beneficiary data problems, app rollout issues",
+        "Write root-cause analyses and escalate confirmed defects to product engineering",
+      ],
+    },
+    {
       company: "SeamlessHR",
       role: "Backend Engineer",
       period: "Nov 2024 – present",

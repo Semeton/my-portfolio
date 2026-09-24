@@ -36,7 +36,7 @@ export default function Hero() {
               </h1>
               <hr className="my-4" />
               <p className="text-lg uppercase font-bold text-gray-600 dark:text-gray-400">
-                Backend engineer. Systems for banks and enterprise SaaS.
+                Software engineer. Backend systems for banks, enterprise SaaS, and public health.
               </p>
 
               <div className="flex items-center justify-center md:justify-start space-x-4 mt-4 mb-12">
@@ -82,9 +82,11 @@ export default function Hero() {
                 </p>
 
                 <p className="leading-relaxed">
-                  Currently at SeamlessHR. Pursuing a Master's in Information
-                  Technology at Miva Open University, working toward systems
-                  architecture.
+                  Currently at SeamlessHR, and on contract with eGov Foundation
+                  on DIGIT, the platform behind Nigeria's health campaigns.
+                  Pursuing a Master's in Information
+                  Technology at Miva Open University, working toward deep
+                  systems architecture and ultimately solutions engineering.
                 </p>
               </div>
 
