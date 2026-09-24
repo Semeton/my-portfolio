@@ -77,8 +77,25 @@ export default function Hero() {
           architecture decisions hold up once they meet production.
         </p>
         <p>
-          Currently at SeamlessHR, and on contract with eGov Foundation on
-          DIGIT, the platform behind Nigeria's health campaigns. Pursuing a
+          Currently at{" "}
+          <a
+            href="https://seamlesstech.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
+          >
+            Seamless Technologies
+          </a>
+          , and on contract with{" "}
+          <a
+            href="https://egov.global/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
+          >
+            eGov Foundation
+          </a>{" "}
+          on DIGIT, the platform behind Nigeria's health campaigns. Pursuing a
           Master's in Information Technology at Miva Open University, working
           toward deep systems architecture and ultimately solutions
           engineering.

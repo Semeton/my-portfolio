@@ -4,6 +4,7 @@ export default function Experience() {
   const experiences = [
     {
       company: "eGov Foundation",
+      url: "https://egov.global/",
       role: "Hub Software Engineer (Contract)",
       period: "Jun 2026 – present",
       description:
@@ -14,7 +15,8 @@ export default function Experience() {
       ],
     },
     {
-      company: "SeamlessHR",
+      company: "Seamless Technologies",
+      url: "https://seamlesstech.com/",
       role: "Backend Engineer",
       period: "Nov 2024 – present",
       description:
@@ -73,7 +75,18 @@ export default function Experience() {
           <div key={exp.company}>
             <div className="flex flex-wrap items-baseline justify-between gap-x-4">
               <p>
-                <span className="font-medium">{exp.company}</span>
+                {exp.url ? (
+                  <a
+                    href={exp.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
+                  >
+                    {exp.company}
+                  </a>
+                ) : (
+                  <span className="font-medium">{exp.company}</span>
+                )}
                 <span className="text-muted-foreground"> — {exp.role}</span>
               </p>
               <p className="text-sm text-muted-foreground tabular-nums">
