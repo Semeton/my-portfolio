@@ -104,7 +104,7 @@ const projects = [
     subtitle:
       "A governance runtime that puts deterministic guardrails around AI coding agents.",
     description:
-      "Published npm CLI that drops a policy layer into any repo so AI agents (Claude, Codex, Copilot) operate under explicit, enforceable rules instead of hoping they read the instructions file. Enforcement happens before writes land, not in post-hoc review.",
+      "Published npm CLI that drops a policy layer into any repo so AI agents (Claude, Codex, Copilot) operate under explicit, enforceable rules instead of hoping they read the instructions file. Enforcement happens before writes land, not in post-hoc review. v0.8 on npm. I use it daily in my own agent-first workflow on production codebases.",
     role: "Creator",
     highlights: [
       "Designed a layered runtime: repository contract (policy) → execution role (scoped authority) → governance runtime (enforcement) → verified writes",
@@ -112,6 +112,7 @@ const projects = [
       "Added Repository Memory so architectural decisions and session state persist across executions instead of being rebuilt each time",
       "Made governance provider-independent, so the same contract holds whether the agent is Claude, OpenAI, or a future model",
       "Shipped and maintain it as an installable CLI: npm i -g @semeton/agent-contract",
+      "Companion tool: @semeton/azure-boards-cli (azb), so agents can read and update tickets from the terminal",
     ],
     tech: ["Node.js", "CLI", "YAML", "Claude", "OpenAI"],
     link: "https://agent-contract.semeton.xyz",

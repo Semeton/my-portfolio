@@ -5,16 +5,18 @@ export default function Experience() {
     {
       company: "eGov Foundation",
       url: "https://egov.global/",
-      role: "Hub Software Engineer (Contract)",
+      role: "Hub Software Engineer, West Africa (Contract)",
       period: "Jun 2026 – present",
       description:
-        "Working with the Solutions Engineering team on DIGIT HCM, the open-source platform running health campaigns in Nigeria.",
+        "Bridge between country programme teams and the platform engineering team on DIGIT HCM, the open-source platform running national malaria campaigns (SMC and ITN).",
       details: [
-        "Supported seasonal malaria chemoprevention (SMC) campaigns across Abuja, Bauchi, and Taraba",
-        "Diagnose field-reported issues: sync failures, stock and beneficiary data problems, app rollout issues",
-        "Write root-cause analyses and escalate confirmed defects to product engineering",
+        "Supported SMC and ITN campaigns across Abuja, Bauchi, Taraba and Borno, including on-site field support",
+        "Diagnosed activity dates being stamped at server sync time instead of on-device creation time: late-synced work counted against the next day's quota, locking field workers out of working days and skewing attendance-based payment. Documented the root cause and the fix requirement",
+        "Contributed to the stock-reconciliation design for an ITN distribution pilot: partial receipts, auto-returned shortfalls, and in-transit vs lost states in an offline-first ledger",
+        "Sizing infrastructure and support staffing for a 2027–29 multi-state campaign programme (11 states, ~27M target population)",
+        "Built the release test suite that each new field-app build passes before it reaches partners; wrote the campaign delivery SOP (requirement freeze, go-live checklist, failure-recovery runbook)",
       ],
-      stack: "Java · Spring Boot · PostgreSQL",
+      stack: "DIGIT HCM · PostgreSQL · Elasticsearch · Kibana · Offline-first sync",
     },
     {
       company: "Seamless Technologies",
@@ -22,12 +24,14 @@ export default function Experience() {
       role: "Backend Engineer",
       period: "Nov 2024 – present",
       description:
-        "Backend services for a multi-tenant HRMS serving enterprise clients.",
+        "Recruitment platform and HRMS modules (internal recruitment, exit, onboarding) for a multi-tenant HR suite serving enterprise clients.",
       details: [
-        "Built backend for the AI-integrated recruitment module: CV parsing, candidate ranking, automated screening",
-        "Implemented webhooks for the recruitment pipeline",
-        "Stabilizing and shipping features across exit, onboarding, and employee confirmation modules",
+        "Built the Kafka pipeline publishing recruitment, exit and onboarding data to the company data lake, as a non-blocking side effect so a mapping failure can't fail the primary write",
+        "Own the two-way integration between the recruitment platform and the core HRMS: requisition-to-job creation, status sync back, internal-applicant pre-fill, SSO with company-access checks, service-to-service auth",
+        "Led tenant-isolation and security hardening: SSRF-safe webhooks, company-scoped reads and writes, per-client mail credentials with delivery logging, throttled upload limits, GDPR self-service deletion (anonymise or hard-delete)",
+        "Backend for AI-assisted hiring: CV parsing, candidate ranking with normalised scores, automated screening; frictionless apply with no sign-up, OAuth pre-fill and magic-link login",
       ],
+      stack: "PHP 8 · Laravel · MySQL · Kafka · Redis/Horizon · Algolia · S3 · Pest",
     },
     {
       company: "Zercom Systems",

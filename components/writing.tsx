@@ -34,7 +34,7 @@ const articles = [
   {
     title: "Understanding Is the Feature: What AI Agents Can't Do For You",
     date: "Mar 2026",
-    dek: "A reflection from an engineer who learned the hard way.",
+    dek: "Agents absorb routine coding; the hard bugs live at the seams between systems.",
     link: "https://semeton.substack.com/p/understanding-is-the-feature-what",
   },
   {

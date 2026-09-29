@@ -6,22 +6,28 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
+const title = "Semeton Balogun | Backend & Systems Engineer";
+const description =
+  "Backend and systems engineer. Multi-tenant platforms for banks and enterprise SaaS; offline-first data systems for national health campaigns. At Seamless Technologies and eGov Foundation (DIGIT).";
+
 export const metadata: Metadata = {
-  title: "Semeton Balogun | Software Engineer",
-  description:
-    "Software engineer. Backend systems for banks, enterprise SaaS, and public health. Currently at Seamless Technologies, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+  title,
+  description,
   keywords: [
     "Semeton Balogun",
     "Software Engineer",
     "Backend Engineer",
     "Laravel",
-    "Java",
-    "Spring Boot",
     "PostgreSQL",
+    "MySQL",
     "SQL Server",
+    "Kafka",
     "Multi-tenant Architecture",
     "Systems Architecture",
+    "Offline-first sync",
+    "Data migration",
     "Production Debugging",
+    "AI coding agents",
   ],
   authors: [{ name: "Semeton Balogun" }],
   creator: "Semeton Balogun",
@@ -50,24 +56,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://semeton.xyz",
-    title: "Semeton Balogun | Software Engineer",
-    description:
-      "Software engineer. Backend systems for banks, enterprise SaaS, and public health. Currently at Seamless Technologies, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+    title,
+    description,
     siteName: "Semeton Balogun Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Semeton Balogun - Software Engineer",
+        alt: "Semeton Balogun - Backend & Systems Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Semeton Balogun | Software Engineer",
-    description:
-      "Software engineer. Backend systems for banks, enterprise SaaS, and public health. Currently at Seamless Technologies, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+    title,
+    description,
     images: ["/og-image.png"],
     creator: "@semetonbalogun",
   },
@@ -94,29 +98,31 @@ export default function RootLayout({
               "@type": "Person",
               name: "Semeton Balogun",
               url: "https://semeton.xyz",
-              jobTitle: "Software Engineer",
-              worksFor: {
-                "@type": "Organization",
-                name: "Seamless Technologies",
-              },
+              jobTitle: "Backend & Systems Engineer",
+              worksFor: [
+                { "@type": "Organization", name: "Seamless Technologies" },
+                { "@type": "Organization", name: "eGov Foundation" },
+              ],
               sameAs: [
                 "https://github.com/semeton",
                 "https://www.linkedin.com/in/semetonbalogun/",
+                "https://semeton.substack.com",
               ],
-              description:
-                "Software engineer. Backend systems for banks, enterprise SaaS, and public health. Currently at Seamless Technologies, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+              description,
               knowsAbout: [
                 "Backend Development",
+                "System Architecture",
+                "Multi-tenant Architecture",
                 "PHP",
                 "Laravel",
-                "Java",
-                "Spring Boot",
-                "PostgreSQL",
                 "Node.js",
-                "System Architecture",
-                "API Development",
+                "MySQL",
+                "PostgreSQL",
+                "Kafka",
+                "Offline-first Sync",
+                "Data Migration",
                 "Production Debugging",
-                "Multi-tenant Architecture",
+                "AI Coding Agent Governance",
               ],
             }),
           }}
