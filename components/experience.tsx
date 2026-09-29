@@ -14,9 +14,9 @@ export default function Experience() {
         "Diagnosed activity dates being stamped at server sync time instead of on-device creation time: late-synced work counted against the next day's quota, locking field workers out of working days and skewing attendance-based payment. Documented the root cause and the fix requirement",
         "Contributed to the stock-reconciliation design for an ITN distribution pilot: partial receipts, auto-returned shortfalls, and in-transit vs lost states in an offline-first ledger",
         "Sizing infrastructure and support staffing for a 2027–29 multi-state campaign programme (11 states, ~27M target population)",
-        "Built the release test suite that each new field-app build passes before it reaches partners; wrote the campaign delivery SOP (requirement freeze, go-live checklist, failure-recovery runbook)",
       ],
-      stack: "DIGIT HCM · PostgreSQL · Elasticsearch · Kibana · Offline-first sync",
+      stack:
+        "DIGIT HCM · PostgreSQL · Elasticsearch · Kibana · Offline-first sync",
     },
     {
       company: "Seamless Technologies",
@@ -27,11 +27,12 @@ export default function Experience() {
         "Recruitment platform and HRMS modules (internal recruitment, exit, onboarding) for a multi-tenant HR suite serving enterprise clients.",
       details: [
         "Built the Kafka pipeline publishing recruitment, exit and onboarding data to the company data lake, as a non-blocking side effect so a mapping failure can't fail the primary write",
-        "Own the two-way integration between the recruitment platform and the core HRMS: requisition-to-job creation, status sync back, internal-applicant pre-fill, SSO with company-access checks, service-to-service auth",
+        "Implemented the two-way integration between the recruitment platform and the core HRMS: requisition-to-job creation, status sync back, internal-applicant pre-fill, SSO with company-access checks, service-to-service auth",
         "Led tenant-isolation and security hardening: SSRF-safe webhooks, company-scoped reads and writes, per-client mail credentials with delivery logging, throttled upload limits, GDPR self-service deletion (anonymise or hard-delete)",
         "Backend for AI-assisted hiring: CV parsing, candidate ranking with normalised scores, automated screening; frictionless apply with no sign-up, OAuth pre-fill and magic-link login",
       ],
-      stack: "PHP 8 · Laravel · MySQL · Kafka · Redis/Horizon · Algolia · S3 · Pest",
+      stack:
+        "PHP 8 · Laravel · MySQL · Kafka · Redis/Horizon · Algolia · S3 · Pest",
     },
     {
       company: "Zercom Systems",
@@ -47,13 +48,15 @@ export default function Experience() {
         "Wrote a custom SQL Server driver alongside the MySQL default; deployed across IIS inside bank networks, Apache, DigitalOcean, and AWS; cut infrastructure costs ~85%",
         "Built REST integrations with 5+ external organisations, ran security and load testing with OWASP ZAP and JMeter, and trained client teams on the platform",
       ],
-      stack: "PHP 8 · Laravel · SQL Server · MySQL · Node.js · Memcached · Docker · IIS · Apache",
+      stack:
+        "PHP 8 · Laravel · SQL Server · MySQL · Node.js · Memcached · Docker · IIS · Apache",
     },
     {
       company: "ScholarshipIQ",
       role: "Backend Engineer",
       period: "Jun 2022 – Apr 2023",
-      description: "Built the backend for an academic matching and funding platform.",
+      description:
+        "Built the backend for an academic matching and funding platform.",
       details: [
         "Backend services and REST APIs in Laravel, integrated with a React frontend",
         "Cut API response times ~50% through query optimization and indexing",
