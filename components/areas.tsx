@@ -44,7 +44,7 @@ const areas: Area[] = [
     kicker: "How I work",
     title: "Guardrails for AI coding agents",
     goal: "Get the speed of AI coding agents on production codebases without losing control of what they change.",
-    body: "I work agent-first. agent-contract, my npm CLI, checks every write an agent attempts against the repository's rules and blocks anything outside the task's scope before it lands.",
+    body: "I work agent-first. agent-contract, my npm CLI, checks every write an agent attempts against the repository's rules and blocks anything outside the task's scope before it lands. I'm also researching repository memory: how a decision log stays true and reaches the agent at the right moment, behind a write gate that humans control. It's the subject of my talk for PHP Talks Lagos.",
     caseStudies: [{ label: "Agent Contract", href: "/projects/agent-contract" }],
     essays: [essays.beyondPrompts, essays.understanding],
   },

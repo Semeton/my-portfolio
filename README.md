@@ -32,6 +32,7 @@ Live site: [https://semeton.xyz](https://semeton.xyz)
 | Writing and Elsewhere lists | [components/writing.tsx](components/writing.tsx) |
 | Background page | [components/background.tsx](components/background.tsx) |
 | Page title, description, structured data | [app/layout.tsx](app/layout.tsx) |
+| "What I'm looking for" call to action | [components/open-to.tsx](components/open-to.tsx) |
 | Sitemap | [app/sitemap.ts](app/sitemap.ts) (case-study URLs are generated from `lib/case-studies.ts`) |
 
 Adding an entry to `caseStudies` in `lib/case-studies.ts` creates a new `/projects/<slug>` page and sitemap entry at build time.
@@ -52,6 +53,16 @@ The site is a static export deployed to GitHub Pages.
 
 - `npm run deploy` builds the site and pushes `out/` to the `gh-pages` branch.
 - A Pages workflow is also defined in [.github/workflows/setup-node/publish.yml](.github/workflows/setup-node/publish.yml). GitHub only runs workflow files placed directly in `.github/workflows/`, so it does not run from its current location.
+
+## Résumé
+
+The PDF linked from the site is `public/semeton-balogun-resume.pdf`. Its source is [docs/resume/resume.html](docs/resume/resume.html). After editing the source, regenerate the PDF with headless Chrome:
+
+```bash
+bash docs/resume/build.sh
+```
+
+The résumé repeats facts from the site (work history, case studies), so update both together.
 
 ## Images
 

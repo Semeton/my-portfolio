@@ -7,7 +7,7 @@ const links = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/semetonbalogun/" },
   {
     label: "Resume",
-    href: "https://docs.google.com/document/d/1NfYdtsJkmpsMdYHhVUiMH6Cd_hIFL0-scYoBItzEmZ4/edit?usp=sharing",
+    href: "/semeton-balogun-resume.pdf",
   },
   { label: "Substack", href: "https://semeton.substack.com" },
   { label: "Email", href: "mailto:balogunsemeton@gmail.com" },
