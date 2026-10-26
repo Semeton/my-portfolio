@@ -6,20 +6,30 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
+const title =
+  "Semeton Balogun | Backend & Systems Engineer, Solutions Architecture";
+const description =
+  "Backend and systems engineer moving into solutions architecture. Multi-tenant platforms for banks and enterprise SaaS; offline-first data systems for national health campaigns. At Seamless Technologies and eGov Foundation (DIGIT).";
+
 export const metadata: Metadata = {
-  title: "Semeton Balogun | Backend Engineer & Technical Lead",
-  description:
-    "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+  title,
+  description,
   keywords: [
     "Semeton Balogun",
+    "Software Engineer",
     "Backend Engineer",
     "Laravel",
-    "NestJS",
     "PostgreSQL",
-    "Distributed Systems",
+    "MySQL",
+    "SQL Server",
+    "Kafka",
     "Multi-tenant Architecture",
     "Systems Architecture",
+    "Solutions Architecture",
+    "Offline-first sync",
+    "Data migration",
     "Production Debugging",
+    "AI coding agents",
   ],
   authors: [{ name: "Semeton Balogun" }],
   creator: "Semeton Balogun",
@@ -48,29 +58,28 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://semeton.xyz",
-    title: "Semeton Balogun | Backend Engineer & Technical Lead",
-    description:
-      "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+    title,
+    description,
     siteName: "Semeton Balogun Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Semeton Balogun - Backend Engineer",
+        alt: "Semeton Balogun - Backend & Systems Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Semeton Balogun | Backend Engineer & Technical Lead",
-    description:
-      "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+    title,
+    description,
     images: ["/og-image.png"],
     creator: "@semetonbalogun",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [{ url: "/icon-32.png", sizes: "32x32", type: "image/png" }],
+    apple: "/icon-180.png",
   },
   manifest: "/site.webmanifest",
 };
@@ -91,26 +100,33 @@ export default function RootLayout({
               "@type": "Person",
               name: "Semeton Balogun",
               url: "https://semeton.xyz",
-              jobTitle: "Backend Engineer",
-              worksFor: {
-                "@type": "Organization",
-                name: "SeamlessHR",
-              },
+              jobTitle: "Backend & Systems Engineer",
+              worksFor: [
+                { "@type": "Organization", name: "Lawyering" },
+                { "@type": "Organization", name: "Seamless Technologies" },
+                { "@type": "Organization", name: "eGov Foundation" },
+              ],
               sameAs: [
                 "https://github.com/semeton",
                 "https://www.linkedin.com/in/semetonbalogun/",
+                "https://semeton.substack.com",
               ],
-              description:
-                "Backend engineer. Systems for banks and enterprise SaaS. Currently at SeamlessHR, previously led the Tangerine365 rewrite deployed across major Nigerian banks.",
+              description,
               knowsAbout: [
                 "Backend Development",
+                "Solutions Architecture",
+                "System Architecture",
+                "Multi-tenant Architecture",
                 "PHP",
                 "Laravel",
                 "Node.js",
-                "System Architecture",
-                "API Development",
+                "MySQL",
+                "PostgreSQL",
+                "Kafka",
+                "Offline-first Sync",
+                "Data Migration",
                 "Production Debugging",
-                "Multi-tenant Architecture",
+                "AI Coding Agent Governance",
               ],
             }),
           }}

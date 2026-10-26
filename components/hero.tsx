@@ -1,111 +1,102 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import Image from "next/image";
-import { GithubIcon, LinkedinIcon, FileTextIcon } from "lucide-react";
+import Link from "next/link";
+import ThemeToggle from "@/components/theme-toggle";
+
+const links = [
+  { label: "GitHub", href: "https://github.com/semeton" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/semetonbalogun/" },
+  {
+    label: "Resume",
+    href: "/semeton-balogun-resume.pdf",
+  },
+  { label: "Substack", href: "https://semeton.substack.com" },
+  { label: "Email", href: "mailto:balogunsemeton@gmail.com" },
+];
+
+const linkClass =
+  "text-foreground underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground";
 
 export default function Hero() {
   return (
-    <section id="about" className="py-28 md:py-36 bg-white dark:bg-black">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-12 md:gap-16">
-            <div className="w-56 h-56 md:w-80 md:h-80 relative flex-shrink-0 order-1 md:order-2 group">
-              <div className="absolute inset-0 rounded-xl overflow-hidden border-4 border-white dark:border-black shadow-lg">
-                <Image
-                  src="/images/semeton-black.jpeg"
-                  alt="Semeton Balogun"
-                  width={320}
-                  height={320}
-                  className="w-full h-full object-cover absolute inset-0 transition-opacity duration-500 opacity-100 group-hover:opacity-0"
-                  priority
-                />
-                <Image
-                  src="/images/semeton.jpeg"
-                  alt="Semeton Balogun"
-                  width={320}
-                  height={320}
-                  className="w-full h-full object-cover absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-                />
-              </div>
-            </div>
-
-            <div className="order-2 md:order-1 text-center md:text-left">
-              <h1 className="text-6xl md:text-8xl font-black tracking-tight mb-4 leading-tight">
-                Semeton <br className="hidden md:block" />
-                Balogun
-              </h1>
-              <hr className="my-4" />
-              <p className="text-lg uppercase font-bold text-gray-600 dark:text-gray-400">
-                Software engineer. Backend systems for banks, enterprise SaaS, and public health.
-              </p>
-
-              <div className="flex items-center justify-center md:justify-start space-x-4 mt-4 mb-12">
-                <a
-                  href="https://github.com/semeton"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                  aria-label="GitHub"
-                >
-                  <GithubIcon className="h-6 w-6" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/semetonbalogun/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedinIcon className="h-6 w-6" />
-                </a>
-                <a
-                  href="https://docs.google.com/document/d/1NfYdtsJkmpsMdYHhVUiMH6Cd_hIFL0-scYoBItzEmZ4/edit?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                  aria-label="Resume"
-                >
-                  <FileTextIcon className="h-6 w-6" />
-                </a>
-              </div>
-
-              <div className="space-y-5 text-lg text-gray-600 dark:text-gray-300">
-                <p className="leading-relaxed">
-                  Registered nurse before switching to software engineering.
-                </p>
-
-                <p className="leading-relaxed">
-                  Led the rewrite of a legacy banking LMS into a multi-tenant
-                  platform used by Wema Bank, First Bank, and FCMB. Wrote the
-                  custom database drivers and handled deployment on physical
-                  servers inside the banks' networks.
-                </p>
-
-                <p className="leading-relaxed">
-                  Currently at SeamlessHR, and on contract with eGov Foundation
-                  on DIGIT, the platform behind Nigeria's health campaigns.
-                  Pursuing a Master's in Information
-                  Technology at Miva Open University, working toward deep
-                  systems architecture and ultimately solutions engineering.
-                </p>
-              </div>
-
-              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <Button asChild className="rounded-full px-8 py-6 text-base">
-                  <Link href="#contact">Email me</Link>
-                </Button>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="rounded-full px-8 py-6 text-base"
-                >
-                  <Link href="#projects">See the work</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section id="about">
+      <div className="mb-12 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+        {links.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            {link.label}
+          </a>
+        ))}
+        <span className="ml-auto">
+          <ThemeToggle />
+        </span>
       </div>
+      <div className="flex items-center justify-between gap-6">
+        <div>
+          <h1 className="text-3xl font-semibold tracking-tight">
+            Semeton Balogun
+          </h1>
+          <p className="mt-2 text-lg">
+            Backend and systems engineer, moving into solutions architecture.
+          </p>
+        </div>
+        <Image
+          src="/images/semeton.jpeg"
+          alt="Semeton Balogun"
+          width={72}
+          height={72}
+          className="h-[72px] w-[72px] flex-shrink-0 rounded-full object-cover"
+          priority
+        />
+      </div>
+
+      <p className="mt-6 leading-relaxed text-muted-foreground">
+        I turn business goals into systems that hold up in production: tenant
+        isolation for banks and enterprise SaaS, deployments inside bank
+        networks, and data that stays correct across offline devices. I'm CTO
+        at{" "}
+        <a
+          href="https://lawyering.cloud"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+        >
+          Lawyering
+        </a>
+        , and work at{" "}
+        <a
+          href="https://seamlesstech.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+        >
+          Seamless Technologies
+        </a>{" "}
+        and on contract with{" "}
+        <a
+          href="https://egov.global/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+        >
+          eGov Foundation
+        </a>
+        .
+      </p>
+      <p className="mt-4 leading-relaxed text-muted-foreground">
+        I came to software from nursing, after qualifying as a registered nurse
+        at the University of Lagos.{" "}
+        <Link
+          href="/about"
+          className="text-[hsl(var(--brand))] hover:underline underline-offset-4"
+        >
+          My background →
+        </Link>
+      </p>
     </section>
   );
 }

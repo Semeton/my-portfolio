@@ -1,0 +1,154 @@
+<!doctype html>
+<!--
+  Source for public/semeton-balogun-resume.pdf.
+  Regenerate with: bash docs/resume/build.sh
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Semeton Balogun — Résumé</title>
+<style>
+  @page { size: A4; margin: 14mm 15mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #141414; font-size: 9.6pt; line-height: 1.42; }
+  a { color: inherit; text-decoration: none; }
+  header { border-bottom: 1.5pt solid #141414; padding-bottom: 8pt; margin-bottom: 10pt; }
+  h1 { font-size: 22pt; letter-spacing: -0.4pt; line-height: 1.1; }
+  .headline { font-size: 11pt; margin-top: 3pt; }
+  .contact { margin-top: 5pt; color: #4a4a4a; font-size: 8.8pt; }
+  .contact span + span::before { content: "·"; margin: 0 5pt; color: #999; }
+  h2 { font-size: 8.4pt; text-transform: uppercase; letter-spacing: 1.2pt; color: #2343c9; margin: 12pt 0 5pt; }
+  .summary { color: #222; }
+  .job { margin-bottom: 8pt; }
+  .row, .desc { break-after: avoid; }
+  li { break-inside: avoid; }
+  .row { display: flex; justify-content: space-between; gap: 10pt; align-items: baseline; }
+  .org { font-weight: 700; }
+  .role { color: #333; }
+  .when { color: #555; font-size: 8.6pt; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .desc { margin-top: 1.5pt; color: #333; }
+  ul { margin: 3pt 0 0 11pt; }
+  li { margin-bottom: 1.6pt; }
+  .stack { margin-top: 2.5pt; color: #666; font-size: 8.2pt; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6pt 16pt; }
+  .item { break-inside: avoid; }
+  .item b { display: block; }
+  .item p { color: #333; }
+  .skills p { margin-bottom: 2pt; }
+  .skills b { font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Semeton Balogun</h1>
+  <p class="headline">Backend and systems engineer, moving into solutions architecture</p>
+  <p class="contact">
+    <span>Lagos, Nigeria</span>
+    <span><a href="mailto:balogunsemeton@gmail.com">balogunsemeton@gmail.com</a></span>
+    <span><a href="https://semeton.xyz">semeton.xyz</a></span>
+    <span><a href="https://github.com/semeton">github.com/semeton</a></span>
+    <span><a href="https://www.linkedin.com/in/semetonbalogun/">linkedin.com/in/semetonbalogun</a></span>
+  </p>
+</header>
+
+<h2>Summary</h2>
+<p class="summary">
+  Backend and systems engineer with six years in production: multi-tenant platforms for banks and enterprise SaaS,
+  offline-first data for national health campaigns, and governance for AI coding agents. I start from the business
+  goal: sizing infrastructure, designing deployments inside bank networks, and representing engineering with
+  stakeholders. Looking for lead roles in solutions architecture, or AI research on agent governance: guardrails
+  and repository memory for coding agents.
+</p>
+
+<h2>Experience</h2>
+
+<div class="job">
+  <div class="row"><p><span class="org">Lawyering</span> <span class="role">— CTO</span></p><p class="when">May 2026 – present</p></div>
+  <p class="desc">A workspace for law firms and individual practitioners: cases, engagements, documents, billing and client communication. Sole engineer, building agent-first.</p>
+  <ul>
+    <li>Designed the platform as a modular monolith of 19 Laravel modules, with tenant scoping on every tenant-owned record</li>
+    <li>Built Drive: encryption at rest, participant permissions, and share links with expiry and access codes for viewers without accounts</li>
+    <li>Built PayTrack billing in naira and US dollars, with payment plans and automatic retainer renewals</li>
+    <li>In production since June 2026, with over 1,200 automated tests</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="row"><p><span class="org">eGov Foundation</span> <span class="role">— Hub Software Engineer, West Africa (Contract)</span></p><p class="when">Jun 2026 – present</p></div>
+  <p class="desc">Bridge between country programme teams and platform engineering on DIGIT HCM, the open-source platform running Nigeria's national malaria campaigns.</p>
+  <ul>
+    <li>Diagnosed activity dates being stamped at sync time instead of on-device creation time, which locked field workers out of working days and skewed attendance-based pay; documented the root cause and fix requirement</li>
+    <li>Contributed to the stock-reconciliation design for an ITN distribution pilot in an offline-first ledger</li>
+    <li>Sizing infrastructure and support staffing for a 2027–29 programme across 11 states (~27M target population)</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="row"><p><span class="org">Seamless Technologies</span> <span class="role">— Backend Engineer</span></p><p class="when">Nov 2024 – present</p></div>
+  <p class="desc">Recruitment platform and HRMS modules for a multi-tenant HR suite serving enterprise clients.</p>
+  <ul>
+    <li>Built the Kafka pipeline to the company data lake as a non-blocking side effect, so a mapping failure can't fail the primary write</li>
+    <li>Implemented the two-way integration between the recruitment platform and the core HRMS, including SSO with company-access checks and service-to-service auth</li>
+    <li>Led tenant-isolation and security hardening: SSRF-safe webhooks, company-scoped reads and writes, per-client mail credentials, GDPR self-service deletion</li>
+    <li>Backend for AI-assisted hiring: CV parsing, candidate ranking, automated screening</li>
+    <li>Volunteer facilitator on the Codeable programme, teaching software engineering to Special Olympics athletes and students at the Kirikiri correctional centre</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="row"><p><span class="org">Zercom Systems</span> <span class="role">— Technical Lead</span></p><p class="when">Apr 2023 – Nov 2024</p></div>
+  <p class="desc">Led the rebuild of a per-client LMS into Tangerine365, one multi-tenant platform running on-premise at banks, as a self-serve cloud product, and inside Human Manager HRMS.</p>
+  <ul>
+    <li>Merged per-client codebases into one vanilla PHP 8 codebase with tenancy by subdomain or by ID, so a fix ships once instead of once per client</li>
+    <li>Acted as solutions architect for client deployments: architecture, server sizing and specifications, and engineering's voice in stakeholder meetings</li>
+    <li>Designed First Bank's three-tier on-premise deployment; deployed across IIS inside bank networks, Apache, DigitalOcean and AWS</li>
+    <li>Wrote a SQL Server driver alongside the MySQL default, chosen at runtime, for banks that required it</li>
+    <li>Consolidated the company's internal tools, staging and UAT onto one CyberPanel/LiteSpeed server with wildcard subdomains, cutting that hosting cost ~85%</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="row"><p><span class="org">ScholarshipIQ</span> <span class="role">— Backend Engineer</span></p><p class="when">Jun 2022 – Apr 2023</p></div>
+  <ul>
+    <li>Cut API response times ~50% through query optimisation and indexing; introduced staging and branching discipline, cutting production errors by over 90%</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="row"><p><span class="org">Bincom Dev Center</span> <span class="role">— Backend Developer (apprenticeship)</span></p><p class="when">Sep 2020 – Jul 2022</p></div>
+  <ul>
+    <li>Backend work in Node.js and PHP on ARM Learn for ARM Pensions and Social Lender; trained 5+ interns</li>
+  </ul>
+</div>
+
+<h2>Selected projects and research</h2>
+<div class="grid">
+  <div class="item"><b>Agent Contract</b><p>npm CLI that checks every write an AI coding agent attempts against repository rules and blocks out-of-scope changes before they land.</p></div>
+  <div class="item"><b>Repository memory for coding agents</b><p>Talk for PHP Talks Lagos and an experiment harness measuring whether a verified, human-gated decision log changes agent behaviour, including memory poisoning.</p></div>
+  <div class="item"><b>Terminoxx360</b><p>ATM fleet monitoring at Access Bank; sole engineer on a multi-tenant rebuild with CBN regulatory uptime, automated escalation and an on-premise AI option.</p></div>
+  <div class="item"><b>TrustCenta</b><p>Multi-tenant security platform wrapping OWASP ZAP, Gophish and CISO Assistant; rebuilt after a compromise and wrote the public post-mortem.</p></div>
+</div>
+
+<h2>Education</h2>
+<div class="job">
+  <div class="row"><p><span class="org">Miva Open University</span> <span class="role">— Master of Information Technology, specialising in AI</span></p><p class="when">In progress</p></div>
+</div>
+<div class="job">
+  <div class="row"><p><span class="org">University of Lagos</span> <span class="role">— BSc Nursing Science, Distinction (joint-highest CGPA)</span></p><p class="when">2015 – 2021</p></div>
+  <p class="desc">Registered Nurse, Nursing and Midwifery Council of Nigeria, 2022.</p>
+</div>
+
+<h2>Skills</h2>
+<div class="skills">
+  <p><b>Architecture:</b> multi-tenancy, deployment design and infrastructure sizing, queues and event-driven workflows, offline-first sync, security hardening</p>
+  <p><b>Languages and frameworks:</b> PHP (Laravel and vanilla), TypeScript, Node.js, React, Next.js, Livewire</p>
+  <p><b>Data and infrastructure:</b> MySQL, PostgreSQL, SQL Server, Redis, Kafka, Elasticsearch, Docker, Linux, IIS, Apache, LiteSpeed, DigitalOcean, AWS</p>
+  <p><b>AI:</b> Claude, OpenAI and Ollama integrations; agent-first development; governance for coding agents</p>
+</div>
+
+<h2>Writing</h2>
+<p>Engineering essays on <a href="https://semeton.substack.com">Codeplified</a> (semeton.substack.com), including <i>The Architecture I Didn't Design</i> and <i>Beyond Prompts: Repository Governance for AI Coding Agents</i>.</p>
+
+</body>
+</html>
