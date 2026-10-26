@@ -6,9 +6,10 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-const title = "Semeton Balogun | Backend & Systems Engineer";
+const title =
+  "Semeton Balogun | Backend & Systems Engineer, Solutions Architecture";
 const description =
-  "Backend and systems engineer. Multi-tenant platforms for banks and enterprise SaaS; offline-first data systems for national health campaigns. At Seamless Technologies and eGov Foundation (DIGIT).";
+  "Backend and systems engineer moving into solutions architecture. Multi-tenant platforms for banks and enterprise SaaS; offline-first data systems for national health campaigns. At Seamless Technologies and eGov Foundation (DIGIT).";
 
 export const metadata: Metadata = {
   title,
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
     "Kafka",
     "Multi-tenant Architecture",
     "Systems Architecture",
+    "Solutions Architecture",
     "Offline-first sync",
     "Data migration",
     "Production Debugging",
@@ -100,6 +102,7 @@ export default function RootLayout({
               url: "https://semeton.xyz",
               jobTitle: "Backend & Systems Engineer",
               worksFor: [
+                { "@type": "Organization", name: "Lawyering" },
                 { "@type": "Organization", name: "Seamless Technologies" },
                 { "@type": "Organization", name: "eGov Foundation" },
               ],
@@ -111,6 +114,7 @@ export default function RootLayout({
               description,
               knowsAbout: [
                 "Backend Development",
+                "Solutions Architecture",
                 "System Architecture",
                 "Multi-tenant Architecture",
                 "PHP",

@@ -1,6 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
 import ThemeToggle from "@/components/theme-toggle";
-import ClientList from "@/components/clients";
 
 const links = [
   { label: "GitHub", href: "https://github.com/semeton" },
@@ -13,6 +13,9 @@ const links = [
   { label: "Email", href: "mailto:balogunsemeton@gmail.com" },
 ];
 
+const linkClass =
+  "text-foreground underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground";
+
 export default function Hero() {
   return (
     <section id="about">
@@ -23,7 +26,7 @@ export default function Hero() {
             href={link.href}
             target={link.href.startsWith("mailto:") ? undefined : "_blank"}
             rel="noopener noreferrer"
-            className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
+            className="text-muted-foreground hover:text-foreground"
           >
             {link.label}
           </a>
@@ -34,13 +37,11 @@ export default function Hero() {
       </div>
       <div className="flex items-center justify-between gap-6">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">
+          <h1 className="text-3xl font-semibold tracking-tight">
             Semeton Balogun
           </h1>
-          <p className="mt-1 text-muted-foreground">
-            Backend and systems engineer. Multi-tenant platforms for banks and
-            enterprise SaaS; offline-first data systems for national health
-            campaigns.
+          <p className="mt-2 text-lg">
+            Backend and systems engineer, moving into solutions architecture.
           </p>
         </div>
         <Image
@@ -53,68 +54,49 @@ export default function Hero() {
         />
       </div>
 
-      <div className="mt-8 space-y-4 leading-relaxed">
-        <p>
-          I build backend systems where the hard part is production: tenant
-          isolation, data that has to stay correct across services and offline
-          devices, and deployments inside bank networks. At{" "}
-          <a
-            href="https://seamlesstech.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
-          >
-            Seamless Technologies
-          </a>{" "}
-          I work on a multi-tenant HR suite. On contract with{" "}
-          <a
-            href="https://egov.global/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
-          >
-            eGov Foundation
-          </a>{" "}
-          I work on DIGIT, the open-source platform behind Nigeria's malaria
-          campaigns. Since mid-2026 I've worked agent-first, under rules
-          enforced by a tool I built,{" "}
-          <a
-            href="https://agent-contract.semeton.xyz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
-          >
-            agent-contract
-          </a>
-          .
-        </p>
-        <p>
-          Before that I was technical lead at Zercom Systems. I led the rewrite
-          of an LMS used by <ClientList />, and acted as solutions architect
-          for its bank deployments. What I keep coming back to, and write
-          about, is how architecture decisions hold up once they meet
-          production.
-        </p>
-        <p>
-          I came to software from nursing. I studied at the University of
-          Lagos, graduated with distinction and qualified as a registered
-          nurse, while working as a graphic designer and creative director on
-          the side. Curiosity got me teaching myself to code. In 2020 I joined
-          the tech apprenticeship at Bincom Dev Center, my first engineering
-          role, with{" "}
-          <a
-            href="https://ogwodev.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
-          >
-            Emmanuel Ogwo
-          </a>{" "}
-          as my mentor. I'm now pursuing a Master's in Information Technology
-          at Miva Open University.
-        </p>
-      </div>
-
+      <p className="mt-6 leading-relaxed text-muted-foreground">
+        I turn business goals into systems that hold up in production: tenant
+        isolation for banks and enterprise SaaS, deployments inside bank
+        networks, and data that stays correct across offline devices. I'm CTO
+        at{" "}
+        <a
+          href="https://lawyering.cloud"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+        >
+          Lawyering
+        </a>
+        , and work at{" "}
+        <a
+          href="https://seamlesstech.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+        >
+          Seamless Technologies
+        </a>{" "}
+        and on contract with{" "}
+        <a
+          href="https://egov.global/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+        >
+          eGov Foundation
+        </a>
+        .
+      </p>
+      <p className="mt-4 leading-relaxed text-muted-foreground">
+        I came to software from nursing, after qualifying as a registered nurse
+        at the University of Lagos.{" "}
+        <Link
+          href="/about"
+          className="text-[hsl(var(--brand))] hover:underline underline-offset-4"
+        >
+          My background →
+        </Link>
+      </p>
     </section>
   );
 }

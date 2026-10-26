@@ -1,160 +1,62 @@
-# Semeton Balogun Portfolio
+# semeton.xyz
 
-A modern, minimalist portfolio website for Semeton Balogun, Backend Engineer. Built with Next.js, React, and Tailwind CSS, featuring a clean black and white design inspired by Apple's UI/UX aesthetic.
+Personal site of Semeton Balogun, a backend and systems engineer moving into solutions architecture.
 
 Live site: [https://semeton.xyz](https://semeton.xyz)
 
-![Semeton Balogun Portfolio](/public/og-image.png)
+## Stack
 
-## Features
+- Next.js 15 (App Router) with static export (`output: "export"`, built to `out/`)
+- React 19, TypeScript
+- Tailwind CSS 3 with theme tokens in [app/globals.css](app/globals.css); the accent colour is the `--brand` variable
+- next-themes for light and dark mode
+- Inter via `next/font`
 
-- **Responsive Design**: Fully responsive across all device sizes
-- **Light/Dark Mode**: System-preference detection with manual toggle option
-- **Modern Stack**: Built with Next.js 15, React 19, and Tailwind CSS
-- **SEO Optimized**: Comprehensive metadata, structured data, and sitemap
-- **Accessibility**: WCAG-compliant with proper semantic HTML and ARIA attributes
-- **Performance**: Optimized for Core Web Vitals and fast loading
+## Pages
 
-## Technologies
+| Route | Source | Content |
+|---|---|---|
+| `/` | [app/page.tsx](app/page.tsx) | Intro, the four problem areas, a short work timeline, latest writing, elsewhere |
+| `/work` | [app/work/page.tsx](app/work/page.tsx) | Full work history |
+| `/projects/<slug>` | [app/projects/[slug]/page.tsx](app/projects/[slug]/page.tsx) | Case studies, written as Business goal / Context / Decisions / Result |
+| `/about` | [app/about/page.tsx](app/about/page.tsx) | Background: nursing, design, the move into software |
 
-- **Framework**: Next.js 15 (App Router)
-- **UI Library**: React 19
-- **Styling**: Tailwind CSS
-- **Components**: shadcn/ui
-- **Icons**: Lucide React
-- **Fonts**: Inter (Google Fonts)
-- **Deployment**: Vercel (recommended)
+## Where the content lives
 
-## Project Structure
+| To change | Edit |
+|---|---|
+| Intro and header links | [components/hero.tsx](components/hero.tsx) |
+| The four problem areas on the home page | [components/areas.tsx](components/areas.tsx) |
+| Work history (home timeline and `/work`) | [components/experience.tsx](components/experience.tsx) |
+| Case studies and shared essay links | [lib/case-studies.ts](lib/case-studies.ts) |
+| Writing and Elsewhere lists | [components/writing.tsx](components/writing.tsx) |
+| Background page | [components/background.tsx](components/background.tsx) |
+| Page title, description, structured data | [app/layout.tsx](app/layout.tsx) |
+| Sitemap | [app/sitemap.ts](app/sitemap.ts) (case-study URLs are generated from `lib/case-studies.ts`) |
 
-\`\`\`
-semeton_portfolio/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx          # Root layout with metadata
-│   ├── page.tsx            # Main page component
-│   ├── globals.css         # Global styles
-│   ├── sitemap.ts          # Dynamic sitemap generator
-│   └── robots.ts           # Robots.txt configuration
-├── components/             # React components
-│   ├── header.tsx          # Navigation header
-│   ├── hero.tsx            # Hero / about section
-│   ├── experience.tsx      # Work experience section
-│   ├── projects.tsx        # Key projects section
-│   ├── writing.tsx         # Writing & media section
-│   ├── contact.tsx         # Contact information section
-│   ├── footer.tsx          # Page footer
-│   ├── theme-provider.tsx  # Dark/light mode provider
-│   └── ui/                 # shadcn/ui components
-├── hooks/                  # Custom React hooks
-│   └── use-mobile.tsx      # Mobile detection hook
-├── public/                 # Static assets
-│   ├── images/             # Image assets
-│   ├── favicon.ico         # Site favicon
-│   ├── og-image.png        # Open Graph image
-│   └── site.webmanifest    # PWA manifest
-└── tailwind.config.ts      # Tailwind configuration
-\`\`\`
+Adding an entry to `caseStudies` in `lib/case-studies.ts` creates a new `/projects/<slug>` page and sitemap entry at build time.
 
-## Professional Profile
+## Development
 
-### About
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # static export to out/
+```
 
-Semeton Balogun is a backend engineer working across banking, HR tech, and security platforms. Mostly PHP (Laravel) and Node.js, with a focus on multi-tenant systems and production debugging. See [components/hero.tsx](components/hero.tsx) for the current bio and [components/experience.tsx](components/experience.tsx) for the full work history — this section is a summary and can drift out of date.
-
-### Experience
-
-- **Backend Engineer** at SeamlessHR (Nov 2024 – present)
-  - Backend for the AI-integrated recruitment module: CV parsing, candidate ranking, automated screening
-  - Webhooks for the recruitment pipeline
-  - Feature work across exit, onboarding, and employee confirmation modules
-
-- **Technical Lead** at Zercom Systems (Apr 2023 – Nov 2024)
-  - Rewrote a legacy PHP 7.4 LMS into Tangerine365, a multi-tenant platform deployed across three Nigerian banks
-  - Built a custom MSSQL driver to support SQL Server banks alongside the MySQL default
-  - Cut infrastructure costs ~85% through a VPS migration
-
-- **Backend Engineer** at ScholarshipIQ (Jun 2022 – Apr 2023)
-  - Backend and REST APIs for an academic matching and funding platform
-  - Cut API response times ~50% through query optimization and indexing
-  - Introduced staging environments and branching discipline, cutting the error rate reaching production
-
-- **Backend Developer** at Bincom Dev Center (Sep 2020 – Jul 2022)
-  - Backend components in Node.js and PHP across educational platforms (ARM Learn) and internal API systems
-  - OAuth2 integrations with Google and Facebook
-  - Trained interns and helped run technical community events
-
-### Key Projects
-
-- **Tangerine365** — multi-tenant LMS deployed across Wema Bank, First Bank, and FCMB
-- **Terminoxx360** — real-time ATM monitoring for Access Bank Nigeria
-- **TrustCenta** — estate access control (TrustPass) plus a cybersecurity suite wrapping ZAP and Gophish
-- **Agent Contract** — npm CLI enforcing policy guardrails around AI coding agents
-
-## Setup and Development
-
-### Prerequisites
-
-- Node.js 18.x or later
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-   \`\`\`bash
-   git clone https://github.com/semeton/portfolio.git
-   cd portfolio
-   \`\`\`
-
-2. Install dependencies:
-   \`\`\`bash
-   npm install
-   # or
-   yarn install
-   \`\`\`
-
-3. Run the development server:
-   \`\`\`bash
-   npm run dev
-   # or
-   yarn dev
-   \`\`\`
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+Stop `npm run dev` before running `npm run build`: both write to `.next/`, and running them together breaks the dev server until `.next/` is deleted.
 
 ## Deployment
 
-This project is optimized for deployment on Vercel:
+The site is a static export deployed to GitHub Pages.
 
-1. Push your code to a GitHub repository
-2. Import the project in Vercel
-3. Configure the custom domain (semeton.xyz)
-4. Deploy
+- `npm run deploy` builds the site and pushes `out/` to the `gh-pages` branch.
+- A Pages workflow is also defined in [.github/workflows/setup-node/publish.yml](.github/workflows/setup-node/publish.yml). GitHub only runs workflow files placed directly in `.github/workflows/`, so it does not run from its current location.
 
-For other hosting providers, build the project first:
+## Images
 
-\`\`\`bash
-npm run build
-# or
-yarn build
-\`\`\`
-
-## SEO Information
-
-The portfolio is optimized for search engines with:
-
-- Comprehensive metadata
-- Open Graph and Twitter Card tags
-- JSON-LD structured data
-- Dynamic sitemap
-- Robots.txt configuration
-- Semantic HTML structure
-- Optimized image assets
-
-## Contact
-
-- **GitHub**: [github.com/semeton](https://github.com/semeton)
-- **LinkedIn**: [linkedin.com/in/semetonbalogun](https://linkedin.com/in/semetonbalogun)
-- **Resume**: [View Resume](https://docs.google.com/document/d/1NfYdtsJkmpsMdYHhVUiMH6Cd_hIFL0-scYoBItzEmZ4/edit?usp=sharing)
+- `public/og-image.png` is the 1200×630 social sharing image.
+- Photos in `public/images/` are resized and have their EXIF/GPS metadata stripped before publishing.
 
 ## License
 

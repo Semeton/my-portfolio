@@ -78,7 +78,9 @@ const elsewhere = [
 const linkClass =
   "underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground";
 
-export function Writing() {
+const titleClass = "font-medium hover:text-[hsl(var(--brand))]";
+
+export function Writing({ limit }: { limit?: number }) {
   return (
     <Section id="writing" title="Writing">
       <p className="mb-6 text-muted-foreground">
@@ -94,13 +96,13 @@ export function Writing() {
         , practitioner to practitioner.
       </p>
       <ul className="space-y-6">
-        {articles.map((article) => (
+        {articles.slice(0, limit).map((article) => (
           <li key={article.link}>
             <a
               href={article.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`font-medium ${linkClass}`}
+              className={titleClass}
             >
               {article.title}
             </a>
@@ -113,12 +115,12 @@ export function Writing() {
       </ul>
       <p className="mt-6 text-sm">
         <a
-          href="https://semeton.substack.com/subscribe"
+          href={limit ? "https://semeton.substack.com/archive" : "https://semeton.substack.com/subscribe"}
           target="_blank"
           rel="noopener noreferrer"
-          className={linkClass}
+          className="text-[hsl(var(--brand))] hover:underline underline-offset-4"
         >
-          Subscribe on Substack
+          {limit ? "All writing on Substack →" : "Subscribe on Substack"}
         </a>
       </p>
     </Section>
@@ -136,7 +138,7 @@ export function Elsewhere() {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`font-medium ${linkClass}`}
+                className={titleClass}
               >
                 {item.title}
               </a>
