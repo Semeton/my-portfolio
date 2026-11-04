@@ -2,21 +2,6 @@ import Section from "@/components/section";
 
 export const experiences = [
   {
-    company: "Lawyering",
-    url: "https://lawyering.cloud",
-    role: "CTO",
-    period: "May 2026 – present",
-    description:
-      "A workspace for law firms and individual practitioners: cases, engagements, documents, billing and client communication. I'm the only engineer, building agent-first.",
-    details: [
-      "Designed the platform as a modular monolith of 19 Laravel modules with tenant scoping on every tenant-owned record",
-      "Built Drive: server-side encryption at rest, participant permissions, and share links with expiry and access codes for viewers without accounts",
-      "Built PayTrack billing in naira and US dollars, with payment plans and automatic retainer renewals",
-      "In production since June 2026, with over 1,200 automated tests",
-    ],
-    stack: "PHP 8.4 · Laravel · Inertia · React · TypeScript · Tailwind · Pest",
-  },
-  {
     company: "eGov Foundation",
     url: "https://egov.global/",
     role: "Hub Software Engineer, West Africa (Contract)",

@@ -52,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Lawyering",
     summary:
       "A workspace for law firms and individual practitioners: cases, engagements, documents, billing and client communication in one place.",
-    role: "CTO, building solo with AI agents",
+    role: "Solo engineer, building with AI agents",
     period: "2026 – present",
     goal: "Turn the paperwork of legal practice into a digital workspace. The founder, a lawyer, wanted a Slack for law firms, where firms manage their cases, engagements, documents and clients in one secure place.",
     context: [

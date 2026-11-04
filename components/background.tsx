@@ -152,7 +152,7 @@ function Software() {
       </p>
       <p>
         From Bincom I went to ScholarshipIQ, then Zercom Systems, Seamless
-        Technologies, eGov Foundation and Lawyering. The details are in my{" "}
+        Technologies and eGov Foundation. The details are in my{" "}
         <Link href="/work" className={linkClass}>
           work history
         </Link>

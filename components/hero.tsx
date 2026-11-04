@@ -57,17 +57,8 @@ export default function Hero() {
       <p className="mt-6 leading-relaxed text-muted-foreground">
         I turn business goals into systems that hold up in production: tenant
         isolation for banks and enterprise SaaS, deployments inside bank
-        networks, and data that stays correct across offline devices. I'm CTO
+        networks, and data that stays correct across offline devices. I work
         at{" "}
-        <a
-          href="https://lawyering.cloud"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={linkClass}
-        >
-          Lawyering
-        </a>
-        , and work at{" "}
         <a
           href="https://seamlesstech.com/"
           target="_blank"

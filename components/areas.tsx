@@ -16,7 +16,7 @@ const areas: Area[] = [
     kicker: "Banks & enterprise SaaS",
     title: "Multi-tenant platforms",
     goal: "Sell one product to many organisations, each with its own branding, rules and infrastructure, without keeping a codebase per client.",
-    body: "As CTO of Lawyering I'm building a platform where law firms and individual practitioners each get an isolated workspace for their staff and clients. At Zercom I merged per-client copies of an LMS into Tangerine365: one codebase, tenants by subdomain or by ID. At Seamless I work on tenant isolation for a multi-tenant HR suite.",
+    body: "On Lawyering I'm building a platform where law firms and individual practitioners each get an isolated workspace for their staff and clients. At Zercom I merged per-client copies of an LMS into Tangerine365: one codebase, tenants by subdomain or by ID. At Seamless I work on tenant isolation for a multi-tenant HR suite.",
     caseStudies: [
       { label: "Lawyering", href: "/projects/lawyering" },
       { label: "Tangerine365", href: "/projects/tangerine365" },

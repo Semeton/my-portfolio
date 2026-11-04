@@ -102,7 +102,6 @@ export default function RootLayout({
               url: "https://semeton.xyz",
               jobTitle: "Backend & Systems Engineer",
               worksFor: [
-                { "@type": "Organization", name: "Lawyering" },
                 { "@type": "Organization", name: "Seamless Technologies" },
                 { "@type": "Organization", name: "eGov Foundation" },
               ],
