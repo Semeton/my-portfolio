@@ -1,4 +1,5 @@
-import type { CaseStudy as Study } from "@/lib/case-studies";
+import Link from "next/link";
+import { caseStudies, type CaseStudy as Study } from "@/lib/case-studies";
 
 const labelClass =
   "mb-3 text-xs font-medium uppercase tracking-[0.12em] text-[hsl(var(--brand))]";
@@ -21,9 +22,12 @@ function Header({ study }: { study: Study }) {
     <header>
       <h1 className="text-3xl font-semibold tracking-tight">{study.title}</h1>
       <p className="mt-2 text-lg text-muted-foreground">{study.summary}</p>
+      <p className="mt-3 font-medium">{study.highlights.join(" · ")}</p>
       <p className="mt-4 text-sm text-muted-foreground">
         {study.role}
-        {study.period && <span className="tabular-nums"> · {study.period}</span>}
+        {study.period && (
+          <span className="tabular-nums"> · {study.period}</span>
+        )}
         {" · "}
         <a
           href={study.link}
@@ -79,6 +83,22 @@ function Essays({ study }: { study: Study }) {
   );
 }
 
+function NextStudy({ study }: { study: Study }) {
+  const index = caseStudies.findIndex((item) => item.slug === study.slug);
+  const next = caseStudies[(index + 1) % caseStudies.length];
+  return (
+    <nav className="border-t pt-6 text-sm">
+      <Link href={`/projects/${next.slug}`} className="group block">
+        <span className="text-muted-foreground">Next case study</span>
+        <span className="mt-1 block font-medium text-[hsl(var(--brand))] group-hover:underline underline-offset-4">
+          {next.title} →
+        </span>
+        <span className="mt-1 block text-muted-foreground">{next.summary}</span>
+      </Link>
+    </nav>
+  );
+}
+
 export default function CaseStudy({ study }: { study: Study }) {
   return (
     <article className="space-y-12">
@@ -98,6 +118,7 @@ export default function CaseStudy({ study }: { study: Study }) {
       </section>
       <Essays study={study} />
       <p className="text-xs text-muted-foreground">{study.stack.join(" · ")}</p>
+      <NextStudy study={study} />
     </article>
   );
 }
