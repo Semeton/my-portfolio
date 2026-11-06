@@ -44,8 +44,12 @@ const areas: Area[] = [
     kicker: "How I work",
     title: "Guardrails for AI coding agents",
     goal: "Get the speed of AI coding agents on production codebases without losing control of what they change.",
-    body: "I work agent-first. agent-contract, my npm CLI, checks every write an agent attempts against the repository's rules and blocks anything outside the task's scope before it lands. I'm also researching repository memory: how a decision log stays true and reaches the agent at the right moment, behind a write gate that humans control. It's the subject of my talk for PHP Talks Lagos.",
-    caseStudies: [{ label: "Agent Contract", href: "/projects/agent-contract" }],
+    body: "I work agent-first, and I build the guardrails I need as open source npm packages, one for each point where an agent's work can go wrong. agent-contract blocks any write outside the task's scope before it lands. repo-memory keeps the reasons behind the code as decision records that CI checks against the code and only a human can accept. change-evidence reads every pull request as data and tells the reviewer where to look. repo-memory grew out of my PHP Talks Lagos session in October 2026.",
+    caseStudies: [
+      { label: "Agent Contract", href: "/projects/agent-contract" },
+      { label: "repo-memory", href: "/projects/repo-memory" },
+      { label: "change-evidence", href: "/projects/change-evidence" },
+    ],
     essays: [essays.beyondPrompts, essays.understanding],
   },
 ];

@@ -47,6 +47,13 @@ const articles = [
 
 const elsewhere = [
   {
+    title: "PHP Talks Lagos",
+    kind: "Talk, Oct 2026",
+    description:
+      "Engineering Memory for AI Coding Agents in PHP Applications. Storage is the easy part of agent memory; the write path and staleness are the hard parts. Backed by an experiment with headless Claude Code runs across memory conditions, and the origin of repo-memory.",
+    link: "https://github.com/Semeton/repo-memory-demo",
+  },
+  {
     title: "Perspective",
     kind: "Podcast",
     description:
