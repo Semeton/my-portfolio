@@ -4,6 +4,8 @@ export type CaseStudy = {
   slug: string;
   title: string;
   summary: string;
+  /** Two or three short facts shown under the summary, so the result comes first. */
+  highlights: string[];
   role: string;
   period?: string;
   goal: string;
@@ -52,6 +54,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Lawyering",
     summary:
       "A workspace for law firms and individual practitioners: cases, engagements, documents, billing and client communication in one place.",
+    highlights: ["In production since June 2026", "19 modules", "1,200+ automated tests"],
     role: "Solo engineer, building with AI agents",
     period: "2026 – present",
     goal: "Turn the paperwork of legal practice into a digital workspace. The founder, a lawyer, wanted a Slack for law firms, where firms manage their cases, engagements, documents and clients in one secure place.",
@@ -96,6 +99,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Tangerine365",
     summary:
       "One multi-tenant LMS for banks and enterprises, replacing a separate codebase per client.",
+    highlights: ["One codebase for four organisations", "10,000+ production users"],
     role: "Technical lead and solutions architect, Zercom Systems",
     period: "2023 – 2024",
     goal: "Sell one learning platform to banks and enterprises with very different branding, compliance and infrastructure rules, without maintaining a copy of the code for every client.",
@@ -142,6 +146,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Terminoxx360",
     summary:
       "ATM fleet monitoring and incident response, running at Access Bank and rebuilt for multi-country banking groups.",
+    highlights: ["Slow-query backlog cleared at Access Bank", "600+ tests on the rebuild"],
     role: "Maintainer at Access Bank; sole engineer on the new version",
     goal: "Tell a bank which ATMs are down before its customers do, get the right person fixing each one, and report uptime the way the Central Bank of Nigeria requires. The new version serves a banking group's subsidiaries across several countries from one deployment.",
     context: [
@@ -185,6 +190,7 @@ export const caseStudies: CaseStudy[] = [
     title: "TrustCenta",
     summary:
       "A multi-tenant security platform: vulnerability scanning, risk, compliance, staff training and phishing simulation in one product.",
+    highlights: ["Five security disciplines in one product", "Public post-mortem"],
     role: "Sole engineer",
     period: "2024 – present",
     goal: "Give a company one place to find its security weaknesses, track the risk, prove compliance and train its staff, instead of a separate tool for each.",
@@ -227,6 +233,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "agent-contract",
     title: "Agent Contract",
     summary: "Deterministic guardrails for AI coding agents, published on npm.",
+    highlights: ["Published on npm", "In daily use on Lawyering and this site"],
     role: "Creator",
     period: "2026 – present",
     goal: "Get the speed of AI coding agents on production codebases without turning every review into an audit of what else the agent touched.",
@@ -260,6 +267,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "repo-memory",
     title: "repo-memory",
     summary: "Decision records for codebases that coding agents work in, published on npm.",
+    highlights: ["Without memory: 4 of 4 runs hard-deleted orders", "With a record: 3 of 3 kept them"],
     role: "Creator",
     period: "2026 – present",
     goal: "Give coding agents the reasons behind the code, the incident behind a rule or the approach the team already threw away, without letting a stale note or an agent's own guess become a team rule.",
@@ -300,6 +308,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "change-evidence",
     title: "change-evidence",
     summary: "Evidence for pull requests written by agents, published on npm.",
+    highlights: ["Published on npm", "Shadow mode on Lawyering since November 2026"],
     role: "Creator",
     period: "2026 – present",
     goal: "Trust a 3,000-line agent pull request without reading every line, by knowing exactly where a reviewer has to look.",
