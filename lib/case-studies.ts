@@ -287,6 +287,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     result: [
+      "In the talk's experiment, asked to purge old orders, agents without memory hard-deleted them in 4 of 4 runs; agents with the record kept the order numbers in 3 of 3 and cited it every time. Tests were green either way.",
+      "A stale record that only carried a warning was ignored by Opus (0 of 9 runs) but followed by Sonnet in 3 of 7, which is why the check runs in CI rather than in the model.",
       "Published as @semeton/repo-memory, with npm trusted publishing from GitHub Actions.",
       "Running on Lawyering, where agent-contract sends every decision through it for my review.",
     ],

@@ -48,10 +48,24 @@ const articles = [
 const elsewhere = [
   {
     title: "PHP Talks Lagos",
-    kind: "Talk, Oct 2026",
-    description:
-      "Engineering Memory for AI Coding Agents in PHP Applications. Storage is the easy part of agent memory; the write path and staleness are the hard parts. Backed by an experiment with headless Claude Code runs across memory conditions, and the origin of repo-memory.",
-    link: "https://github.com/Semeton/repo-memory-demo",
+    kind: "Talk slides, Oct 2026",
+    description: (
+      <>
+        Engineering Memory for AI Coding Agents in PHP Applications. Your code
+        already remembers what; write down why, and make it prove itself.
+        Backed by an experiment with headless Claude Code runs across memory
+        conditions, and the origin of repo-memory.{" "}
+        <a
+          href="https://github.com/Semeton/repo-memory-demo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
+        >
+          Demo and experiment
+        </a>
+      </>
+    ),
+    link: "https://docs.google.com/presentation/d/1E58OnIoIlSkVlJRUSPuiKE2wjXhqHBivirl7jXOPZN4/edit?usp=sharing",
   },
   {
     title: "Perspective",
