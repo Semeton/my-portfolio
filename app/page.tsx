@@ -1,20 +1,19 @@
-import Header from "@/components/header";
 import Hero from "@/components/hero";
-import Projects from "@/components/projects";
-import Writing from "@/components/writing";
-import Contact from "@/components/contact";
+import Areas from "@/components/areas";
+import Timeline from "@/components/timeline";
+import { Writing, Elsewhere } from "@/components/writing";
+import OpenTo from "@/components/open-to";
 import Footer from "@/components/footer";
-import Experience from "@/components/experience";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
-      <Header />
+    <main className="mx-auto min-h-screen max-w-[650px] px-4 py-16 sm:py-24">
       <Hero />
-      <Experience />
-      <Projects />
-      <Writing />
-      <Contact />
+      <Areas />
+      <Timeline />
+      <Writing limit={3} />
+      <Elsewhere />
+      <OpenTo />
       <Footer />
     </main>
   );
