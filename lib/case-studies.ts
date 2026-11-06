@@ -241,7 +241,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Memory lives in the repo",
-        body: "Decisions, conventions and a codebase map persist between sessions instead of being rediscovered, which also cuts context use.",
+        body: "Conventions, a codebase map and session handoffs persist between sessions instead of being rediscovered, which also cuts context use. Decisions moved to repo-memory in 0.10, so they go through human review instead of a log the agent writes.",
       },
       {
         title: "Provider-independent",
@@ -255,6 +255,83 @@ export const caseStudies: CaseStudy[] = [
     stack: ["Node.js", "CLI", "YAML", "Claude", "OpenAI"],
     link: "https://agent-contract.semeton.xyz",
     essays: [essays.beyondPrompts],
+  },
+  {
+    slug: "repo-memory",
+    title: "repo-memory",
+    summary: "Decision records for codebases that coding agents work in, published on npm.",
+    role: "Creator",
+    period: "2026 – present",
+    goal: "Give coding agents the reasons behind the code, the incident behind a rule or the approach the team already threw away, without letting a stale note or an agent's own guess become a team rule.",
+    context: [
+      "An agent can read what the code does but not why. It rediscovers those reasons the hard way, or quietly breaks them.",
+      "Writing the reasons down isn't enough. A note the code has moved on from is worse than none, because the agent trusts it, and an agent that writes its own memory can turn one bad guess into a rule.",
+      "It started as my PHP Talks Lagos session, Engineering Memory for AI Coding Agents in PHP Applications (October 2026). In the talk's experiment, headless Claude Code runs on a multi-tenant Laravel app: agents with no memory followed every rule visible in the code and broke the one that wasn't. Agents given a record of it did not.",
+    ],
+    decisions: [
+      {
+        title: "Evidence that can fail",
+        body: "Every record points at the code that makes it true, and a CI check with no model involved verifies it. A record whose anchor disappeared is STALE, one the code breaks is VIOLATED, and one the tool can't check is UNKNOWN, which fails too, because 'couldn't check' must never look like 'checked'.",
+      },
+      {
+        title: "Agents propose, humans accept",
+        body: "propose always writes a proposal. accept refuses to run inside an agent session, and lint rejects an agent-written record marked accepted without a recorded reviewer.",
+      },
+      {
+        title: "Retrieval by scope",
+        body: "Each record lists the files it applies to. An agent asks for the records that cover the paths it is about to change, instead of loading one big file into every session.",
+      },
+      {
+        title: "Plain files in git",
+        body: "One Markdown file per record in docs/decisions/, reviewed like code. Zero runtime dependencies, works with any agent and any language, with PHP class resolution built in.",
+      },
+    ],
+    result: [
+      "In the talk's experiment, asked to purge old orders, agents without memory hard-deleted them in 4 of 4 runs; agents with the record kept the order numbers in 3 of 3 and cited it every time. Tests were green either way.",
+      "A stale record that only carried a warning was ignored by Opus (0 of 9 runs) but followed by Sonnet in 3 of 7, which is why the check runs in CI rather than in the model.",
+      "Published as @semeton/repo-memory, with npm trusted publishing from GitHub Actions.",
+      "Running on Lawyering, where agent-contract sends every decision through it for my review.",
+    ],
+    stack: ["Node.js", "CLI", "Markdown", "GitHub Actions"],
+    link: "https://github.com/Semeton/repo-memory",
+    essays: [],
+  },
+  {
+    slug: "change-evidence",
+    title: "change-evidence",
+    summary: "Evidence for pull requests written by agents, published on npm.",
+    role: "Creator",
+    period: "2026 – present",
+    goal: "Trust a 3,000-line agent pull request without reading every line, by knowing exactly where a reviewer has to look.",
+    context: [
+      "Agents write pull requests faster than anyone can review them line by line, so review turns into skimming.",
+      "The changes that matter most are rarely the biggest: a route that became public, a migration that retypes a column, a query that skips tenant scoping.",
+    ],
+    decisions: [
+      {
+        title: "Never run the code it judges",
+        body: "It reads the pull request's commits as git objects and never checks out, installs, builds or executes them. The workflow runs from the base branch, so a pull request can't edit the check that judges it.",
+      },
+      {
+        title: "UNKNOWN is never a pass",
+        body: "Routes, migrations, dependencies and CI changes are extracted statically. Anything it can't establish is reported as UNKNOWN and raises the risk tier.",
+      },
+      {
+        title: "Policy as data, per repository",
+        body: "Default Laravel rules ship as data. A repository adds what only it knows, such as where its tenant boundary is and where money moves, read from the base branch and never from the pull request.",
+      },
+      {
+        title: "Measure before blocking",
+        body: "A study mode replays a repository's merged pull requests and measures whether the tiers would have routed the right changes to a human. On koel and monica, the low tier held about three quarters of pull requests at a fraction of the bad-outcome rate.",
+      },
+    ],
+    result: [
+      "Published as @semeton/change-evidence and running in shadow mode on Lawyering since November 2026: one report per pull request, never blocking a merge.",
+      "First lesson from Lawyering: committed build output and a codebase-wide scope-bypass pattern drive most flags, so the policy is being calibrated before anything sits in the merge path.",
+    ],
+    stack: ["Node.js", "Git", "GitHub Actions", "Laravel"],
+    link: "https://github.com/Semeton/change-evidence",
+    essays: [],
   },
 ];
 
