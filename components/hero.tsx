@@ -41,7 +41,8 @@ export default function Hero() {
             Semeton Balogun
           </h1>
           <p className="mt-2 text-lg">
-            Backend and systems engineer, moving into solutions architecture.
+            Backend and systems engineer. I design multi-tenant platforms and
+            the infrastructure they run on.
           </p>
         </div>
         <Image
@@ -57,8 +58,8 @@ export default function Hero() {
       <p className="mt-6 leading-relaxed text-muted-foreground">
         I turn business goals into systems that hold up in production: tenant
         isolation for banks and enterprise SaaS, deployments inside bank
-        networks, and data that stays correct across offline devices. I work
-        at{" "}
+        networks, and data that stays correct across offline devices. I also
+        build open source guardrails for AI coding agents. I work at{" "}
         <a
           href="https://seamlesstech.com/"
           target="_blank"
