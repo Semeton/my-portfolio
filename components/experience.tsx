@@ -55,7 +55,10 @@ export const experiences = [
     ],
     stack:
       "PHP 8 (vanilla, no framework) · SQL Server · MySQL · Node.js · Memcached · Docker · IIS · Apache",
-    caseStudies: [{ label: "Tangerine365", href: "/projects/tangerine365" }],
+    caseStudies: [
+      { label: "Tangerine365", href: "/projects/tangerine365" },
+      { label: "Terminoxx360", href: "/projects/terminoxx360" },
+    ],
   },
   {
     company: "ScholarshipIQ",

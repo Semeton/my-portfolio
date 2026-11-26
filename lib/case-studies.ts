@@ -153,7 +153,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "ATM fleet monitoring and incident response, running at Access Bank and rebuilt for multi-country banking groups.",
     highlights: ["Slow-query backlog cleared at Access Bank", "600+ tests on the rebuild"],
-    role: "Maintainer at Access Bank; sole engineer on the new version",
+    role: "Zercom Systems product: maintainer at Access Bank, sole engineer on the new version",
     goal: "Tell a bank which ATMs are down before its customers do, get the right person fixing each one, and report uptime the way the Central Bank of Nigeria requires. The new version serves a banking group's subsidiaries across several countries from one deployment.",
     context: [
       "At Access Bank, transaction-heavy jobs stalled under database locks, and a backlog of slow queries kept growing.",
@@ -197,7 +197,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       "A multi-tenant security platform: vulnerability scanning, risk, compliance, staff training and phishing simulation in one product.",
     highlights: ["Five security disciplines in one product", "Public post-mortem"],
-    role: "Sole engineer",
+    role: "Freelance project, sole engineer",
     period: "2024 – present",
     goal: "Give a company one place to find its security weaknesses, track the risk, prove compliance and train its staff, instead of a separate tool for each.",
     context: [
@@ -239,7 +239,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "fleet-gate",
     title: "Fleet review gate",
     summary: "An automated review loop between engineers and an AI agent fleet that opens pull requests, at SeamlessHR.",
-    highlights: ["No public endpoint", "Read-only reviews", "Nothing merges without a human tap"],
+    highlights: ["Running for two engineers", "Read-only reviews", "Nothing merges without a human tap"],
     role: "Designer and builder, end to end",
     period: "2026 – present",
     goal: "Let the company's AI dev agents keep shipping pull requests on production HR repositories without an engineer re-reading every PR or relaying every fix by hand.",
@@ -277,7 +277,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     result: [
       "Gates the fleet's pull requests every weekday, with the agent loop running unattended between human decisions.",
-      "Packaged with a setup guide so teammates can run their own instance in about two hours, with no admin rights.",
+      "Running for two engineers, each with their own instance. A setup guide gets a teammate running in about two hours, with no admin rights.",
     ],
     stack: ["Node.js 22", "Slack Socket Mode", "Claude Code (headless)", "GitHub CLI", "launchd", "GitHub Actions", "Jira REST"],
     essays: [],
