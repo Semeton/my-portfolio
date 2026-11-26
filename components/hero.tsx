@@ -31,8 +31,9 @@ export default function Hero() {
 
       <p className="mt-6 leading-relaxed text-muted-foreground">
         Six years building backend systems in production. At Zercom I led the
-        move from a codebase per client to one multi-tenant LMS for Wema Bank,
-        First Bank and PremiumTrust Bank, with over 10,000 users, and designed
+        move from a codebase per client to one multi-tenant LMS used by over
+        35,000 people at First Bank, Wema Bank, FCMB, PremiumTrust Bank and
+        Seven-Up Bottling Company, and designed
         First Bank&apos;s on-premise deployment. Now I work on HR software at{" "}
         <a
           href="https://seamlesstech.com/"

@@ -104,7 +104,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Tangerine365",
     summary:
       "One multi-tenant LMS for banks and enterprises, replacing a separate codebase per client.",
-    highlights: ["One codebase for four organisations", "10,000+ production users"],
+    highlights: ["One codebase for five organisations", "35,000+ production users"],
     role: "Technical lead and solutions architect, Zercom Systems",
     period: "2023 – 2024",
     goal: "Sell one learning platform to banks and enterprises with very different branding, compliance and infrastructure rules, without maintaining a copy of the code for every client.",
@@ -138,8 +138,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     result: [
-      "By the time I left in November 2024, one codebase was deployed at Wema Bank, First Bank, PremiumTrust Bank and Seven-Up Bottling Company, plus a self-serve cloud product.",
-      "Over 10,000 production users, most migrated from the legacy LMS.",
+      "By the time I left in November 2024, one codebase was deployed at First Bank, Wema Bank, FCMB, PremiumTrust Bank and Seven-Up Bottling Company, plus a self-serve cloud product.",
+      "Over 35,000 production users: more than 20,000 at First Bank, more than 12,000 at Wema Bank, and about 2,000 or more each at PremiumTrust Bank, FCMB and Seven-Up. Most migrated from the legacy LMS.",
       "Production then taught the rest: queue-backed reports, an in-app scheduler, chunked proctoring recordings and mandatory authenticator-app 2FA for admins.",
       "Before I left, we had planned the migration to Laravel, the framework investment the deadline had ruled out at the start.",
     ],

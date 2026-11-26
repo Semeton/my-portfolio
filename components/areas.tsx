@@ -21,7 +21,7 @@ const areas: Area[] = [
     kicker: "Banks & enterprise SaaS",
     title: "Multi-tenant platforms",
     outcome:
-      "By the time I left Zercom in 2024, one codebase served Wema Bank, First Bank, PremiumTrust Bank and Seven-Up Bottling Company, with over 10,000 production users, where each client used to run its own copy. Lawyering, built solo with agents, has been in production since June 2026: 22 modules, over 2,000 tests.",
+      "By the time I left Zercom in 2024, one codebase served First Bank, Wema Bank, FCMB, PremiumTrust Bank and Seven-Up Bottling Company, with over 35,000 production users, where each client used to run its own copy. Lawyering, built solo with agents, has been in production since June 2026: 22 modules, over 2,000 tests.",
     goal: "Sell one product to many organisations, each with its own branding, rules and infrastructure, without keeping a codebase per client.",
     body: "Lawyering gives law firms and individual practitioners each an isolated workspace for their staff and clients. Tangerine365 separates tenants by subdomain or by ID. At Seamless Technologies I work on tenant isolation for a multi-tenant HR suite.",
     caseStudies: [
