@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { diagrams } from "@/components/diagrams";
 import { caseStudies, type CaseStudy as Study } from "@/lib/case-studies";
 
 const labelClass =
@@ -28,17 +29,37 @@ function Header({ study }: { study: Study }) {
         {study.period && (
           <span className="tabular-nums"> · {study.period}</span>
         )}
-        {" · "}
-        <a
-          href={study.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[hsl(var(--brand))] hover:underline underline-offset-4"
-        >
-          {study.link.replace("https://", "")} ↗
-        </a>
+        {study.link && (
+          <>
+            {" · "}
+            <a
+              href={study.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[hsl(var(--brand))] hover:underline underline-offset-4"
+            >
+              {study.link.replace("https://", "")} ↗
+            </a>
+          </>
+        )}
       </p>
     </header>
+  );
+}
+
+function Architecture({ study }: { study: Study }) {
+  if (!study.diagram) return null;
+  const { label, caption, Diagram } = diagrams[study.diagram];
+  return (
+    <section>
+      <h2 className={labelClass}>{label}</h2>
+      <figure className="rounded-md border px-2 py-5 sm:px-4">
+        <Diagram />
+        <figcaption className="mt-4 text-sm text-muted-foreground">
+          {caption}
+        </figcaption>
+      </figure>
+    </section>
   );
 }
 
@@ -111,6 +132,7 @@ export default function CaseStudy({ study }: { study: Study }) {
         <h2 className={labelClass}>Context</h2>
         <Bullets items={study.context} />
       </section>
+      <Architecture study={study} />
       <Decisions study={study} />
       <section>
         <h2 className={labelClass}>Result</h2>
