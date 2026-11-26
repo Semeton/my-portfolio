@@ -47,6 +47,10 @@ export const essays = {
     label: "Beyond Prompts",
     link: "https://semeton.substack.com/p/beyond-prompts-repository-governance",
   },
+  repositoryMemory: {
+    label: "Your AI Coding Agent Forgets. Your Repository Shouldn't.",
+    link: "https://semeton.substack.com/p/your-ai-coding-agent-forgets-your",
+  },
   understanding: {
     label: "Understanding Is the Feature",
     link: "https://semeton.substack.com/p/understanding-is-the-feature-what",
@@ -355,7 +359,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     stack: ["Node.js", "CLI", "Markdown", "GitHub Actions"],
     link: "https://github.com/Semeton/repo-memory",
-    essays: [],
+    essays: [essays.repositoryMemory],
   },
   {
     slug: "change-evidence",

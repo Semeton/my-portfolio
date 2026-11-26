@@ -2,6 +2,12 @@ import Section from "@/components/section";
 
 const articles = [
   {
+    title: "Your AI Coding Agent Forgets. Your Repository Shouldn't.",
+    date: "Nov 2026",
+    dek: "Repository memory, institutional engineering knowledge, and why persistent context needs to be verifiable.",
+    link: "https://semeton.substack.com/p/your-ai-coding-agent-forgets-your",
+  },
+  {
     title: "Beyond Prompts: Repository Governance for AI Coding Agents",
     date: "Jul 2026",
     dek: "Deterministic guardrails for non-deterministic agents.",

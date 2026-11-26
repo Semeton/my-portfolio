@@ -70,6 +70,7 @@ const areas: Area[] = [
         label: "Engineering Memory for AI Coding Agents (PHP Talks Lagos)",
         link: "https://docs.google.com/presentation/d/1E58OnIoIlSkVlJRUSPuiKE2wjXhqHBivirl7jXOPZN4/edit?usp=sharing",
       },
+      essay(essays.repositoryMemory),
       essay(essays.beyondPrompts),
       essay(essays.understanding),
     ],
