@@ -1,3 +1,5 @@
+import type { DiagramKey } from "@/components/diagrams";
+
 export type Essay = { label: string; link: string };
 
 export type CaseStudy = {
@@ -10,6 +12,8 @@ export type CaseStudy = {
   period?: string;
   goal: string;
   context: string[];
+  /** Architecture diagram shown after the context, when the structure matters. */
+  diagram?: DiagramKey;
   decisions: { title: string; body: string }[];
   result: string[];
   stack: string[];
@@ -110,6 +114,7 @@ export const caseStudies: CaseStudy[] = [
       "Days before one bank's go-live, its infrastructure team required SQL Server. The previous vendor had abandoned a separate SQL Server fork because it couldn't keep two repositories in sync.",
       "The codebase was vanilla PHP with no framework, and the deadline ruled out adopting one. Every piece of infrastructure a framework would provide, from queues and scheduling to the database dispatcher and theming, we had to build ourselves. That is what made it hard to architect at scale.",
     ],
+    diagram: "tangerine365",
     decisions: [
       {
         title: "Shrink to a core, then rebuild upward",
@@ -243,6 +248,7 @@ export const caseStudies: CaseStudy[] = [
       "The dev agent ignores Jira and PR comments. It acts only on commands in Slack, and drops plain chat sent through an app. The automation had to speak that protocol exactly.",
       "No admin rights and no public URL: it had to run from an engineer's own machine.",
     ],
+    diagram: "fleet-gate",
     decisions: [
       {
         title: "Nothing exposed to the internet",
@@ -363,6 +369,7 @@ export const caseStudies: CaseStudy[] = [
       "Agents write pull requests faster than anyone can review them line by line, so review turns into skimming.",
       "The changes that matter most are rarely the biggest: a route that became public, a migration that retypes a column, a query that skips tenant scoping.",
     ],
+    diagram: "change-evidence",
     decisions: [
       {
         title: "Never run the code it judges",
