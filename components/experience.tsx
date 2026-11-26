@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Section from "@/components/section";
 
 export const experiences = [
@@ -14,7 +15,7 @@ export const experiences = [
       "Contributed to the stock-reconciliation design for an ITN distribution pilot: partial receipts, auto-returned shortfalls, and in-transit vs lost states in an offline-first ledger",
       "Sizing infrastructure and support staffing for a 2027–29 multi-state campaign programme (11 states, ~27M target population)",
       "Responsible for the technical go-live gate on campaigns: requirements, dashboards and reports, infrastructure, audit trails and error logging checked before training and go-live",
-      "Shadowed Namibia's national measles-rubella and polio vaccination campaign (November 2026) with WHO AFRO and the WHO country office in Oshana and Omusati, including a border transit post: mapped the national reporting chain from paper tally to national dashboard, demonstrated digital capture to campaign staff, and sent blocking gaps, such as age-band eligibility, back to the platform team",
+      "Shadowed Namibia's national measles-rubella and polio vaccination campaign (November 2026) with WHO AFRO and the WHO country office in Oshana and Omusati, including a border transit post: mapped the national reporting chain from paper tally to national dashboard, demonstrated digital capture to campaign staff, and sent blocking gaps back to the platform team",
     ],
     stack:
       "DIGIT HCM · PostgreSQL · Elasticsearch · Kibana · Offline-first sync",
@@ -35,6 +36,7 @@ export const experiences = [
     ],
     stack:
       "PHP 8 · Laravel · MySQL · Kafka · Redis/Horizon · Algolia · S3 · Pest · Node.js · Claude Code",
+    caseStudies: [{ label: "Fleet review gate", href: "/projects/fleet-gate" }],
   },
   {
     company: "Zercom Systems",
@@ -53,6 +55,7 @@ export const experiences = [
     ],
     stack:
       "PHP 8 (vanilla, no framework) · SQL Server · MySQL · Node.js · Memcached · Docker · IIS · Apache",
+    caseStudies: [{ label: "Tangerine365", href: "/projects/tangerine365" }],
   },
   {
     company: "ScholarshipIQ",
@@ -62,7 +65,7 @@ export const experiences = [
       "Built the backend for an academic matching and funding platform.",
     details: [
       "Backend services and REST APIs in Laravel, integrated with a React frontend",
-      "Cut API response times ~50% through query optimization and indexing",
+      "Cut API response times ~50% through query optimisation and indexing",
       "Introduced staging environments and branching discipline; cut production errors by over 90%",
       "Added email verification to eliminate ghost sign-ups",
       "Integrated Flutterwave for payments, HubSpot for user management, and cron-driven email automation",
@@ -119,6 +122,19 @@ export default function Experience({ title = "Work" }: { title?: string }) {
             </ul>
             {exp.stack && (
               <p className="mt-3 text-xs text-muted-foreground">{exp.stack}</p>
+            )}
+            {exp.caseStudies && (
+              <p className="mt-2 flex flex-wrap gap-x-4 text-sm">
+                {exp.caseStudies.map((study) => (
+                  <Link
+                    key={study.href}
+                    href={study.href}
+                    className="py-1 text-[hsl(var(--brand))] underline-offset-4 hover:underline"
+                  >
+                    Case study: {study.label} →
+                  </Link>
+                ))}
+              </p>
             )}
           </div>
         ))}

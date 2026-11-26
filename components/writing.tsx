@@ -45,40 +45,12 @@ const articles = [
   },
 ];
 
-const elsewhere = [
-  {
-    title: "Perspective",
-    kind: "Podcast",
-    description:
-      "Co-hosted with a close friend. Conversational, not specialist — ambition, attention, adult friendships, discipline, identity.",
-    link: "https://open.spotify.com/show/6IIbErw26bSWgRs5NWz8vw",
-  },
-  {
-    title: "Medium",
-    kind: "Essays",
-    description: (
-      <>
-        Essays and journaling. Includes{" "}
-        <a
-          href="https://semeton.medium.com/on-the-god-question-10262250a36d"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground"
-        >
-          On the God Question
-        </a>{" "}
-        — a long-form piece on naturalistic agnosticism and why no existing
-        religion produces a portrait of God that isn't too small and too human.
-      </>
-    ),
-    link: "https://medium.com/@semeton",
-  },
-];
 
 const linkClass =
   "underline decoration-muted-foreground/40 underline-offset-4 hover:decoration-foreground";
 
-const titleClass = "font-medium hover:text-[hsl(var(--brand))]";
+const titleClass =
+  "font-medium underline decoration-muted-foreground/60 underline-offset-4 hover:decoration-foreground";
 
 export function Writing({ limit }: { limit?: number }) {
   return (
@@ -93,7 +65,7 @@ export function Writing({ limit }: { limit?: number }) {
         >
           Codeplified
         </a>
-        , practitioner to practitioner.
+        .
       </p>
       <ul className="space-y-6">
         {articles.slice(0, limit).map((article) => (
@@ -123,33 +95,6 @@ export function Writing({ limit }: { limit?: number }) {
           {limit ? "All writing on Substack →" : "Subscribe on Substack"}
         </a>
       </p>
-    </Section>
-  );
-}
-
-export function Elsewhere() {
-  return (
-    <Section id="elsewhere" title="Elsewhere">
-      <ul className="space-y-6">
-        {elsewhere.map((item) => (
-          <li key={item.link}>
-            <p>
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={titleClass}
-              >
-                {item.title}
-              </a>
-              <span className="text-muted-foreground"> — {item.kind}</span>
-            </p>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              {item.description}
-            </p>
-          </li>
-        ))}
-      </ul>
     </Section>
   );
 }

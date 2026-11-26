@@ -10,7 +10,7 @@ import type { ReactNode } from "react";
 const ink = "currentColor";
 const muted = "hsl(var(--muted-foreground))";
 const brand = "hsl(var(--brand))";
-const line = "hsl(var(--muted-foreground) / 0.55)";
+const line = "hsl(var(--muted-foreground) / 0.85)";
 
 type BoxProps = {
   x: number;
@@ -54,7 +54,7 @@ function Box({ x, y, width, height, title, note, accent, dashed }: BoxProps) {
           x={center}
           y={titleY + 16}
           textAnchor="middle"
-          fontSize={11.5}
+          fontSize={12}
           fill={muted}
         >
           {note}
@@ -95,7 +95,7 @@ function Zone({
       <text
         x={x + 12}
         y={y + 18}
-        fontSize={11}
+        fontSize={12}
         letterSpacing={0.4}
         fill={accent ? brand : muted}
       >
@@ -138,7 +138,7 @@ function Label({
   anchor?: "start" | "middle" | "end";
 }) {
   return (
-    <text x={x} y={y} fontSize={11} textAnchor={anchor} fill={muted}>
+    <text x={x} y={y} fontSize={12} textAnchor={anchor} fill={muted}>
       {children}
     </text>
   );
@@ -307,7 +307,7 @@ function FleetGateDiagram() {
         width={164}
         height={58}
         title="Dev agent"
-        note="acts only on ! commands"
+        note="takes fixes in Slack"
       />
       <Box
         x={212}

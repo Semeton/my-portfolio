@@ -3,7 +3,7 @@ import { diagrams } from "@/components/diagrams";
 import { caseStudies, type CaseStudy as Study } from "@/lib/case-studies";
 
 const labelClass =
-  "mb-3 text-xs font-medium uppercase tracking-[0.12em] text-[hsl(var(--brand))]";
+  "mb-3 text-sm font-medium uppercase tracking-[0.1em] text-[hsl(var(--brand))]";
 
 function Bullets({ items }: { items: string[] }) {
   return (
@@ -21,7 +21,7 @@ function Bullets({ items }: { items: string[] }) {
 function Header({ study }: { study: Study }) {
   return (
     <header>
-      <h1 className="text-3xl font-semibold tracking-tight">{study.title}</h1>
+      <h1 className="text-4xl font-semibold tracking-tight">{study.title}</h1>
       <p className="mt-2 text-lg text-muted-foreground">{study.summary}</p>
       <p className="mt-3 font-medium">{study.highlights.join(" · ")}</p>
       <p className="mt-4 text-sm text-muted-foreground">
@@ -53,9 +53,9 @@ function Architecture({ study }: { study: Study }) {
   return (
     <section>
       <h2 className={labelClass}>{label}</h2>
-      <figure className="rounded-md border px-2 py-5 sm:px-4">
+      <figure className="rounded-md border px-0 py-5 sm:px-4">
         <Diagram />
-        <figcaption className="mt-4 text-sm text-muted-foreground">
+        <figcaption className="mt-4 px-3 text-sm text-muted-foreground sm:px-0">
           {caption}
         </figcaption>
       </figure>
@@ -71,7 +71,7 @@ function Decisions({ study }: { study: Study }) {
         {study.decisions.map((decision) => (
           <div key={decision.title}>
             <h3 className="font-semibold">{decision.title}</h3>
-            <p className="mt-1 leading-relaxed text-muted-foreground">
+            <p className="mt-1 leading-relaxed">
               {decision.body}
             </p>
           </div>
@@ -140,6 +140,25 @@ export default function CaseStudy({ study }: { study: Study }) {
       </section>
       <Essays study={study} />
       <p className="text-xs text-muted-foreground">{study.stack.join(" · ")}</p>
+      <p className="text-sm text-muted-foreground">
+        Questions about this work?{" "}
+        <a
+          href="mailto:balogunsemeton@gmail.com"
+          className="text-[hsl(var(--brand))] underline-offset-4 hover:underline"
+        >
+          Email me
+        </a>{" "}
+        or read the{" "}
+        <a
+          href="/semeton-balogun-resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[hsl(var(--brand))] underline-offset-4 hover:underline"
+        >
+          résumé
+        </a>
+        .
+      </p>
       <NextStudy study={study} />
     </article>
   );

@@ -6,10 +6,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-const title =
-  "Semeton Balogun | Backend & Systems Engineer, Solutions Architecture";
+const title = "Semeton Balogun | Backend and systems engineer";
 const description =
-  "Backend and systems engineer moving into solutions architecture. Multi-tenant platforms for banks and enterprise SaaS; offline-first data systems for national health campaigns. At Seamless Technologies and eGov Foundation (DIGIT).";
+  "Backend and systems engineer. Multi-tenant platforms for banks and enterprise SaaS, data systems for national health campaigns, and open source guardrails for AI coding agents.";
 
 export const metadata: Metadata = {
   title,
@@ -56,17 +55,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_GB",
     url: "https://semeton.xyz",
     title,
     description,
-    siteName: "Semeton Balogun Portfolio",
+    siteName: "Semeton Balogun",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Semeton Balogun - Backend & Systems Engineer",
+        alt: "Semeton Balogun, backend and systems engineer",
       },
     ],
   },
@@ -134,6 +133,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans bg-background text-foreground`}
       >
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-foreground focus:px-3 focus:py-2 focus:text-sm focus:text-background"
+        >
+          Skip to content
+        </a>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
