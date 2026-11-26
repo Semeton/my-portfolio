@@ -11,7 +11,7 @@ export const experiences = [
       "Bridge between country programme teams and the platform engineering team on DIGIT HCM, the open-source platform running national health campaigns: malaria (SMC and ITN) in Nigeria, and immunisation in Namibia.",
     details: [
       "Supported SMC and ITN campaigns across Abuja, Bauchi, Taraba and Borno, including on-site field support",
-      "Diagnosed activity dates being stamped at server sync time instead of on-device creation time: late-synced work counted against the next day's quota, locking field workers out of working days and skewing attendance-based payment. Documented the root cause and the fix requirement",
+      "Diagnosed why field workers were locked out of working days: activity records were judged by server sync time instead of on-device creation time, so late-synced work counted against the next day's quota and skewed attendance-based payment. Documented the root cause and the fix requirement, and the state-wide stopgap that kept workers recording",
       "Contributed to the stock-reconciliation design for an ITN distribution pilot: partial receipts, auto-returned shortfalls, and in-transit vs lost states in an offline-first ledger",
       "Sizing infrastructure and support staffing for a 2027–29 multi-state campaign programme (11 states, ~27M target population)",
       "Responsible for the technical go-live gate on campaigns: requirements, dashboards and reports, infrastructure, audit trails and error logging checked before training and go-live",
@@ -19,6 +19,7 @@ export const experiences = [
     ],
     stack:
       "DIGIT HCM · PostgreSQL · Elasticsearch · Kibana · Offline-first sync",
+    caseStudies: [{ label: "DIGIT HCM campaign support", href: "/projects/digit-hcm" }],
   },
   {
     company: "Seamless Technologies",
@@ -26,7 +27,7 @@ export const experiences = [
     role: "Backend Engineer",
     period: "Nov 2024 – present",
     description:
-      "Recruitment platform and HRMS modules (internal recruitment, exit, onboarding) for a multi-tenant HR suite serving enterprise clients.",
+      "Formerly SeamlessHR. Recruitment platform and HRMS modules (internal recruitment, exit, onboarding) for a multi-tenant HR suite serving enterprise clients.",
     details: [
       "Built the Kafka pipeline publishing recruitment, exit and onboarding data to the company data lake, as a non-blocking side effect so a mapping failure can't fail the primary write",
       "Implemented the two-way integration between the recruitment platform and the core HRMS: requisition-to-job creation, status sync back, internal-applicant pre-fill, SSO with company-access checks, service-to-service auth",

@@ -240,9 +240,54 @@ export const caseStudies: CaseStudy[] = [
     essays: [essays.postMortem1, essays.postMortem2],
   },
   {
+    slug: "digit-hcm",
+    title: "DIGIT HCM campaign support",
+    summary:
+      "Keeping malaria campaign data correct when field phones sync late, for eGov Foundation in Nigeria.",
+    highlights: ["Root cause found during a live campaign cycle", "On site in Taraba for SMC Cycle 3", "Owner of the technical go-live gate"],
+    role: "Hub Software Engineer, West Africa (contract), eGov Foundation",
+    period: "2026 – present",
+    goal: "Field workers in malaria campaigns get credited and paid for the days they actually worked, even when their phones sync late.",
+    context: [
+      "DIGIT HCM is the open-source platform eGov runs national health campaigns on. In Nigeria that means seasonal malaria chemoprevention (SMC) and bed-net (ITN) distribution, with field workers recording every household visit on Android phones that are offline for much of the day.",
+      "A daily target caps how much each worker can record in a day, and the days a worker is recorded as working feed attendance and payment.",
+      "During SMC Cycle 3 in Taraba (September 2026), supervisors reported workers locked out of working days after partial syncs.",
+      "My role sits between state programme teams and the platform engineers in Bangalore: resolve what can be resolved in the field, and turn the rest into escalations the platform team can act on.",
+    ],
+    decisions: [
+      {
+        title: "Judge a record by when it happened, not when it arrived",
+        body: "The server dated each activity by when it synced, not when the phone created it. A worker who synced a day late had yesterday's visits counted against today's cap, hit the limit and was locked out, and because days worked are inferred from those dates, payment was skewed too. The fix requirement: take the activity date from the device's creation time and keep sync time for audit.",
+      },
+      {
+        title: "Unblock the field first, change the model second",
+        body: "A code change wasn't possible in the middle of a cycle. The stopgap was raising the daily target state-wide so no worker lost a day, and the timestamp fix went to the platform team for a later release, rather than an emergency patch to a build already in field workers' hands.",
+      },
+      {
+        title: "Ownership follows who created the record",
+        body: "For the next cycle the programme asked that each worker see only the beneficiaries they registered. Ownership is keyed to the record's immutable creator, not the team code, which isn't stored on records and changes when teams are reshuffled. Likely duplicates found by fuzzy search warn rather than block: an accepted trade-off that catches a worker re-registering their own beneficiary, but not one registered by another team.",
+      },
+      {
+        title: "Test each build before partners do",
+        body: "Partners kept finding issues that internal QA had passed, so each campaign build now goes through a Nigeria release test script after eGov QA and before it reaches a partner.",
+      },
+      {
+        title: "A gate before every go-live",
+        body: "Requirements, dashboards and reports, infrastructure, audit trails and error logging are checked before training starts, because problems found on training day cost a cohort of trained workers, not just a fix.",
+      },
+    ],
+    result: [
+      "Root cause and fix requirement documented during the cycle; the state-wide stopgap went out the same week.",
+      "A field support pack for state and LGA focal persons: a pre-campaign readiness checklist, a triage guide and escalation templates, reused from cycle to cycle.",
+      "Shadowed Namibia's national measles-rubella and polio campaign with WHO teams in November 2026, mapping how paper tallies become national figures.",
+    ],
+    stack: ["DIGIT HCM", "PostgreSQL", "Elasticsearch", "Kibana", "Android offline sync"],
+    essays: [],
+  },
+  {
     slug: "fleet-gate",
     title: "Fleet review gate",
-    summary: "An automated review loop between engineers and an AI agent fleet that opens pull requests, at SeamlessHR.",
+    summary: "An automated review loop between engineers and an AI agent fleet that opens pull requests, at Seamless Technologies.",
     highlights: ["Running for two engineers", "Read-only reviews", "Nothing merges without a human tap"],
     role: "Designer and builder, end to end",
     period: "2026 – present",

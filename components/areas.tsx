@@ -45,10 +45,10 @@ const areas: Area[] = [
     kicker: "National health campaigns",
     title: "Offline-first data systems",
     outcome:
-      "Traced field-worker lockouts to activities being dated at sync time instead of creation time. Now sizing infrastructure and support staffing for a 2027–29 programme across 11 states (~27M people).",
+      "Found why field workers were locked out of days they had worked: activity records were judged by when they synced, not when they were created, so late syncs counted against the next day's cap. Now sizing infrastructure and support staffing for a 2027–29 programme across 11 states (~27M people).",
     goal: "Field workers in malaria campaigns get credited and paid for the days they actually worked, even when their phones sync late.",
     body: "On contract with eGov Foundation I support DIGIT HCM, the platform behind Nigeria's health campaigns, across Abuja, Bauchi, Taraba and Borno. In November 2026 I joined WHO teams in northern Namibia, as eGov's observer, to shadow the national measles-rubella and polio vaccination campaign.",
-    caseStudies: [{ label: "Role details", href: "/work" }],
+    caseStudies: [{ label: "DIGIT HCM campaign support", href: "/projects/digit-hcm" }],
     reading: [],
   },
   {
@@ -57,7 +57,7 @@ const areas: Area[] = [
     outcome:
       "Three open source npm packages, and a review gate for an AI agent fleet at work. In my experiment, where a rule lived only in a decision record, agents asked to purge old orders hard-deleted them in 4 of 4 runs without it and kept the order numbers in 3 of 3 with it.",
     goal: "Get the speed of AI coding agents on production codebases without losing control of what they change.",
-    body: "One package for each point where an agent's work can go wrong. agent-contract blocks any write outside the task's scope before it lands. repo-memory keeps the reasons behind the code as records that CI checks and only a human can accept. change-evidence reads every pull request as data and tells the reviewer where to look. I build Lawyering under all three. At SeamlessHR I built the review gate between our engineers and the company's AI agent fleet.",
+    body: "One package for each point where an agent's work can go wrong. agent-contract blocks any write outside the task's scope before it lands. repo-memory keeps the reasons behind the code as records that CI checks and only a human can accept. change-evidence reads every pull request as data and tells the reviewer where to look. I build Lawyering under all three. At Seamless Technologies I built the review gate between our engineers and the company's AI agent fleet.",
     caseStudies: [
       { label: "Fleet review gate", href: "/projects/fleet-gate" },
       { label: "agent-contract", href: "/projects/agent-contract" },
@@ -115,6 +115,13 @@ function AreaLinks({ area }: { area: Area }) {
 export default function Areas() {
   return (
     <Section id="areas" title="What I work on">
+      <p className="mb-10 leading-relaxed text-muted-foreground">
+        Four areas, one concern: systems that stay correct under real
+        constraints. Tenant isolation keeps one client&apos;s data from another.
+        Deployment design works within a budget and a bank&apos;s rules. Offline
+        sync keeps records right on unreliable networks. Agent guardrails keep
+        non-deterministic tools predictable.
+      </p>
       <div className="space-y-10">
         {areas.map((area) => (
           <article
