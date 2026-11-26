@@ -7,12 +7,14 @@ export const metadata: Metadata = {
   description:
     "Full work history: eGov Foundation, Seamless Technologies, Zercom Systems, ScholarshipIQ and Bincom Dev Center.",
   alternates: { canonical: "/work" },
+  openGraph: { url: "/work", title: "Work history | Semeton Balogun", description: "Full work history: eGov Foundation, Seamless Technologies, Zercom Systems, ScholarshipIQ and Bincom Dev Center." },
+  twitter: { title: "Work history | Semeton Balogun", description: "Full work history: eGov Foundation, Seamless Technologies, Zercom Systems, ScholarshipIQ and Bincom Dev Center." },
 };
 
 export default function WorkPage() {
   return (
     <Subpage>
-      <h1 className="text-3xl font-semibold tracking-tight">Work history</h1>
+      <h1 className="text-4xl font-semibold tracking-tight">Work history</h1>
       <p className="mt-2 text-muted-foreground">
         Roles, what I was responsible for, and the stack.
       </p>

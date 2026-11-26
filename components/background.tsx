@@ -83,7 +83,7 @@ function Design() {
     <Part title="Design">
       <p>
         Alongside my degree I worked as a brand and graphic designer. In 2019 I
-        became national graphics designer for NUNSA, the Nigerian University
+        became national graphic designer for NUNSA, the Nigerian University
         Nursing Students Association, under the Hon. Fawole Israel
         administration, and a member of its editorial unit. In my own chapter
         at the College of Medicine I was academic secretary and chapter

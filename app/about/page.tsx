@@ -7,12 +7,14 @@ export const metadata: Metadata = {
   description:
     "From registered nurse and brand designer to backend and systems engineer.",
   alternates: { canonical: "/about" },
+  openGraph: { url: "/about", title: "Background | Semeton Balogun", description: "From registered nurse and brand designer to backend and systems engineer." },
+  twitter: { title: "Background | Semeton Balogun", description: "From registered nurse and brand designer to backend and systems engineer." },
 };
 
 export default function AboutPage() {
   return (
     <Subpage>
-      <h1 className="mb-8 text-3xl font-semibold tracking-tight">Background</h1>
+      <h1 className="mb-8 text-4xl font-semibold tracking-tight">Background</h1>
       <Background />
     </Subpage>
   );

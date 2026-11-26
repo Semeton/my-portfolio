@@ -19,6 +19,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${study.title} | Semeton Balogun`,
     description: study.goal,
     alternates: { canonical: `/projects/${study.slug}` },
+    openGraph: {
+      type: "article",
+      url: `/projects/${study.slug}`,
+      title: `${study.title} | Semeton Balogun`,
+      description: study.summary,
+    },
+    twitter: {
+      title: `${study.title} | Semeton Balogun`,
+      description: study.summary,
+    },
   };
 }
 
