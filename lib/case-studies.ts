@@ -13,7 +13,8 @@ export type CaseStudy = {
   decisions: { title: string; body: string }[];
   result: string[];
   stack: string[];
-  link: string;
+  /** Public URL; omitted for internal work that has none. */
+  link?: string;
   essays: Essay[];
 };
 
@@ -54,7 +55,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Lawyering",
     summary:
       "A workspace for law firms and individual practitioners: cases, engagements, documents, billing and client communication in one place.",
-    highlights: ["In production since June 2026", "19 modules", "1,200+ automated tests"],
+    highlights: ["In production since June 2026", "22 modules", "2,000+ automated tests"],
     role: "Solo engineer, building with AI agents",
     period: "2026 – present",
     goal: "Turn the paperwork of legal practice into a digital workspace. The founder, a lawyer, wanted a Slack for law firms, where firms manage their cases, engagements, documents and clients in one secure place.",
@@ -88,7 +89,7 @@ export const caseStudies: CaseStudy[] = [
     result: [
       "In production since June 2026, with Cases and Engagements, Drive, PayTrack billing, StaffTrack, e-signatures, and Google Calendar and Google Drive integration.",
       "The latest release, in October 2026, added automatic retainer renewals and billing in naira or US dollars.",
-      "19 modules and over 1,200 automated tests, built by one engineer working with agents since May 2026.",
+      "22 modules and over 2,000 automated tests, built by one engineer working with agents since May 2026.",
     ],
     stack: ["PHP 8.4", "Laravel", "Inertia", "React", "TypeScript", "Tailwind", "Pest"],
     link: "https://lawyering.cloud",
@@ -230,6 +231,52 @@ export const caseStudies: CaseStudy[] = [
     essays: [essays.postMortem1, essays.postMortem2],
   },
   {
+    slug: "fleet-gate",
+    title: "Fleet review gate",
+    summary: "An automated review loop between engineers and an AI agent fleet that opens pull requests, at SeamlessHR.",
+    highlights: ["No public endpoint", "Read-only reviews", "Nothing merges without a human tap"],
+    role: "Designer and builder, end to end",
+    period: "2026 – present",
+    goal: "Let the company's AI dev agents keep shipping pull requests on production HR repositories without an engineer re-reading every PR or relaying every fix by hand.",
+    context: [
+      "A fleet of AI agents opens pull requests on the recruitment and HRMS repositories, and CI posts an automated review. Turning its blockers into a fix request, checking each new push and chasing fixes that were only partly done was manual work for whoever was watching.",
+      "The dev agent ignores Jira and PR comments. It acts only on commands in Slack, and drops plain chat sent through an app. The automation had to speak that protocol exactly.",
+      "No admin rights and no public URL: it had to run from an engineer's own machine.",
+    ],
+    decisions: [
+      {
+        title: "Nothing exposed to the internet",
+        body: "Slack talks to the machine over Socket Mode, an outgoing WebSocket, so there is no webhook to host or get approved. GitHub and Jira are polled every five minutes by launchd.",
+      },
+      {
+        title: "Two processes with separate jobs",
+        body: "A poller finds fleet PRs, reads the CI verdict, queues a local review, sends fix requests and posts a weekday brief. An always-on listener handles review cards, buttons and follow-up questions, answered by resuming the Claude session that wrote that review.",
+      },
+      {
+        title: "Reviews can read, never write",
+        body: "Each review is headless Claude with read-only tools, running on a git worktree of the PR head, given domain notes for the recruitment and HRMS modules, with a cost cap per review.",
+      },
+      {
+        title: "Bounded autonomy",
+        body: "Fix requests go to the dev agent as the engineer, signed so they can be told apart from typed messages. After three rounds it hands the PR back to a person. It never merges, force-pushes or changes a ticket without a tap.",
+      },
+      {
+        title: "Sends are idempotent",
+        body: "Before sending a fix, it searches Slack for an earlier one against the same head commit, so restarts and overlapping runs don't send twice. It can only see its owner's messages, so two engineers split the work by repository or by role.",
+      },
+      {
+        title: "A cloud fallback that never overlaps",
+        body: "A GitHub Actions copy in a private repository keeps the gate running while the laptop is asleep. The local engine writes a heartbeat every five minutes, and the cloud job skips while that heartbeat is under fifteen minutes old.",
+      },
+    ],
+    result: [
+      "Gates the fleet's pull requests every weekday, with the agent loop running unattended between human decisions.",
+      "Packaged with a setup guide so teammates can run their own instance in about two hours, with no admin rights.",
+    ],
+    stack: ["Node.js 22", "Slack Socket Mode", "Claude Code (headless)", "GitHub CLI", "launchd", "GitHub Actions", "Jira REST"],
+    essays: [],
+  },
+  {
     slug: "agent-contract",
     title: "Agent Contract",
     summary: "Deterministic guardrails for AI coding agents, published on npm.",
@@ -298,7 +345,7 @@ export const caseStudies: CaseStudy[] = [
       "In the talk's experiment, asked to purge old orders, agents without memory hard-deleted them in 4 of 4 runs; agents with the record kept the order numbers in 3 of 3 and cited it every time. Tests were green either way.",
       "A stale record that only carried a warning was ignored by Opus (0 of 9 runs) but followed by Sonnet in 3 of 7, which is why the check runs in CI rather than in the model.",
       "Published as @semeton/repo-memory, with npm trusted publishing from GitHub Actions.",
-      "Running on Lawyering, where agent-contract sends every decision through it for my review.",
+      "Running on Lawyering, where agent-contract sends every decision through it: 136 records so far, 132 accepted after my review, 2 rejected and 1 superseded.",
     ],
     stack: ["Node.js", "CLI", "Markdown", "GitHub Actions"],
     link: "https://github.com/Semeton/repo-memory",
@@ -307,8 +354,8 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "change-evidence",
     title: "change-evidence",
-    summary: "Evidence for pull requests written by agents, published on npm.",
-    highlights: ["Published on npm", "Shadow mode on Lawyering since November 2026"],
+    summary: "Evidence for pull requests written by agents, for Laravel and Next.js, published on npm.",
+    highlights: ["Laravel and Next.js/Prisma policies", "Validated on repositories it was never tuned on"],
     role: "Creator",
     period: "2026 – present",
     goal: "Trust a 3,000-line agent pull request without reading every line, by knowing exactly where a reviewer has to look.",
@@ -327,18 +374,19 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Policy as data, per repository",
-        body: "Default Laravel rules ship as data. A repository adds what only it knows, such as where its tenant boundary is and where money moves, read from the base branch and never from the pull request.",
+        body: "Built-in policies for Laravel and for Next.js with Prisma ship as data. A repository adds what only it knows, such as where its tenant boundary is and where money moves, read from the base branch and never from the pull request.",
       },
       {
-        title: "Measure before blocking",
-        body: "A study mode replays a repository's merged pull requests and measures whether the tiers would have routed the right changes to a human. On koel and monica, the low tier held about three quarters of pull requests at a fraction of the bad-outcome rate.",
+        title: "Route by consequence, and say what it can't show",
+        body: "The rules point reviewers at what matters: auth, schema, money, CI and the supply chain. A study mode replays merged pull requests against revert and fix-commit proxies, and the validation report states its own limits: nothing yet shows the tool predicts defective PRs, and on one repository PR size alone did better at a fixed review budget.",
       },
     ],
     result: [
       "Published as @semeton/change-evidence and running in shadow mode on Lawyering since November 2026: one report per pull request, never blocking a merge.",
-      "First lesson from Lawyering: committed build output and a codebase-wide scope-bypass pattern drive most flags, so the policy is being calibrated before anything sits in the merge path.",
+      "Studied out-of-sample on BookStack, Documenso and Lawyering, alongside the two Laravel repositories it was first tuned on.",
+      "Lawyering's reports fed straight back into the tool: generated files are now excluded from size, and the report says what it didn't check.",
     ],
-    stack: ["Node.js", "Git", "GitHub Actions", "Laravel"],
+    stack: ["Node.js", "Git", "GitHub Actions", "Laravel", "Next.js", "Prisma"],
     link: "https://github.com/Semeton/change-evidence",
     essays: [],
   },

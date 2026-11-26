@@ -28,15 +28,19 @@ function Header({ study }: { study: Study }) {
         {study.period && (
           <span className="tabular-nums"> · {study.period}</span>
         )}
-        {" · "}
-        <a
-          href={study.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[hsl(var(--brand))] hover:underline underline-offset-4"
-        >
-          {study.link.replace("https://", "")} ↗
-        </a>
+        {study.link && (
+          <>
+            {" · "}
+            <a
+              href={study.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[hsl(var(--brand))] hover:underline underline-offset-4"
+            >
+              {study.link.replace("https://", "")} ↗
+            </a>
+          </>
+        )}
       </p>
     </header>
   );

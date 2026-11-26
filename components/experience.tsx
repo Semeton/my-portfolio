@@ -7,12 +7,14 @@ export const experiences = [
     role: "Hub Software Engineer, West Africa (Contract)",
     period: "Jun 2026 – present",
     description:
-      "Bridge between country programme teams and the platform engineering team on DIGIT HCM, the open-source platform running national malaria campaigns (SMC and ITN).",
+      "Bridge between country programme teams and the platform engineering team on DIGIT HCM, the open-source platform running national health campaigns: malaria (SMC and ITN) in Nigeria, and immunisation in Namibia.",
     details: [
       "Supported SMC and ITN campaigns across Abuja, Bauchi, Taraba and Borno, including on-site field support",
       "Diagnosed activity dates being stamped at server sync time instead of on-device creation time: late-synced work counted against the next day's quota, locking field workers out of working days and skewing attendance-based payment. Documented the root cause and the fix requirement",
       "Contributed to the stock-reconciliation design for an ITN distribution pilot: partial receipts, auto-returned shortfalls, and in-transit vs lost states in an offline-first ledger",
       "Sizing infrastructure and support staffing for a 2027–29 multi-state campaign programme (11 states, ~27M target population)",
+      "Responsible for the technical go-live gate on campaigns: requirements, dashboards and reports, infrastructure, audit trails and error logging checked before training and go-live",
+      "Shadowed Namibia's national measles-rubella and polio vaccination campaign (November 2026) with WHO AFRO and the WHO country office in Oshana and Omusati, including a border transit post: mapped the national reporting chain from paper tally to national dashboard, demonstrated digital capture to campaign staff, and sent blocking gaps, such as age-band eligibility, back to the platform team",
     ],
     stack:
       "DIGIT HCM · PostgreSQL · Elasticsearch · Kibana · Offline-first sync",
@@ -29,9 +31,10 @@ export const experiences = [
       "Implemented the two-way integration between the recruitment platform and the core HRMS: requisition-to-job creation, status sync back, internal-applicant pre-fill, SSO with company-access checks, service-to-service auth",
       "Led tenant-isolation and security hardening: SSRF-safe webhooks, company-scoped reads and writes, per-client mail credentials with delivery logging, throttled upload limits, GDPR self-service deletion (anonymise or hard-delete)",
       "Backend for AI-assisted hiring: CV parsing, candidate ranking with normalised scores, automated screening; frictionless apply with no sign-up, OAuth pre-fill and magic-link login",
+      "Designed and built the review gate between engineers and the company's AI agent fleet: read-only Claude reviews of each fleet PR, fix requests to the dev agent for up to three rounds, then a hand-back to a person; nothing merges without a human tap",
     ],
     stack:
-      "PHP 8 · Laravel · MySQL · Kafka · Redis/Horizon · Algolia · S3 · Pest",
+      "PHP 8 · Laravel · MySQL · Kafka · Redis/Horizon · Algolia · S3 · Pest · Node.js · Claude Code",
   },
   {
     company: "Zercom Systems",

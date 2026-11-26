@@ -49,21 +49,6 @@ function Photo({
   );
 }
 
-const habits = [
-  {
-    title: "Diagnose before you treat.",
-    body: "Find the root cause before changing anything. My work on the sync-time bug at eGov and the stalled jobs at Access Bank both started there.",
-  },
-  {
-    title: "Every intervention needs a rationale.",
-    body: "In a hospital mistakes are costly, so every action needs a scientific reason behind it. I hold technical decisions to the same standard.",
-  },
-  {
-    title: "Discipline.",
-    body: "Do the routine steps properly every time, especially when nobody is checking.",
-  },
-];
-
 function Nursing() {
   return (
     <Part title="Nursing">
@@ -85,17 +70,10 @@ function Nursing() {
         height={1200}
         focus="center 18%"
       />
-      <p>Three habits from nursing show up in how I engineer:</p>
-      <ul className="space-y-2">
-        {habits.map((habit) => (
-          <li key={habit.title} className="flex gap-3">
-            <span className="flex-shrink-0 text-muted-foreground">–</span>
-            <span>
-              <span className="font-medium">{habit.title}</span> {habit.body}
-            </span>
-          </li>
-        ))}
-      </ul>
+      <p>
+        The habit I kept from it: find the root cause before changing
+        anything.
+      </p>
     </Part>
   );
 }
@@ -167,13 +145,11 @@ function Now() {
     <Part title="Now">
       <p>
         I&apos;m studying for a Master&apos;s in Information Technology at Miva
-        Open University, specialising in artificial intelligence. I&apos;m in my
-        second semester and working on my thesis.
-      </p>
-      <p>
-        The reason goes back to nursing. Practice should rest on theory, and I
-        want to know the rationale behind what I build, not only how to build
-        it.
+        Open University, specialising in artificial intelligence. My
+        dissertation, due in March 2027, builds and evaluates a
+        retrieval-augmented generation system for first-level triage of
+        incidents that field workers report during digital health campaigns in
+        Nigeria.
       </p>
     </Part>
   );
@@ -197,8 +173,7 @@ function Outside() {
       </p>
       <p>
         My favourite person of all time is Richard Feynman, mostly because he
-        refused to live through one filter. Nursing, design and software have
-        all made more sense to me together than any of them would alone.
+        refused to live through one filter.
       </p>
       <Photo
         src="/images/about-outside.jpg"
