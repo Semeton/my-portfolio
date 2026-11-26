@@ -12,14 +12,14 @@ export default function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return <span className="h-4 w-4" />;
+  if (!mounted) return <span className="-m-2 block h-8 w-8" />;
 
   const isDark = resolvedTheme === "dark";
 
   return (
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="text-muted-foreground hover:text-foreground transition-colors"
+      className="-m-2 p-2 text-muted-foreground transition-colors hover:text-foreground"
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
     >
       {isDark ? <SunIcon className="h-4 w-4" /> : <MoonIcon className="h-4 w-4" />}
