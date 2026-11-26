@@ -120,7 +120,7 @@ function Software() {
       <p>
         When I asked Emmanuel how I could repay him, he told me to pay it
         forward. I&apos;ve tried to. I trained interns at Bincom and ADOMedia, and I
-        volunteered on SeamlessHR&apos;s Codeable programme, teaching software
+        volunteered on Seamless Technologies&apos; Codeable programme, teaching software
         engineering to Special Olympics athletes and to students at the
         Kirikiri correctional centre in Lagos. I wrote about it in{" "}
         <External href="https://semeton.medium.com/paying-it-forward-behind-bars-7b71c584caec">
