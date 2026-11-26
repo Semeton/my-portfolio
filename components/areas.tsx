@@ -21,7 +21,7 @@ const areas: Area[] = [
     kicker: "Banks & enterprise SaaS",
     title: "Multi-tenant platforms",
     outcome:
-      "One codebase now serves Wema Bank, First Bank, PremiumTrust Bank and Seven-Up, with over 10,000 production users, where each client used to run its own copy. Lawyering, built solo with agents, has been in production since June 2026: 19 modules, over 1,200 tests.",
+      "One codebase now serves Wema Bank, First Bank, PremiumTrust Bank and Seven-Up, with over 10,000 production users, where each client used to run its own copy. Lawyering, built solo with agents, has been in production since June 2026: 22 modules, over 2,000 tests.",
     goal: "Sell one product to many organisations, each with its own branding, rules and infrastructure, without keeping a codebase per client.",
     body: "Lawyering gives law firms and individual practitioners each an isolated workspace for their staff and clients. Tangerine365 separates tenants by subdomain or by ID. At Seamless I work on tenant isolation for a multi-tenant HR suite.",
     caseStudies: [
@@ -47,7 +47,7 @@ const areas: Area[] = [
     outcome:
       "Traced field-worker lockouts to activities being dated at sync time instead of creation time. Now sizing infrastructure and support staffing for a 2027–29 programme across 11 states (~27M people).",
     goal: "Field workers in malaria campaigns get credited and paid for the days they actually worked, even when their phones sync late.",
-    body: "On contract with eGov Foundation I support DIGIT HCM, the platform behind Nigeria's health campaigns, across Abuja, Bauchi, Taraba and Borno.",
+    body: "On contract with eGov Foundation I support DIGIT HCM, the platform behind Nigeria's health campaigns, across Abuja, Bauchi, Taraba and Borno. In November 2026 I joined WHO teams in northern Namibia to shadow the national measles-rubella and polio vaccination campaign.",
     caseStudies: [{ label: "Role details", href: "/work" }],
     reading: [],
   },
@@ -57,8 +57,9 @@ const areas: Area[] = [
     outcome:
       "Three open source npm packages. In my experiment, agents asked to purge old orders hard-deleted them 4 times out of 4; given a reviewed decision record, they kept the order numbers 3 times out of 3.",
     goal: "Get the speed of AI coding agents on production codebases without losing control of what they change.",
-    body: "One package for each point where an agent's work can go wrong. agent-contract blocks any write outside the task's scope before it lands. repo-memory keeps the reasons behind the code as records that CI checks and only a human can accept. change-evidence reads every pull request as data and tells the reviewer where to look. I build Lawyering under all three.",
+    body: "One package for each point where an agent's work can go wrong. agent-contract blocks any write outside the task's scope before it lands. repo-memory keeps the reasons behind the code as records that CI checks and only a human can accept. change-evidence reads every pull request as data and tells the reviewer where to look. I build Lawyering under all three. At SeamlessHR I built the review gate between our engineers and the company's AI agent fleet.",
     caseStudies: [
+      { label: "Fleet review gate", href: "/projects/fleet-gate" },
       { label: "Agent Contract", href: "/projects/agent-contract" },
       { label: "repo-memory", href: "/projects/repo-memory" },
       { label: "change-evidence", href: "/projects/change-evidence" },
